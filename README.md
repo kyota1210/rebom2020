@@ -45,9 +45,9 @@
 
 ## tags
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column | Type   | Options                       |
+| ------ | ------ | ----------------------------- |
+| name   | string | null: false, uniqueness: true |
 
 ### Association
 - has_many :book_tag_relations
