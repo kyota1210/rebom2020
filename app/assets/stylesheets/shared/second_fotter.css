@@ -1,0 +1,20 @@
+.second-fotter {
+  width: 100%;
+  min-width: 800px;
+  height: 200px;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.second-fotter-text-wrap {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.second-fotter-text {
+  color: #333;
+  font-size: 12px;
+  margin: 0 10px;
+}

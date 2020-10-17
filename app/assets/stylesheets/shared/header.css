@@ -27,7 +27,7 @@
   padding: 10px 20px;
   margin-right: 10px;
 }
-.login-btn, .sign-up-btn{
+.top-login-btn, .sign-up-btn{
   color: aliceblue;
   text-decoration: none;
   display: block;
