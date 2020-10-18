@@ -1,0 +1,38 @@
+.header{
+  height: 120px;
+  background-color: #1e2c41;
+}
+
+.container{
+  margin: 0 auto;
+  width: 80%;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo{
+  margin: 10px;
+}
+
+.header-right-contents{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login{
+  border: 1px solid white;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+.top-login-btn, .sign-up-btn{
+  color: aliceblue;
+  text-decoration: none;
+  display: block;
+}
+.sign-up{
+  border: 1px solid white;
+  padding: 10px 20px;
+}
