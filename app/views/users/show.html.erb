@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <%= render "shared/header" %>
+  
+  <div class="main-books-wrapper">
+  <div class="left-side-bar">
+    <div class="left-bar-contents">
+      <div class="user-image">
+        <% if @user.image.attached? %>
+          <p><%= image_tag(rails_blob_path(@user.image),size: "140x135", class: "user-icon") %></p>
+        <% else %>
+          <p><%= image_tag("default_user.png", size: "140x135", class: "user-icon") %></p>
+        <% end %>
+      </div>
+      <div class="left-bar-title">
+        <%= link_to "#{@user.name}", edit_user_path(current_user.id), class:"user-name" %>
+      </div>
+      <% if @user.text %>
+      <div class="user-text">
+        <p><%= @user.text %></p>
+      </div>
+      <% end %>
+      <div class="left-bar-list">
+        <ul class="left-content-lists">
+          <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
+          <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
+          <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
+        <ul>
+      </div>
+      <div class="logout-btn">
+        <% if user_signed_in? %>
+        <div class="logout">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"bottom-logout-btn" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='purchase-btn'>
+      <span class='purchase-btn-text'>追加する</span>
+      <a href="#">
+      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
+  </div>
+  <div class="books-timeline">
+  </div>
+</div>
+</div>

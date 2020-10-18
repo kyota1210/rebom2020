@@ -12,13 +12,13 @@
   flex-direction: column;
 }
 
-.left-bar-title{
+.left-bar-top{
+  margin: 40px auto;
   padding: 50px 0;
   font-size: 18px;
 }
 .user-name{
   color: #1e2c41;
-  font-weight: 300;
   text-decoration: none;
 }
 .left-bar-list{
@@ -33,7 +33,6 @@
 }
 .content-btn{
   color: #1e2c41;
-  font-weight: 300;
   text-decoration: none;
 }
 
