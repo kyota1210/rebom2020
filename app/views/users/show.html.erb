@@ -2,15 +2,15 @@
   <%= render "shared/header" %>
   
   <div class="main-books-wrapper">
-  <div class="left-side-bar">
-    <div class="left-bar-contents">
-      <div class="user-image">
-        <% if @user.image.attached? %>
+    <div class="left-side-bar">
+      <div class="left-bar-contents">
+        <div class="user-image">
+          <% if @user.image.attached? %>
           <p><%= image_tag(rails_blob_path(@user.image),size: "140x135", class: "user-icon") %></p>
-        <% else %>
+          <% else %>
           <p><%= image_tag("default_user.png", size: "140x135", class: "user-icon") %></p>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
       <div class="left-bar-title">
         <%= link_to "#{@user.name}", edit_user_path(current_user.id), class:"user-name" %>
       </div>
@@ -43,5 +43,5 @@
   </div>
   <div class="books-timeline">
   </div>
-</div>
+  
 </div>
