@@ -6,13 +6,17 @@
 
 .left-side-bar{
   width: 260px;
-  background-color: rgb(230, 188, 83);
+  background-image: linear-gradient(45deg, #fe8150 0%, #FFC107 100%);
   display: flex;
   text-align: center;
   flex-direction: column;
 }
 .user-image{
   margin-top: 28px;
+}
+.user-icon{
+  border: 2px solid black;
+  border-radius: 4%;
 }
 .left-bar-title{
   padding: 15px 0;
@@ -23,6 +27,15 @@
   font-weight: 300;
   text-decoration: none;
 }
+.user-text{
+  padding: 8px;
+  margin: 0 auto;
+  width: 85%;
+  height: 100px;
+  background-color: rgba(254, 233, 118, 0.619);
+  border-radius: 4%;
+}
+
 .left-bar-list{
   margin-top: 70px;
 }
@@ -31,7 +44,7 @@
   flex-direction: column;
 }
 .left-content{
-  padding: 25px 0;
+  padding: 15px 0;
 }
 .content-btn{
   color: #1e2c41;
@@ -44,9 +57,10 @@
 }
 .bottom-logout-btn{
   padding: 10px 20px;
-  border: 1px solid #1e2c41;
+  border: 1px solid white;
   color: white;
   background-color: tomato;
+  border-radius: 4%;
   text-decoration: none;
 }
 

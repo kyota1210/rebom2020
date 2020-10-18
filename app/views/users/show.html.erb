@@ -5,13 +5,20 @@
   <div class="left-side-bar">
     <div class="left-bar-contents">
       <div class="user-image">
-        <a href="#">
-      <%= image_tag 'user-image.png', size: '140x140',class: "user-icon" %>
-      </a>
+        <% if @user.image.attached? %>
+          <p><%= image_tag(rails_blob_path(@user.image),size: "140x135", class: "user-icon") %></p>
+        <% else %>
+          <p><%= image_tag("default_user.png", size: "140x135", class: "user-icon") %></p>
+        <% end %>
       </div>
       <div class="left-bar-title">
-        <%= link_to "きょうたろう", user_path(current_user.id), class:"user-name" %>
+        <%= link_to "#{@user.name}", edit_user_path(current_user.id), class:"user-name" %>
       </div>
+      <% if @user.text %>
+      <div class="user-text">
+        <p><%= @user.text %></p>
+      </div>
+      <% end %>
       <div class="left-bar-list">
         <ul class="left-content-lists">
           <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
