@@ -19,7 +19,7 @@
     <ul class="book-lists">
       <% @books.each do |book| %>
       <li class="content">
-          <%# <%= link_to books_path(book) do %>
+          <%= link_to book_path(book.id) do %>
           <div class='book-img-content'>
             <%= image_tag book.image, class: "book-img" %>
           </div>
@@ -35,7 +35,7 @@
               </div>
             </div>
           </div>
-          <%# <% end %>
+          <% end %>
       </li>
       <% end %>
     </ul>

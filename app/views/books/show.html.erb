@@ -1,0 +1,107 @@
+<div class="content-wrapper">
+  <%= render "shared/second-header" %>
+  
+  <div class="main-books-wrapper">
+    <div class="left-side-bar">
+      <div class="left-bar-contents">
+        <div class="book-image">
+          <p><%= image_tag(rails_blob_path(@book.image), class: "book-icon") %></p>
+        </div>
+      <div class="left-bar-title">
+        <%= @book.title %>
+      </div>
+      <div class="book-author">
+        <p><%= "著者：#{@book.author}" %></p>
+      </div>
+      <div class="left-bar-list">
+        <ul class="left-content-lists">
+          <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
+          <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
+          <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
+        <ul>
+      </div>
+    </div>
+    <div class='add-btn'>
+      <span class='add-btn-text'>追加する</span>
+      <a href="#">
+      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
+  </div>
+  <div class="posts-index">
+    <%# <% if current_user.id && user_signed_in? == @book.user.id %>
+    <div class="create-content-btn">
+      <span class='add-btn-post'>投稿する</span>
+      <a href="#">
+      </a>
+    </div>
+    <%# <% end %>
+    <div class="post-contents-wrapper">
+      <div class="post-contents">
+        <ul class="posts">
+          <li class="post">
+            <div class="post-content">
+              <div class="upper-content">
+                <div class="post-date">
+                  2020/3/31(Wed) 12:43:30
+                </div>
+              </div>
+              <div class="lower-content">
+                <div class="highlight-content">
+                  おはよう
+                </div>
+                </div>
+              </div>
+            <div>
+          </li>
+          <li class="post">
+            <div class="post-content">
+              <div class="upper-content">
+                <div class="post-date">
+                  2020/3/31(Wed) 12:43:30
+                </div>
+              </div>
+              <div class="lower-content">
+                <div class="highlight-content">
+                  こんばんは
+                </div>
+                </div>
+              </div>
+            <div>
+          </li>
+          <li class="post">
+            <div class="post-content">
+              <div class="upper-content">
+                <div class="post-date">
+                  2020/3/31(Wed) 12:43:30
+                </div>
+              </div>
+              <div class="lower-content">
+                <div class="highlight-content">
+                  こんにちは
+                </div>
+                </div>
+              </div>
+            <div>
+          </li>
+          <li class="post">
+            <div class="post-content">
+              <div class="upper-content">
+                <div class="post-date">
+                  2020/3/31(Wed) 12:43:30
+                </div>
+              </div>
+              <div class="lower-content">
+                <div class="highlight-content">
+                  こんばんは
+                </div>
+                </div>
+              </div>
+            <div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+</div>
