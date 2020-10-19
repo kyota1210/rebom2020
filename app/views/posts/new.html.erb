@@ -1,0 +1,18 @@
+<%= render "shared/second-header" %>
+
+<div class="post-container">
+    <%= form_with model: @post, url: book_posts_path, local: true do |f| %>
+    <%# <%= render 'layouts/error_messages', model: f.object %>
+    <div class="highlight-box">
+      <%= f.text_area :highlight, placeholder: "ハイライト", class:"highlight" %>
+    </div>
+    <div class="text-box">
+      <%= f.text_area :text, placeholder: "200字以内", class:"text-area" %>
+    </div>
+    <div class='save-btn'>
+      <%= f.submit "保存する", class:"save" %>
+    </div>
+    <% end %>
+</div>
+
+<%= render "shared/second-footer" %>

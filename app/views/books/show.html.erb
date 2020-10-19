@@ -24,81 +24,34 @@
     <div class='add-btn'>
       <span class='add-btn-text'>追加する</span>
       <a href="#">
-      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "purchase-btn-icon" %>
+      <%= image_tag 'book_btn.png', size: '200x50' ,class: "add-btn-icon" %>
       </a>
     </div>
   </div>
   <div class="posts-index">
     <%# <% if current_user.id && user_signed_in? == @book.user.id %>
     <div class="create-content-btn">
-      <span class='add-btn-post'>投稿する</span>
-      <a href="#">
+      <a><%= link_to '投稿する', new_book_post_path(@book.id), class:"add-btn-post" %>
       </a>
     </div>
     <%# <% end %>
     <div class="post-contents-wrapper">
       <div class="post-contents">
         <ul class="posts">
+          <% @book.posts.each do |post| %>
           <li class="post">
-            <div class="post-content">
-              <div class="upper-content">
-                <div class="post-date">
-                  2020/3/31(Wed) 12:43:30
-                </div>
+            <div class="upper-content">
+              <div class="post-date">
+                <%= l post.created_at %>
               </div>
-              <div class="lower-content">
-                <div class="highlight-content">
-                  おはよう
-                </div>
-                </div>
+            </div>
+            <div class="lower-content">
+              <div class="highlight-content">
+                <%= post.highlight %>
               </div>
-            <div>
+            </div>
           </li>
-          <li class="post">
-            <div class="post-content">
-              <div class="upper-content">
-                <div class="post-date">
-                  2020/3/31(Wed) 12:43:30
-                </div>
-              </div>
-              <div class="lower-content">
-                <div class="highlight-content">
-                  こんばんは
-                </div>
-                </div>
-              </div>
-            <div>
-          </li>
-          <li class="post">
-            <div class="post-content">
-              <div class="upper-content">
-                <div class="post-date">
-                  2020/3/31(Wed) 12:43:30
-                </div>
-              </div>
-              <div class="lower-content">
-                <div class="highlight-content">
-                  こんにちは
-                </div>
-                </div>
-              </div>
-            <div>
-          </li>
-          <li class="post">
-            <div class="post-content">
-              <div class="upper-content">
-                <div class="post-date">
-                  2020/3/31(Wed) 12:43:30
-                </div>
-              </div>
-              <div class="lower-content">
-                <div class="highlight-content">
-                  こんばんは
-                </div>
-                </div>
-              </div>
-            <div>
-          </li>
+          <% end %>
         </ul>
       </div>
     </div>

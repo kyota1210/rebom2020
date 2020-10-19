@@ -29,9 +29,6 @@
   font-weight: 300;
   text-decoration: none;
 }
-.book-author{
-
-}
 
 .left-bar-list{
   margin-top: 25px;
@@ -70,6 +67,8 @@
 }
 .add-btn-post{
   color: azure;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .post-contents-wrapper{
@@ -81,7 +80,7 @@
 .posts{
   margin-top: 50px;
 }
-.post-content{
+.post{
   width: 100%;
   height: 18vh;
   padding: 12px 20px;
@@ -89,7 +88,15 @@
   border: 1px solid #1e2c41;
   color: azure;
   background-color: cadetblue;
+  position: relative;
+}
+.post-date{
+  font-size: 13px;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
 }
 .highlight-content{
   margin: 10px auto;
+  font-size: 18px;
 }
