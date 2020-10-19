@@ -1,15 +1,15 @@
-.purchase-btn {
+.add-btn {
   width: 120px;
   background: #5a70c9;
   text-align: center;
   border-radius: 4%;
-  bottom: 32px;
-  right: 70px;
+  bottom: 36px;
+  right: 50px;
   position: fixed;
   padding: 15px;
 }
 
-.purchase-btn-text {
+.add-btn-text {
   color: #fff;
   display: block;
   font-size: 18px;

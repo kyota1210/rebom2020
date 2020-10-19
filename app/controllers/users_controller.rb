@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    
-    user = User.find(params[:id])
-    if user.valid?
-      user.update(update_params)
+    @user = User.find(params[:id])
+    binding.pry
+    if @user.valid?
+      @user.update(update_params)
       redirect_to action: :show
     else
       render action: :edit
