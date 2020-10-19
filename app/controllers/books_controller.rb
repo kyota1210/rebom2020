@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @books = Book.all.order('created_at DESC')
   end
 
   def new
@@ -20,6 +20,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:image, :title, :author)
+    params.require(:book).permit(:image, :title, :author).merge(user_id: current_user.id)
   end
 end

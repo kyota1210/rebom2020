@@ -3,7 +3,7 @@
     <div class="left-bar-contents">
       <div class="left-bar-top">
         <% if user_signed_in? %>
-        <%= link_to "ユーザー名", "#", class:"user-name" %>
+        <%= link_to "#{current_user.name}", user_path(current_user.id), class:"user-name" %>
         <% end %>
       </div>
       <div class="left-bar-list">
@@ -14,17 +14,12 @@
         <ul>
       </div>
     </div>
-    <div class='purchase-btn'>
-      <span class='purchase-btn-text'>追加する</span>
-      <a href="/books/new">
-      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "purchase-btn-icon" %>
-      </a>
-    </div>
   </div>
   <div class="books-timeline">
-    <% @books.each do |book| %>
-      <li class="list">
-          <%= link_to book_path(book) do %>
+    <ul class="book-lists">
+      <% @books.each do |book| %>
+      <li class="content">
+          <%# <%= link_to books_path(book) do %>
           <div class='book-img-content'>
             <%= image_tag book.image, class: "book-img" %>
           </div>
@@ -33,15 +28,24 @@
               <%= book.title %>
             </h3>
             <div class="book-author">
-              <span><%= book.author %></span>
+              <span><%= "著者：#{book.author}" %></span>
               <div class='star-btn'>
                 <%= image_tag "star.png", class:"star-icon" %>
                 <span class='star-count'>0</span>
               </div>
             </div>
           </div>
-          <% end %>
+          <%# <% end %>
       </li>
       <% end %>
+    </ul>
+  </div>
+  <div class="right-side-bar">
+    <div class='add-btn'>
+      <span class='add-btn-text'>追加する</span>
+      <a href="/books/new">
+      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "purchase-btn-icon" %>
+      </a>
+    </div>
   </div>
 </div>
