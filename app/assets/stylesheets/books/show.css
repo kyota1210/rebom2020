@@ -1,0 +1,95 @@
+.main-books-wrapper{
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 120px);
+}
+
+.left-side-bar{
+  width: 260px;
+  background-image: linear-gradient(45deg, #fe8150 0%, #FFC107 100%);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.book-image{
+  margin-top: 28px;
+}
+.book-icon{
+  width: 17vw;
+  height: 22vh;
+  border: 2px solid black;
+  border-radius: 4%;
+}
+.left-bar-title{
+  padding: 15px 0;
+  font-size: 18px;
+}
+.book-title{
+  color: #1e2c41;
+  font-weight: 300;
+  text-decoration: none;
+}
+.book-author{
+
+}
+
+.left-bar-list{
+  margin-top: 25px;
+}
+.left-content-lists{
+  display: flex;
+  flex-direction: column;
+}
+.left-content{
+  padding: 15px 0;
+}
+.content-btn{
+  color: #1e2c41;
+  text-decoration: none;
+}
+
+
+
+.posts-index{
+  width: calc(100vw - 260px);
+  padding: 30px;
+  background-color:white;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  }
+
+.create-content-btn{
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 4%;
+  background-color: lightslategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-btn-post{
+  color: azure;
+}
+
+.post-contents-wrapper{
+  width: 78%;
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+.posts{
+  margin-top: 50px;
+}
+.post-content{
+  width: 100%;
+  height: 18vh;
+  padding: 12px 20px;
+  margin: 10px;
+  border: 1px solid #1e2c41;
+  color: azure;
+  background-color: cadetblue;
+}
+.highlight-content{
+  margin: 10px auto;
+}
