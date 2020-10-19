@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    binding.pry
     if @user.valid?
       @user.update(update_params)
       redirect_to action: :show

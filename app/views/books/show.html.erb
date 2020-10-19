@@ -24,15 +24,14 @@
     <div class='add-btn'>
       <span class='add-btn-text'>追加する</span>
       <a href="#">
-      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "purchase-btn-icon" %>
+      <%= image_tag 'book_btn.png', size: '200x50' ,class: "add-btn-icon" %>
       </a>
     </div>
   </div>
   <div class="posts-index">
     <%# <% if current_user.id && user_signed_in? == @book.user.id %>
     <div class="create-content-btn">
-      <span class='add-btn-post'>投稿する</span>
-      <a href="#">
+      <a><%= link_to '投稿する', new_book_post_path(@book.id), class:"add-btn-post" %>
       </a>
     </div>
     <%# <% end %>

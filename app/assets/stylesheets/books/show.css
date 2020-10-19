@@ -29,9 +29,6 @@
   font-weight: 300;
   text-decoration: none;
 }
-.book-author{
-
-}
 
 .left-bar-list{
   margin-top: 25px;
@@ -70,6 +67,8 @@
 }
 .add-btn-post{
   color: azure;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .post-contents-wrapper{
