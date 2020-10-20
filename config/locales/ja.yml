@@ -2,3 +2,14 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d"
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+      book:
+        title: タイトル
+        author: 著者名
+        image: 画像
+      post:
+        highlight: ハイライト
+        text: 本文
