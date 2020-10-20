@@ -88,3 +88,20 @@
   font-size: 14px;
   cursor: pointer;
 }
+
+.accordion-box{
+  text-align: center;
+  margin-top: 40px;
+}
+.change-btn{
+  background-color: rgb(157, 197, 250);
+  color: white;
+  border-radius: 10em;
+  padding: 8px 20px;
+  font-size: 10px;
+  display: inline-block;
+}
+
+.accordion-show{
+  display: none;
+}

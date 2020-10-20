@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   
-  validates_format_of :password, with: PASSWORD_REGEX
+  validates :password, format: { with: PASSWORD_REGEX, message: 'は半角英数字6文字以上で入力してください' }
   validates :name, presence: true
   
   has_many         :books
