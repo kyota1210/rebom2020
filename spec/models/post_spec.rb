@@ -15,17 +15,17 @@ RSpec.describe Post, type: :model do
         it 'highlightが空だと投稿できないこと' do
           @post.highlight = ""
           @post.valid?
-          expect(@post.errors.full_messages).to include("Highlight translation missing: ja.activerecord.errors.models.post.attributes.highlight.blank")
+          expect(@post.errors.full_messages).to include("ハイライトを入力してください")
         end
         it 'textが空だと投稿できないこと' do
           @post.text = ""
           @post.valid?
-          expect(@post.errors.full_messages).to include("Text translation missing: ja.activerecord.errors.models.post.attributes.text.blank")
+          expect(@post.errors.full_messages).to include("本文を入力してください")
         end
         it '投稿がbookと紐付いていること' do
           @post.book = nil
           @post.valid?
-          expect(@post.errors.full_messages).to include("Book translation missing: ja.activerecord.errors.models.post.attributes.book.required")
+          expect(@post.errors.full_messages).to include("Bookを入力してください")
         end
       end
     end

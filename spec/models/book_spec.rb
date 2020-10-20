@@ -15,22 +15,22 @@ RSpec.describe Book, type: :model do
       it 'titleが空だと追加できないこと' do
         @book.title = ""
         @book.valid?
-        expect(@book.errors.full_messages).to include("Title can't be blank")
+        expect(@book.errors.full_messages).to include("タイトルを入力してください")
       end
       it 'authorが空だと追加できないこと' do
         @book.author = ""
         @book.valid?
-        expect(@book.errors.full_messages).to include("Author can't be blank")
+        expect(@book.errors.full_messages).to include("著者名を入力してください")
       end
       it 'imageが空だと追加できないこと' do
         @book.image = nil
         @book.valid?
-        expect(@book.errors.full_messages).to include("Image can't be blank")
+        expect(@book.errors.full_messages).to include("画像を入力してください")
       end
       it '追加した本がユーザーと結びついていること' do
         @book.user = nil
         @book.valid?
-        expect(@book.errors.full_messages).to include("User must exist")
+        expect(@book.errors.full_messages).to include("Userを入力してください")
       end
     end
   end
