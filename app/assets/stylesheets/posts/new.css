@@ -1,13 +1,14 @@
-.post-container{
-  margin: 30px auto;
+.post-wrapper{
+  width: 100%;
   text-align: center;
 }
 
 .post-form{
   width: 100%;
+  padding: 40px;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 .highlight-box,.text-box{
   margin-top: 10px;
@@ -20,7 +21,7 @@
 
 .text-area{
   width: 50vw;
-  height: 35vh;
+  height: 28vh;
   padding: 15px 20px;
 }
 .save-btn{
@@ -28,4 +29,13 @@
 }
 .save{
   padding: 10px 40px;
+  font-size: 19px;
+  line-height: 40px!;
+  background: #474f79;
+  font-size: 18px;
+  border-radius: 0.5em;
+  color: rgb(255, 255, 255);
+}
+.save:hover {
+  background: #2c3148;
 }
