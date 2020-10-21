@@ -61,19 +61,24 @@
   background-color:rgba(214, 214, 214, 0.548);
   display: flex;
   flex-direction: column;
-  padding: 20px 30px;
-  margin: 8px;
+  margin: 8px auto;
   position: relative;
 }
-
+.book-img-content{
+  margin-top: 20px;
+  text-align: center;
+}
+.book-info{
+  width: 86%;
+  margin: 0 auto;
+}
 .book-title{
   width: 100%;
   margin-top: 5px;
   font-size: 15px;
 }
 .book-author{
-  margin: 5px auto 15px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .book-img{
