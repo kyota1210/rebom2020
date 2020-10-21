@@ -1,0 +1,38 @@
+<%= render "shared/second-header"%>
+
+<%= form_with model: @book, url: book_path(@book.id), class: 'book-main', local: true do |f| %>
+
+<div class='form-wrapper'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      登録した本の情報を編集します。
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group file">
+    <h2>画像</h2>
+    <%= f.file_field :image, placeholder: "画像アップロード" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">本のタイトル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :title, class:"input-default", id:"title", placeholder:"タイトル", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">著者</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :author, class:"input-default", id:"author", placeholder:"著者", autofocus: true %>
+  </div>
+  <div class='book-btn'>
+    <%= f.submit "追加する", class:"book-indigo-btn" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/second-footer"%>

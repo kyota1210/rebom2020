@@ -54,14 +54,22 @@
           <h3 class="book-title">
             <%= book.title %>
           </h3>
-          <div class="book-author">
+          <div class="book-author-users">
             <%= "著者：#{book.author}" %>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
           </div>
         </div>
+        <% if current_user.id == @user.id %>
+          <div class="action-button">
+            <ul class="action-lists">
+              <li>
+                <a><%= link_to '編集', edit_book_path(book.id), class:"edit-button" %></a>
+              </li>
+              <li>
+                <a><%= link_to '削除', "#", class:"delete-button" %></a>
+              </li>
+            </ul>
+          </div>
+        <% end %>
       </li>
       <% end %>
     </ul>
