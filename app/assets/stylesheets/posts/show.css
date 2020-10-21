@@ -1,26 +1,9 @@
-.post-content-wrapper{
-  background-color: burlywood;
-  height: calc(100vh - 120px);
-  display: flex;
-  justify-content: center;
+.tag{
+  background-color: rgb(250, 248, 237);
+  width: 100%;
+  height: 28px;
+  margin: 10px auto;
 }
-
-.the-book-wrapper{
-  background-color: chocolate;
-  width: 85%;
-  padding: 50px 30px;
-  display: flex;
-  overflow: scroll;
-}
-
-.left-container{
-  background-color: darkgray;
-  width: 25vw;
-  height: 65vh;
-  padding: 10px 20px;
-  text-align: center;
-}
-
 .left-bottom-contents{
   margin: 40px;
   font-size: 20px;
@@ -28,64 +11,74 @@
 .only-post-user{
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
+}
+.action-btn{
+  text-decoration: none;
+  font-size: 15px;
+  color: azure;
+  border-radius: 0.5em;
+  margin: 10px auto;
+  padding: 5px 15px;
+  width: 50%;
 }
 .post-edit{
-  text-decoration: none;
-  color: rgb(20, 92, 46);
-  display: inline-block;
-  border: 1px solid black;
-  margin-top: 20px;
+  border: 1px solid azure;
+  background-color: rgba(20, 92, 46, 0.769);
 }
 .post-delete{
-  text-decoration: none;
-  color: rgb(162, 33, 39);
-  display: inline-block;
-  border: 1px solid black;
-  margin-top: 20px;
+  background-color: rgba(121, 121, 121, 0.66);
+}
+
+.follow-btn{
+  background-color: rgba(42, 81, 165, 0.749);
+  width: 60%;
+  margin: 40px auto;
+  padding: 10px;
+  border-radius: 0.5em;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.follow-btn:hover{
+  opacity: 1;
 }
 .follow-user{
+  font-size: 16px;
   text-decoration: none;
-  color: rgb(72, 108, 224);
-  display: inline-block;
-  border: 1px solid black;
-  margin-top: 20px;
+  color: whitesmoke;
 }
 
-
-
 .post-container{
-  width: 70%;
-  margin: 0 0 10px 20px;
+  width: 50%;
+  padding: 20px;
+  margin: 40px 120px 40px 20px;
+  background-color:rgba(214, 214, 214, 0.548);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .highlight{
   font-size: 17px;
 }
-
 .post-top-content{
-  background-color: darkslateblue;
+  background-color: rgba(165, 6, 6, 0.557);
   width: 100%;
-  height: 13vh;
-  padding: 10px 20px;
+  height: 100px;
+  padding: 5px 10px;
   color: aliceblue;
   text-align: left;
 }
 
 .post-bottom-content{
-  background-color: darkslategray;
+  background-color: white;
   width: 100%;
   height: 30vh;
-  padding: 1px 25px;
+  padding: 20px 30px 50px;
   margin-top: 20px;
-  color: aliceblue;
+  border: 1px solid black;
+  color: black;
   text-align: left;
   position: relative;
-}
-
-.tag{
-  background-color: gold;
-  width: 100%;
-  height: 5vh;
-  margin: 10px auto;
 }
 .post-time{
   position: absolute;
@@ -94,15 +87,24 @@
 }
 
 .comment-wrapper{
-  background-color: darkslategray;
   width: 100%;
-  padding: 20px 25px 30px;
-  margin-top: 20px;
-  color: aliceblue;
+  height: 70%;
+  padding: 15px;
+  margin-top: 15px;
   text-align: left;
 }
+.comment-wrapper h2{
+  width: 100%;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: black;
+  border-bottom: 1px solid black;
+}
 .comment-table{
-  background-color: gainsboro;
+  background-color: white;
   padding: 15px 25px;
-  height: 130px;
+  margin: 10px 0;
+  height: 80%;
+  border-radius: 0.5em;
+  overflow: scroll;
 }

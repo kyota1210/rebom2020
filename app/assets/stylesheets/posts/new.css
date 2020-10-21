@@ -16,26 +16,30 @@
 .highlight{
   width: 50vw;
   height: 10vh;
-  padding: 15px 20px;
+  padding: 13px 18px;
+  font-size: 20px;
 }
 
 .text-area{
   width: 50vw;
   height: 28vh;
   padding: 15px 20px;
+  font-size: 18px;
 }
 .save-btn{
-  margin: 20px;
+  margin: 35px auto 30px;
 }
 .save{
   padding: 10px 40px;
   font-size: 19px;
   line-height: 40px!;
-  background: #474f79;
+  background: #1e2c41;
+  opacity: 93%;
+  border: 1px solid #1e2c41;
   font-size: 18px;
   border-radius: 0.5em;
   color: rgb(255, 255, 255);
 }
 .save:hover {
-  background: #2c3148;
+  opacity: 1;
 }
