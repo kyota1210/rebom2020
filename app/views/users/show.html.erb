@@ -65,7 +65,7 @@
                 <a><%= link_to '編集', edit_book_path(book.id), class:"edit-button" %></a>
               </li>
               <li>
-                <a><%= link_to '削除', "#", class:"delete-button" %></a>
+                <a><%= link_to '削除', book_path(book.id), method: :delete, class:"delete-button" %></a>
               </li>
             </ul>
           </div>
