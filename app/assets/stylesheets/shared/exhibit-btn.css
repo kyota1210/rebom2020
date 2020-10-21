@@ -1,12 +1,14 @@
 .add-btn {
-  width: 120px;
-  background: #5a70c9;
+  width: 140px;
+  height: 140px;
+  background: #1e2c41;
   text-align: center;
-  border-radius: 4%;
+  border-radius: 0.5em;
   bottom: 36px;
-  right: 50px;
+  right: 40px;
   position: fixed;
-  padding: 15px;
+  padding: 10px;
+  z-index: 10;
 }
 
 .add-btn-text {
@@ -18,8 +20,9 @@
 }
 
 .add-btn-icon {
-  width: 60%;
-  height: 50%;
+  margin-top: 5px;
+  width: 70%;
+  height: 60%;
 }
 
 .top-icon{

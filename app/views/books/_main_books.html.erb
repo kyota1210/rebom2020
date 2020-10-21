@@ -15,7 +15,10 @@
       </div>
     </div>
   </div>
+
+  <%# 投稿一覧 %>
   <div class="books-timeline">
+    <div class="books-container">
     <ul class="book-lists">
       <% @books.each do |book| %>
       <li class="content">
@@ -23,28 +26,29 @@
           <div class='book-img-content'>
             <%= image_tag book.image, class: "book-img" %>
           </div>
+          <% end %>
           <div class="book-info">
             <h3 class="book-title">
               <%= book.title %>
             </h3>
             <div class="book-author">
-              <span><%= "著者：#{book.author}" %></span>
+              <%= "著者：#{book.author}" %>
               <div class='star-btn'>
                 <%= image_tag "star.png", class:"star-icon" %>
                 <span class='star-count'>0</span>
               </div>
             </div>
           </div>
-          <% end %>
       </li>
       <% end %>
     </ul>
+    </div>
   </div>
   <div class="right-side-bar">
     <div class='add-btn'>
       <span class='add-btn-text'>追加する</span>
       <a href="/books/new">
-      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "purchase-btn-icon" %>
+      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "add-btn-icon" %>
       </a>
     </div>
   </div>

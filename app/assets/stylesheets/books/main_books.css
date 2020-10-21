@@ -2,11 +2,12 @@
   display: flex;
   width: 100vw;
   height: calc(100vh - 110px);
+  background-color: #dfdfdf09;
 }
 
 .left-side-bar{
   width: 260px;
-  background-color: rgb(230, 188, 83);
+  background-image: linear-gradient(10deg, rgba(114, 114, 114, 0.24) 0%, #41444754 100%);
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -36,52 +37,45 @@
   text-decoration: none;
 }
 
-
-
-.right-side-bar{
-  width: 260px;
-  background-color: rgb(230, 188, 83);
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-}
-
-
-
-
-
+/* ここから投稿一覧 */
 .books-timeline{
   width: calc(100vw - 260px);
   padding: 20px;
-  margin-left: 1vw;
   margin-bottom: 20px;
-  background-color:white;
   overflow: scroll;
   display: flex;
   justify-content: center;
 }
+.books-container{
+  width: 100%;
+}
 .book-lists{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .content{
   width: 31%;
   height: 36vh;
-  border: 1px solid rgb(95, 116, 136);
   border-radius: 2%;
-  background-image: linear-gradient(45deg, #fffefac2 0%, #5353539b 100%);
+  background-color:rgba(214, 214, 214, 0.548);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 3vh 3vh;
+  padding: 20px 30px;
   margin: 8px;
   position: relative;
 }
 
 .book-title{
-  width: 180px;
+  width: 100%;
+  margin-top: 5px;
   font-size: 15px;
 }
+.book-author{
+  margin: 5px auto 15px;
+  font-size: 13px;
+}
+
 .book-img{
   width: 17vw;
   height: 22vh;
@@ -95,4 +89,12 @@
 .star-icon{
   width: 3vh;
   height: 3vh;
+}
+
+.right-side-bar{
+  width: 260px;
+  background-image: linear-gradient(10deg, rgba(114, 114, 114, 0.24) 0%, #41444754 100%);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
 }

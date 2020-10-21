@@ -1,53 +1,60 @@
 <%= render "shared/second-header" %>
 
 <div class="post-content-wrapper">
-  <div class="the-book-wrapper">
-    <div class="left-container">
-      <div class="left-top-contents">
+  <div class="main-books-wrapper">
+    <div class="left-side-container">
+      <div class="left-side-contents">
         <div class="book-image">
           <p><%= image_tag(rails_blob_path(@post.book.image), class: "book-icon") %></p>
         </div>
-      <div class="left-bar-title">
-        <%= @post.book.title %>
-      </div>
-      <div class="book-author">
-        <p><%= "著者：#{@post.book.author}" %></p>
-      </div>
-      <div class="left-bottom-contents">
-        <%= @post.book.user.name %>
-        <% if current_user.id == @post.book.user.id %>
-        <div class="only-post-user">
-          <a href="#", class="post-edit">編集する</a>
-          <a href="#", class="post-delete">削除する</a>
+        <div class="left-bar-title">
+          <%= @post.book.title %>
         </div>
-        <% else %>
-          <div class="follow-btn">
-            <a href="#", class="follow-user">フォローする</a>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="post-container">
-    <div class="post-top-content">
-      <div class="highlight">
-          <%= @post.highlight %>
-      </div>
-    </div>
-    <div class="post-bottom-content">
-      <div class="post-text">
+        <div class="book-author">
+        <p><%= "著者：#{@post.book.author}" %></p>
+        </div>
         <div class="tag">
           ここにタグが入ります。
         </div>
-        <%= @post.text %>
-      </div>
-      <div class="post-time">
-        <%= l @post.created_at %>
+        <div class="left-bottom-contents">
+          <% unless current_user.id  == @post.book.user.id %>
+          <div class="post-user-account">
+            <%= link_to "#{@post.book.user.name}", user_path(@post.book.user.id), class:"user-account" %>
+            <span>さんの投稿</span>
+          </div>
+        <% end %>
+          <% if current_user.id == @post.book.user.id %>
+            <div class="only-post-user">
+              <a href="#", class="post-edit action-btn">編集する</a>
+              <a href="#", class="post-delete action-btn">削除する</a>
+            </div>
+          <% else %>
+            <div class="follow-btn">
+              <a href="#", class="follow-user">フォローする</a>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="comment-wrapper">
-      <h2>コメント</h2>
-      <div class="comment-table">
+    <div class="post-container">
+      <div class="post-top-content">
+        <div class="highlight">
+          <%= @post.highlight %>
+        </div>
+      </div>
+      <div class="post-bottom-content">
+        <div class="post-text">
+          <%= @post.text %>
+        </div>
+      
+        <div class="post-time">
+          <%= l @post.created_at %>
+        </div>
+      </div>
+      <div class="comment-wrapper">
+        <h2>コメント</h2>
+        <div class="comment-table">
+        </div>
       </div>
     </div>
   </div>

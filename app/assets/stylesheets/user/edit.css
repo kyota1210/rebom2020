@@ -1,6 +1,5 @@
 .edit-main {
   width: 100%;
-  min-width: 1000px;
   height: 100%;
   background-color: #f5f5f5;
   display: flex;
@@ -14,16 +13,8 @@
 }
 
 .form-header {
-  width: 100%;
-  height: 120px;
   text-align: center;
   font-size: 22px;
-}
-
-.form-header-text {
-  line-height: 100px;
-  border-bottom: 1px solid #f5f5f5;
-  font-weight: bold;
 }
 
 .form-contents{
@@ -33,36 +24,17 @@
 .form-group1,.form-group2{
   width: 50%;
 }
-.form-group {
-  width: 1000%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-top: 20px;
-}
 
-.form-text-wrap {
-  width: 100%;
-  height: 20%;
-}
-
-.form-text {
-  font-size: 14px;
-  font-weight: bold;
-}
 .text-input-default{
-  width: 100%;
   margin-top: 5px;
   height: 88px;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
-  font-size: 16px;
-  resize: none;
+  font-size: 15px;
 }
 .input-default {
-  width: 100%;
   margin-top: 5px;
   height: 48px;
   padding: 10px 16px 8px;
@@ -70,19 +42,18 @@
   border: 1px solid #ccc;
   background: #fff;
   font-size: 16px;
-  resize: none;
 }
 
 .edit-btn {
   width: 50%;
-  margin: 35px auto 0;
+  margin: 25px auto 0;
 }
 
 .edit-indigo-btn {
   width: 100%;
-  margin: 20px auto;
   background: #1e2c41;
   border: 1px solid #1e2c41;
+  border-radius: 0.5em;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
@@ -94,7 +65,7 @@
   margin-top: 40px;
 }
 .change-btn{
-  background-color: rgb(157, 197, 250);
+  background-color: rgb(94, 122, 160);
   color: white;
   border-radius: 10em;
   padding: 8px 20px;

@@ -1,60 +1,62 @@
-<div class="content-wrapper">
-  <%= render "shared/second-header" %>
+<%= render "shared/second-header" %>
   
+<div class="book-content-wrapper">
   <div class="main-books-wrapper">
-    <div class="left-side-bar">
-      <div class="left-bar-contents">
+    <div class="left-side-container">
+      <div class="left-side-contents">
         <div class="book-image">
           <p><%= image_tag(rails_blob_path(@book.image), class: "book-icon") %></p>
         </div>
-      <div class="left-bar-title">
-        <%= @book.title %>
-      </div>
-      <div class="book-author">
-        <p><%= "著者：#{@book.author}" %></p>
-      </div>
-      <div class="left-bar-list">
-        <ul class="left-content-lists">
-          <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
-          <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
-          <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
-        <ul>
+        <div class="left-bar-title">
+          <%= @book.title %>
+        </div>
+        <div class="book-author">
+          <p><%= "著者：#{@book.author}" %></p>
+        </div>
+        <div class="left-bar-list">
+          <ul class="left-content-lists">
+            <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
+            <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
+            <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
+          <ul>
+        </div>
+        <% unless current_user.id  == @book.user.id %>
+        <div class="post-user-account">
+          <%= link_to "#{@book.user.name}", user_path(@book.user.id), class:"user-account" %>
+          <span>さんの投稿</span>
+        </div>
+        <% end %>
       </div>
     </div>
-    <div class='add-btn'>
-      <span class='add-btn-text'>追加する</span>
-      <a href="#">
-      <%= image_tag 'book_btn.png', size: '200x50' ,class: "add-btn-icon" %>
-      </a>
-    </div>
-  </div>
-  <div class="posts-index">
-    <%# <% if current_user.id && user_signed_in? == @book.user.id %>
-    <div class="create-content-btn">
-      <a><%= link_to '投稿する', new_book_post_path(@book.id), class:"add-btn-post" %>
-      </a>
-    </div>
-    <%# <% end %>
-    <div class="post-contents-wrapper">
-      <div class="post-contents">
-        <ul class="posts">
-          <% @book.posts.each do |post| %>
-          <li class="post">
-            <div class="upper-content">
-              <div class="post-date">
-                <%= l post.created_at %>
-              </div>
-            </div>
-            <div class="lower-content">
-              <div class="highlight-content">
-                <a><%= link_to "#{post.highlight}", "/books/#{post.book.id}/posts/#{post.id}", class:"highlight-btn" %></a>
-              </div>
-            </div>
-          </li>
+
+    <div class="posts-index">
+      <% if current_user.id  == @book.user.id %>
+        <div class="create-content">
+          <a ><%= link_to 'アウトプット', new_book_post_path(@book.id), class:"add-btn-post" %></a>
+        </div>
+      <% end %>
+      <div class="post-contents-wrapper">
+        <div class="post-contents">
+          <% if @book.posts %>
+            <ul class="posts">
+              <% @book.posts.each do |post| %>
+                <li class="post">
+                  <div class="upper-content">
+                    <div class="highlight-content">
+                      <a><%= link_to "#{post.highlight}", "/books/#{post.book.id}/posts/#{post.id}", class:"highlight-btn" %></a>
+                    </div>
+                  </div>
+                  <div class="lower-content">
+                    <div class="post-date">
+                      <%= l post.created_at %>
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
           <% end %>
-        </ul>
+        </div>
       </div>
     </div>
   </div>
-  
 </div>
