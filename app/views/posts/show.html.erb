@@ -25,8 +25,8 @@
         <% end %>
           <% if current_user.id == @post.book.user.id %>
             <div class="only-post-user">
-              <a href="#", class="post-edit action-btn">編集する</a>
-              <a href="#", class="post-delete action-btn">削除する</a>
+              <a><%= link_to '編集', edit_book_post_path(@post.book.id),class:"post-edit action-btn"  %></a>
+              <a href="#", class="post-delete action-btn">削除</a>
             </div>
           <% else %>
             <div class="follow-btn">

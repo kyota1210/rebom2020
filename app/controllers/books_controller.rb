@@ -31,7 +31,7 @@ class BooksController < ApplicationController
       @book.update(book_params)
       redirect_to user_path(@book.user.id)
     else
-      render "new"
+      render action: :edit
     end
   end
 
