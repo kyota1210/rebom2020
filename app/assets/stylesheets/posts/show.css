@@ -15,7 +15,7 @@
 }
 .action-btn{
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
   color: azure;
   border-radius: 0.5em;
   margin: 10px auto;
@@ -23,8 +23,10 @@
   width: 50%;
 }
 .post-edit{
-  border: 1px solid azure;
-  background-color: rgba(20, 92, 46, 0.769);
+  background-color: rgb(100, 148, 237);
+}
+.post-edit:hover{
+  background-color: rgb(72, 110, 181);
 }
 .post-delete{
   background-color: rgba(121, 121, 121, 0.66);

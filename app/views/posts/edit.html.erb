@@ -1,0 +1,22 @@
+<%= render "shared/second-header" %>
+
+<div class="post-wrapper">
+  <div class="post-form">
+    <%= form_with model: @post, url: book_post_path(@post.book.id), local: true do |f| %>
+    
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="highlight-box">
+      <%= f.text_area :highlight, placeholder: "ハイライト", class:"highlight" %>
+    </div>
+    <div class="text-box">
+      <%= f.text_area :text, placeholder: "200字以内", class:"text-area" %>
+    </div>
+    <div class='save-btn'>
+      <%= f.submit "保存する", class:"save" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/second-footer" %>
