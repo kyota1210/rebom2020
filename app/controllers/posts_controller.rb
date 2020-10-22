@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :move_to_index1, only: [:edit, :destroy]
+  before_action :move_to_index2, only: :new
+
   def new
     @post = Post.new
   end
@@ -41,5 +44,20 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:highlight, :text).merge(book_id: params[:book_id])
+  end
+
+  def move_to_index1
+    post = Post.find(params[:id])
+    unless user_signed_in? && current_user.id == post.book.user.id
+      redirect_to root_path
+    end
+  end
+
+  def move_to_index2
+    post = Post.new
+    book = Book.find(params[:book_id])
+    unless user_signed_in? && current_user.id == book.user.id
+      redirect_to root_path
+    end
   end
 end

@@ -1,18 +1,20 @@
 <div class="main-books-wrapper">
   <div class="left-side-bar">
     <div class="left-bar-contents">
-      <div class="left-bar-top">
-        <% if user_signed_in? %>
-        <%= link_to "#{current_user.name}", user_path(current_user.id), class:"user-name" %>
-        <% end %>
-      </div>
-      <div class="left-bar-list">
-        <ul class="left-content-lists">
-          <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
-          <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
-          <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
-        <ul>
-      </div>
+      <% if user_signed_in? %>
+        <div class="left-bar-top">
+          <%= link_to "#{current_user.name}", user_path(current_user.id), class:"user-name" %>
+        </div>
+        <div class="left-bar-list">
+          <ul class="left-content-lists">
+            <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
+            <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
+            <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
+          <ul>
+        </div>
+      <% else %>
+        <div class="gest">ようこそ<br>ゲストさん</div>
+      <% end %>
     </div>
   </div>
 

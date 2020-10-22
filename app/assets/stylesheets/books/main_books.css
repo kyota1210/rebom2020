@@ -36,6 +36,12 @@
   color: #1e2c41;
   text-decoration: none;
 }
+.gest{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: #1e2c41;
+}
 
 /* ここから投稿一覧 */
 .books-timeline{
@@ -56,7 +62,7 @@
 }
 .content{
   width: 31%;
-  height: 36vh;
+  height: 38vh;
   border-radius: 2%;
   background-color:rgba(214, 214, 214, 0.548);
   display: flex;
@@ -95,6 +101,7 @@
   width: 3vh;
   height: 3vh;
 }
+/* 一覧投稿ここまで */
 
 .right-side-bar{
   width: 260px;
