@@ -4,17 +4,16 @@
 }
 
 .post-form{
-  width: 100%;
   padding: 40px;
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
 }
 .highlight-box,.text-box{
-  margin-top: 10px;
+  width: 55%;
+  margin: 10px auto;
 }
 .highlight{
-  width: 50vw;
   height: 10vh;
   padding: 13px 18px;
   font-size: 20px;
@@ -22,7 +21,7 @@
 
 .text-area{
   width: 50vw;
-  height: 28vh;
+  height: 23vh;
   padding: 15px 20px;
   font-size: 18px;
 }

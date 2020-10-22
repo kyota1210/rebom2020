@@ -22,9 +22,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    if post.valid?
-      post.update(post_params)
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    if @post.valid?
       redirect_to action: :show
     else
       render action: :edit
