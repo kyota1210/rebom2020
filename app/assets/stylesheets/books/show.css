@@ -53,6 +53,13 @@
   margin-top: 30px;
   text-align: center;
 }
+.user-account{
+  text-decoration: none;
+  color: #1e2c41;
+}
+.user-account:hover{
+  border-bottom: 1px solid #1a2c41;
+}
 
 /* ここから記事投稿一覧 */
 .posts-index{
