@@ -11,7 +11,7 @@
         <% end %>
       </div>
       <div class="left-bar-title">
-        <%= link_to "#{@user.name}", edit_user_path(@user.id), class:"user-name" %>
+        <%= @user.name %>
       </div>
       <div class="user-text">
         <% if @user.text %>
