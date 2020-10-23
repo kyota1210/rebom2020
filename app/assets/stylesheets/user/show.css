@@ -5,21 +5,22 @@
   border: 2px solid black;
   border-radius: 4%;
 }
-
+.left-bar-title{
+  width: 94%;
+  margin: 0 auto;
+}
 .user-text{
   padding: 8px;
   margin: 0 auto;
   width: 85%;
   height: 100px;
-  font-size: 13px;
+  font-size: 14px;
+  text-align: left;
   background-color: rgba(227, 227, 227, 0.619);
   border-radius: 4%;
 }
-.left-bar-list{
-  margin-top: 25px;
-}
 .logout-btn{
-  margin: 40px auto;
+  margin: 100px auto 0;
 }
 .bottom-logout-btn{
   padding: 10px 20px;
