@@ -22,18 +22,17 @@ class UsersController < ApplicationController
   end
 
   private
+
   def no_pass_update_params
     params.require(:user).permit(:image, :name, :text)
   end
-  
+
   def update_paramas
     params.require(:user).permit(:image, :name, :email, :password, :text)
   end
 
   def move_to_index
-    user =User.find(params[:id])
-    unless user_signed_in? && current_user.id == user.id
-      redirect_to root_path
-    end
+    user = User.find(params[:id])
+    redirect_to root_path unless user_signed_in? && current_user.id == user.id
   end
 end

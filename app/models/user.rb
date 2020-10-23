@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  
+
   validates :password, presence: true, on: :create, format: { with: PASSWORD_REGEX, message: 'は半角英数字6文字以上で入力してください' }
-  validates :name, presence: true, length: { maximum: 10, message: "は10字以内で入力してください" }
+  validates :name, presence: true, length: { maximum: 10, message: 'は10字以内で入力してください' }
   validates :email, presence: true
-  
+
   has_many         :books
   has_one_attached :image
 
@@ -24,5 +24,4 @@ class User < ApplicationRecord
     clean_up_passwords
     update_attributes(params, *options)
   end
-
 end

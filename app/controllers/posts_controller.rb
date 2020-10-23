@@ -48,16 +48,12 @@ class PostsController < ApplicationController
 
   def move_to_index1
     post = Post.find(params[:id])
-    unless user_signed_in? && current_user.id == post.book.user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && current_user.id == post.book.user.id
   end
 
   def move_to_index2
     post = Post.new
     book = Book.find(params[:book_id])
-    unless user_signed_in? && current_user.id == book.user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && current_user.id == book.user.id
   end
 end
