@@ -1,6 +1,6 @@
 <%= render "shared/second-header"%>
 
-
+<%= form_with model: @user, url: user_path(@user.id), class: 'edit-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h3 class='form-header-text'>
@@ -8,7 +8,6 @@
     </h3>
   </div>
 
-  <%= form_with model: @user, url: user_path(@user.id), class: 'edit-main', local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-contents">
