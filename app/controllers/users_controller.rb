@@ -11,7 +11,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(update_params)
+    if @user.update(update_paramas)
+      redirect_to user_path(@user.id)
+    elsif @user.update_without_current_password(no_pass_update_params)
+      @user.update(no_pass_update_params)
       redirect_to user_path(@user.id)
     else
       render :edit
@@ -19,8 +22,12 @@ class UsersController < ApplicationController
   end
 
   private
-  def update_params
+  def no_pass_update_params
     params.require(:user).permit(:image, :name, :text)
+  end
+  
+  def update_paramas
+    params.require(:user).permit(:image, :name, :email, :password, :text)
   end
 
   def move_to_index

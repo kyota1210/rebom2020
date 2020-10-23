@@ -20,7 +20,7 @@
             <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
           <ul>
         </div>
-        <% unless current_user.id  == @book.user.id %>
+        <% unless user_signed_in? && current_user.id  == @book.user.id %>
         <div class="post-user-account">
           <%= link_to "#{@book.user.name}", user_path(@book.user.id), class:"user-account" %>
           <span>さんの投稿</span>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="posts-index">
-      <% if current_user.id  == @book.user.id %>
+      <% if user_signed_in? && current_user.id  == @book.user.id %>
         <div class="create-content">
           <a ><%= link_to 'アウトプット', new_book_post_path(@book.id), class:"add-btn-post" %></a>
         </div>
