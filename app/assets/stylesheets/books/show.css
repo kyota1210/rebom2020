@@ -8,43 +8,37 @@
 }
 .left-side-container{
   width: 420px;
+  height: 560px;
   margin: 40px 0 40px 120px;
   background-image: linear-gradient(10deg, rgba(114, 114, 114, 0.24) 0%, #41444754 100%);
   display: flex;
   justify-content: center;
 }
 .left-side-contents{
-  width: 85%;
+  width: 90%;
   text-align: center;
 }
 .book-image{
-  margin-top: 28px;
-}
-.book-icon{
-  width: 17vw;
-  height: 22vh;
-  border: 2px solid black;
-  border-radius: 4%;
+  margin-top: 26px;
 }
 .left-bar-title{
   width: 100%;
-  padding: 15px 0;
-  font-size: 18px;
+  padding: 10px 0;
+  font-size: 19px;
 }
-.book-title{
-  color: #1e2c41;
-  text-decoration: none;
+.book-author{
+  margin: 0 auto;
 }
-
 .left-bar-list{
-  text-align: center;
-}
-.left-content-lists{
-  display: flex;
-  flex-direction: column;
+  margin-top: 18px;
 }
 .left-content{
-  padding: 15px 0;
+  height: 30px;
+}
+.content-btn{
+  text-decoration: none;
+  color: #1a2c41;
+  font-size: 15px;
 }
 .content-btn:hover{
   border-bottom: 1px solid black;

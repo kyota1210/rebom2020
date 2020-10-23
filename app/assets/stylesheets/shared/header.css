@@ -2,7 +2,6 @@
   height: 120px;
   background-color: #1e2c41;
 }
-
 .container{
   margin: 0 auto;
   width: 80%;
@@ -14,6 +13,15 @@
 .header-logo{
   margin: 10px;
 }
+.top-logo{
+  text-decoration: none;
+}
+.top-icon{
+  width: 65px;
+  height: 65px;
+  background-color: cornflowerblue;
+  border-radius: 1em;
+}
 
 .header-right-contents{
   margin-top: 5px;
@@ -24,15 +32,25 @@
 
 .login{
   border: 1px solid white;
-  padding: 10px 20px;
-  margin-right: 10px;
-}
-.top-login-btn, .sign-up-btn{
-  color: aliceblue;
-  text-decoration: none;
-  display: block;
+  margin-right: 15px;
 }
 .sign-up{
   border: 1px solid white;
+}
+
+.top-login-btn{
+  color: aliceblue;
+  background-color: cornflowerblue;
+  text-decoration: none;
   padding: 10px 20px;
+  display: block;
+}
+.top-login-btn:hover{
+  background-color: rgb(237, 143, 100);
+}
+.sign-up-btn{
+  color: aliceblue;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
 }
