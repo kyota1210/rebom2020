@@ -14,14 +14,26 @@
 }
 
 .left-bar-top{
-  margin: 40px auto;
-  padding: 50px 0;
+  margin: 0 auto;
+  padding-top: 10px;
   font-size: 18px;
 }
-.user-name{
-  color: #1e2c41;
-  text-decoration: none;
+.move-to-show{
+  margin-top: 20px;
 }
+.move-show{
+  display: inline-block;
+  width: 100%;
+  height: 8vh;
+  line-height: 8vh;
+  text-decoration: none;
+  color: #1e2c41;
+}
+.move-show:hover{
+  background-color: #1e2c41;
+  color: aliceblue;
+}
+
 .left-bar-list{
   margin-top: 70px;
 }

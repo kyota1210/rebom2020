@@ -9,6 +9,10 @@
   width: 94%;
   margin: 0 auto;
 }
+.user-name{
+  color: #1e2c41;
+  text-decoration: none;
+}
 .user-text{
   padding: 8px;
   margin: 0 auto;
