@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users
   root to:  'books#index'
   resources :books do
     resources :posts, only: [:new, :create, :show, :edit, :update, :destroy]

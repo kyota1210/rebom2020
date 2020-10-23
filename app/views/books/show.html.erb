@@ -1,25 +1,26 @@
-<%= render "shared/second-header" %>
+<%= render "shared/header" %>
   
 <div class="book-content-wrapper">
   <div class="main-books-wrapper">
     <div class="left-side-container">
       <div class="left-side-contents">
         <div class="book-image">
-          <p><%= image_tag(rails_blob_path(@book.image), class: "book-icon") %></p>
+          <p><%= image_tag(rails_blob_path(@book.image), class: "book-img") %></p>
         </div>
         <div class="left-bar-title">
           <%= @book.title %>
         </div>
         <div class="book-author">
-          <p><%= "著者：#{@book.author}" %></p>
+          <%= "著者 : #{@book.author}" %>
         </div>
+        <% if user_signed_in? %>
         <div class="left-bar-list">
           <ul class="left-content-lists">
             <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
             <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
-            <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
           <ul>
         </div>
+        <% end %>
         <% unless user_signed_in? && current_user.id  == @book.user.id %>
         <div class="post-user-account">
           <%= link_to "#{@book.user.name}", user_path(@book.user.id), class:"user-account" %>

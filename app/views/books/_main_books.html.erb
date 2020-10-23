@@ -2,14 +2,23 @@
   <div class="left-side-bar">
     <div class="left-bar-contents">
       <% if user_signed_in? %>
+        <div class="user-image">
+        <% if current_user.image.attached? %>
+          <p><%= image_tag(rails_blob_path(current_user.image),size: "140x135", class: "user-icon") %></p>
+        <% else %>
+          <p><%= image_tag("default_user.png", size: "140x135", class: "user-icon") %></p>
+        <% end %>
+        </div>
         <div class="left-bar-top">
-          <%= link_to "#{current_user.name}", user_path(current_user.id), class:"user-name" %>
+          <%= current_user.name %>
+        </div>
+        <div class="move-to-show">
+            <%= link_to "書斎へ行く", user_path(current_user.id), class:"move-show" %>
         </div>
         <div class="left-bar-list">
           <ul class="left-content-lists">
             <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
             <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
-            <li class="left-content"><%= link_to "見つける", "#", class:"content-btn" %></li>
           <ul>
         </div>
       <% else %>
