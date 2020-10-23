@@ -5,7 +5,7 @@
     <div class="left-side-container">
       <div class="left-side-contents">
         <div class="book-image">
-          <p><%= image_tag(rails_blob_path(@book.image), class: "book-img") %></p>
+          <%= image_tag(rails_blob_path(@book.image), class: "book-img") %>
         </div>
         <div class="left-bar-title">
           <%= @book.title %>
@@ -33,7 +33,7 @@
     <div class="posts-index">
       <% if user_signed_in? && current_user.id  == @book.user.id %>
         <div class="create-content">
-          <a ><%= link_to 'アウトプット', new_book_post_path(@book.id), class:"add-btn-post" %></a>
+          <%= link_to 'アウトプット', new_book_post_path(@book.id), class:"add-btn-post" %>
         </div>
       <% end %>
       <div class="post-contents-wrapper">
@@ -44,7 +44,7 @@
                 <li class="post">
                   <div class="upper-content">
                     <div class="highlight-content">
-                      <a><%= link_to "#{post.highlight}", "/books/#{post.book.id}/posts/#{post.id}", class:"highlight-btn" %></a>
+                      <%= link_to "#{post.highlight}", "/books/#{post.book.id}/posts/#{post.id}", class:"highlight-btn" %>
                     </div>
                   </div>
                   <div class="lower-content">

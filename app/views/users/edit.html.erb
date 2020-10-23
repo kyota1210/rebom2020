@@ -1,20 +1,20 @@
 <%= render "shared/second-header"%>
 
-<%= form_with model: @user, url: user_path(@user.id), class: 'edit-main', local: true do |f| %>
 
 <div class='form-wrap'>
   <div class='form-header'>
-    <h1 class='form-header-text'>
+    <h3 class='form-header-text'>
       ユーザー情報編集
-    </h1>
+    </h3>
   </div>
 
+  <%= form_with model: @user, url: user_path(@user.id), class: 'edit-main', local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-contents">
     <div class="form-group1"> 
       <div class="form-group file">
-        <h2>プロフィール画像</h2>
+        <h4>プロフィール画像</h4>
         <%= f.file_field :image, placeholder: "画像アップロード" %>
       </div>
       <div class="form-group">
@@ -68,4 +68,4 @@
 </div>
 <% end %>
 
-<%= render "shared/second-footer"%>
+<%= render "shared/footer"%>

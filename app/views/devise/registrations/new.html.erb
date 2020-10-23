@@ -1,14 +1,14 @@
 <%= render "shared/second-header"%>
 
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 
-<div class='form-wrap'>
+<div class='form-wrap'> 
   <div class='form-header'>
-    <h1 class='form-header-text'>
+    <h2 class='form-header-text'>
       ようこそ！
-    </h1>
+    </h2>
   </div>
 
+  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-group">
@@ -41,11 +41,11 @@
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
   <div class="form-group">
-    <h2 class='form-bottom-text'>
+    <h3 class='form-bottom-text'>
       「登録する」のボタンを押すことにより、
       <br><span>利用規約</span>
       <br>に同意したものとみなします
-    </h2>
+    </h3>
   </div>
   <div class='register-btn'>
     <%= f.submit "登録する", class:"register-indigo-btn" %>
@@ -53,4 +53,4 @@
 </div>
 <% end %>
 
-<%= render "shared/second-footer"%>
+<%= render "shared/footer"%>
