@@ -11,7 +11,7 @@
 .only-post-user{
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 15px;
 }
 .action-btn{
   text-decoration: none;
