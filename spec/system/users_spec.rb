@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "ユーザー新規登録", type: :system do
+RSpec.describe 'ユーザー新規登録', type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
@@ -15,11 +15,11 @@ RSpec.describe "ユーザー新規登録", type: :system do
       visit new_user_registration_path
       # ユーザー情報を入力する
       fill_in 'name', with: @user.name
-      fill_in 'email',with: @user.email
+      fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
       fill_in 'password-confirmation', with: @user.password_confirmation
       # 新規登録ボタンを押すとユーザーモデルのカウントが1上がることを確認する
-      expect{click_on('登録する')}.to change { User.count }.by(1)
+      expect { click_on('登録する')}.to change { User.count }.by(1)
       # 保存されるとトップページへ遷移することを確認する
       expect(current_path).to eq root_path
       # 新規登録ページやログインページへ遷移するボタンが表示されていないことを確認する
@@ -36,14 +36,14 @@ RSpec.describe "ユーザー新規登録", type: :system do
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
-      fill_in 'name', with: ""
-      fill_in 'email', with: ""
-      fill_in 'password', with: ""
-      fill_in 'password-confirmation', with: ""
+      fill_in 'name', with: ''
+      fill_in 'email', with: ''
+      fill_in 'password', with: ''
+      fill_in 'password-confirmation', with: ''
       # 新規登録ボタンを押してもユーザーモデルのカウントは上がらないことを確認する
-      expect{click_on('登録する')}.to change { User.count }.by(0)
+      expect {click_on('登録する')}.to change { User.count }.by(0)
       # 新規登録ページへ戻されることを確認する
-      expect(current_path).to eq "/users"
+      expect(current_path).to eq '/users'
     end
   end
 end
@@ -56,7 +56,7 @@ RSpec.describe 'ログイン', type: :system do
   context 'ログインできるとき' do
     it '保存されているユーザーの情報と合致すればログインできる' do
       # ログインする
-    sign_in(@user)
+      sign_in(@user)
       # 新規登録ページやログインページへ遷移するボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
       expect(page).to have_no_content('ログイン')
@@ -75,8 +75,8 @@ RSpec.describe 'ログイン', type: :system do
       # ログインページへ遷移する
       visit new_user_session_path
       # ユーザー情報を入力する
-      fill_in 'email', with: ""
-      fill_in 'password', with: ""
+      fill_in 'email', with: ''
+      fill_in 'password', with: ''
       # ログインボタンを押す
       click_on('ログイン')
       # ログインページへ戻されることを確認する
@@ -101,7 +101,7 @@ RSpec.describe 'ユーザー情報編集', type: :system do
     visit edit_user_path(@user)
     # ユーザー情報を入力する
     fill_in 'name', with: 'example'
-    fill_in 'email',with: 'example@example.com'
+    fill_in 'email', with: 'example@example.com'
     # 保存ボタンを押す
     click_on('保存する')
     # ユーザー詳細へ遷移することを確認する
@@ -121,7 +121,7 @@ RSpec.describe 'ユーザー情報編集', type: :system do
     # ユーザー情報を入力する
     fill_in 'text', with: 'テスト入力'
     fill_in 'name', with: 'example'
-    fill_in 'email',with: 'example@example.com'
+    fill_in 'email', with: 'example@example.com'
     # パスワード編集用プルダウンが非表示になっていることを確認する
     expect(find('.accordion-show', visible: false)).to_not be_visible
     # パスワード編集用プルダウンを開く
@@ -147,8 +147,8 @@ RSpec.describe 'ユーザー情報編集', type: :system do
     expect(page).to have_content(@user.name)
     # ユーザー情報編集ページへ移動する
     visit edit_user_path(@user)
-    fill_in 'name', with: ""
-    fill_in 'email',with: ""
+    fill_in 'name', with: ''
+    fill_in 'email', with: ''
     # 保存ボタンを押す
     click_on('保存する')
     # エラーメッセージが表示されていることを確認する
