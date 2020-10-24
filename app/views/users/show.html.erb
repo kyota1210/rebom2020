@@ -43,7 +43,7 @@
   <%# 投稿一覧 %>
   <div class="books-timeline">
     <div class="books-container">
-    <ul class="book-lists">
+    <ul class="user-book-lists">
       <% @user.books.each do |book| %>
       <li class="content">
         <%= link_to book_path(book.id) do %>

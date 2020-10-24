@@ -54,6 +54,10 @@
 }
 
 /* 投稿一覧部分 */
+.user-book-lists{
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
 .book-author-users{
   margin: 5px auto 15px;
   font-size: 13px;
