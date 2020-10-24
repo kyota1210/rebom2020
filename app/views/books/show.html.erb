@@ -1,6 +1,22 @@
 <%= render "shared/header" %>
   
 <div class="book-content-wrapper">
+    <div class="back-btn-wrapper">
+      <%= link_to root_path do %>
+      <div class="home-back-btn-container">
+        <div class="back-btn">
+          <%= image_tag 'home-btn.png', size: '50x50' ,class: "back-btn-icon" %>
+        </div>
+      </div>
+      <% end %>
+      <%= link_to user_path(current_user.id) do %>
+      <div class="back-btn-container">
+        <div class="back-btn">
+          <%= image_tag 'human-logo.png', size: '50x50' ,class: "back-btn-icon" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   <div class="main-books-wrapper">
     <div class="left-side-container">
       <div class="left-side-contents">
@@ -13,14 +29,6 @@
         <div class="book-author">
           <%= "著者 : #{@book.author}" %>
         </div>
-        <% if user_signed_in? %>
-        <div class="left-bar-list">
-          <ul class="left-content-lists">
-            <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
-            <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
-          <ul>
-        </div>
-        <% end %>
         <% unless user_signed_in? && current_user.id  == @book.user.id %>
         <div class="post-user-account">
           <%= link_to "#{@book.user.name}", user_path(@book.user.id), class:"user-account" %>
@@ -32,9 +40,9 @@
 
     <div class="posts-index">
       <% if user_signed_in? && current_user.id  == @book.user.id %>
-        <div class="create-content">
-          <%= link_to 'アウトプット', new_book_post_path(@book.id), class:"add-btn-post" %>
-        </div>
+      <div class="create-content">
+        <%= link_to 'アウトプット', new_book_post_path(@book.id), class:"add-btn-post" %>
+      </div>
       <% end %>
       <div class="post-contents-wrapper">
         <div class="post-contents">
