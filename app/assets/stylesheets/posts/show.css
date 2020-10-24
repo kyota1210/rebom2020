@@ -1,80 +1,55 @@
 .tag{
+  color: #1a2c41;
   background-color: rgb(250, 248, 237);
   width: 100%;
   height: 28px;
   margin: 10px auto;
 }
 .left-bottom-contents{
-  margin: 40px;
-  font-size: 20px;
+  margin: 25px;
 }
-.only-post-user{
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-}
+
 .action-btn{
-  text-decoration: none;
   font-size: 13px;
   color: azure;
   border-radius: 0.5em;
-  margin: 10px auto;
-  padding: 5px 15px;
-  width: 50%;
+  padding: 4px 10px;
 }
 .post-edit{
-  background-color: rgb(100, 148, 237);
+  background-color: rgba(100, 148, 237, 0.79);
+  border: 1px solid rgba(100, 148, 237, 0.79);
+  border-radius: 0.5em;
+  color: azure;
 }
 .post-edit:hover{
-  background-color: rgb(72, 110, 181);
+  background-color: rgba(100, 148, 237, 0.961);
 }
 .post-delete{
-  background-color: rgba(121, 121, 121, 0.66);
+  color: rgb(121, 121, 121);
+  border: 1px solid rgb(121, 121, 121);
 }
-.follow-btn{
-  background-color: rgba(42, 81, 165, 0.749);
-  width: 60%;
-  margin: 40px auto;
-  padding: 10px;
-  border-radius: 0.5em;
-  cursor: pointer;
-  opacity: 0.9;
-}
-.follow-btn:hover{
-  opacity: 1;
-}
-.follow-user{
-  font-size: 16px;
-  text-decoration: none;
-  color: whitesmoke;
+.post-delete:hover{
+  color: black;
+  background-color: rgb(121, 121, 121);
 }
 
-.post-container{
-  width: 50%;
-  padding: 20px;
-  margin: 40px 120px 40px 20px;
-  background-color:rgba(214, 214, 214, 0.548);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.post-top-content{
+  background-color: rgba(165, 6, 6, 0.557);
+  width: 90%;
+  padding: 5px 10px;
+  color: aliceblue;
+  text-align: center;
 }
 .highlight{
   font-size: 18px;
   width: 100%;
   height: 90px;
 }
-.post-top-content{
-  background-color: rgba(165, 6, 6, 0.557);
-  width: 100%;
-  padding: 5px 10px 15px;
-  color: aliceblue;
-  text-align: center;
-}
 
 .post-bottom-content{
   background-color: white;
-  width: 100%;
-  height: 30vh;
+  width: 90%;
+  height: 60%;
   padding: 20px 30px 50px;
   margin-top: 20px;
   border: 1px solid black;
@@ -88,8 +63,9 @@
   right: 20px;
 }
 
+/* コメント欄 */
 .comment-wrapper{
-  width: 100%;
+  width: 90%;
   height: 70%;
   padding: 15px;
   margin-top: 15px;

@@ -2,6 +2,15 @@
 
 <div class="post-content-wrapper">
   <div class="main-books-wrapper">
+    <div class="back-btn-wrapper">
+      <%= link_to :back do %>
+      <div class="back-btn-container">
+        <div class="back-btn">
+          <%= image_tag 'back-btn.png', size: '50x50' ,class: "back-btn-icon" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
     <div class="left-side-container">
       <div class="left-side-contents">
         <div class="book-image">
@@ -28,15 +37,12 @@
               <%= link_to '編集', edit_book_post_path(@post.book.id),class:"post-edit action-btn"  %>
               <%= link_to '削除', book_post_path(@post.book.id), method: :delete, class:"post-delete action-btn" %>
             </div>
-          <% else %>
-            <div class="follow-btn">
-              <a href="#", class="follow-user">フォローする</a>
-            </div>
           <% end %>
         </div>
       </div>
     </div>
-    <div class="post-container">
+    
+    <div class="posts-index">
       <div class="post-top-content">
         <div class="highlight">
           <%= @post.highlight %>
