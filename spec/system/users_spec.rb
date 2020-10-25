@@ -41,7 +41,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'password', with: ''
       fill_in 'password-confirmation', with: ''
       # 新規登録ボタンを押してもユーザーモデルのカウントは上がらないことを確認する
-      expect { click_on('登録する')}.to change { User.count }.by(0)
+      expect { click_on('登録する') }.to change { User.count }.by(0)
       # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq '/users'
     end

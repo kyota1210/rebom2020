@@ -51,11 +51,11 @@ RSpec.describe 'Books', type: :system do
       # 画像選択フォームに画像を添付する
       attach_file('book_image', Rails.root.join('public/images/test_image.png'))
       # 不正な値を入力する
-      str1 = 'これで10文字ですこれで20文字ですこれで30文字ですこれで40文字ですこれで50文字です'
-      str2 = 'これで10文字ですこれで20文字ですこれで30文字です'
+      str1 = 'これで10文字です。これで20文字です。これで30文字です。これで40文字です。これで50文字です。'
+      str2 = 'これで10文字です。これで20文字です。これで30文字です。'
       fill_in 'title', with: str1
       fill_in 'author', with: str2
-      # 情報がDBに保存されていないことを確認する
+      # 追加するボタンをクリックしても、情報がDBに保存されていないことを確認する
       expect { click_on('追加する') }.to change { Book.count }.by(0)
       # 元のページに戻ってくることを確認する
       expect(current_path).to eq '/books'
@@ -76,7 +76,7 @@ RSpec.describe 'Books', type: :system do
       # フォームの値が空であることを確認する
       fill_in 'title', with: ''
       fill_in 'author', with: ''
-      # 情報がDBに保存されていないことを確認する
+      # 追加するボタンをクリックしても、情報がDBに保存されていないことを確認する
       expect { click_on('追加する') }.to change { Book.count }.by(0)
       # 元のページに戻ってくることを確認する
       expect(current_path).to eq '/books'

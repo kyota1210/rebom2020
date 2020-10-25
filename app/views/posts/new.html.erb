@@ -7,10 +7,10 @@
     <%= render 'shared/error_messages', model: f.object %>
 
     <div class="highlight-box">
-      <%= f.text_area :highlight, placeholder: "ハイライト", class:"highlight" %>
+      <%= f.text_area :highlight, placeholder: "ハイライト", id:"post_highlight", class:"highlight" %>
     </div>
     <div class="text-box">
-      <%= f.text_area :text, placeholder: "200字以内", class:"text-area" %>
+      <%= f.text_area :text, placeholder: "200字以内", id:"post_text", class:"text-area" %>
     </div>
     <div class='save-btn'>
       <%= f.submit "保存する", class:"save" %>
