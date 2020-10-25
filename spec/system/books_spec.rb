@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Books", type: :system do
+RSpec.describe 'Books', type: :system do
   before do
     @book = FactoryBot.create(:book)
   end
@@ -21,7 +21,7 @@ RSpec.describe "Books", type: :system do
       fill_in 'title', with: @book.title
       fill_in 'author', with: @book.author
       # '追加する'ボタンを押すと送信した情報がDBに保存されていることを確認する
-      expect{ click_on('追加する') }.to change { Book.count }.by(1)
+      expect { click_on('追加する') }.to change { Book.count }.by(1)
       # トップページに遷移していることを確認する
       expect(current_path).to eq root_path
       # 追加した本の情報がトップページに表示されていることを確認する
@@ -56,9 +56,9 @@ RSpec.describe "Books", type: :system do
       fill_in 'title', with: str1
       fill_in 'author', with: str2
       # 情報がDBに保存されていないことを確認する
-      expect{ click_on('追加する') }.to change { Book.count }.by(0)
+      expect { click_on('追加する') }.to change { Book.count }.by(0)
       # 元のページに戻ってくることを確認する
-      expect(current_path).to eq "/books"
+      expect(current_path).to eq '/books'
       # エラーメッセージが表示されていることを確認する
       expect(page).to have_content('タイトルは36字以内で入力してください')
       expect(page).to have_content('著者名は23字以内で入力してください')
@@ -74,12 +74,12 @@ RSpec.describe "Books", type: :system do
       # 本の追加ページに遷移する
       visit new_book_path
       # フォームの値が空であることを確認する
-      fill_in 'title', with: ""
-      fill_in 'author', with: ""
+      fill_in 'title', with: ''
+      fill_in 'author', with: ''
       # 情報がDBに保存されていないことを確認する
-      expect{ click_on('追加する') }.to change { Book.count }.by(0)
+      expect { click_on('追加する') }.to change { Book.count }.by(0)
       # 元のページに戻ってくることを確認する
-      expect(current_path).to eq "/books"
+      expect(current_path).to eq '/books'
       # エラーメッセージが表示されていることを確認する
       expect(page).to have_content('タイトルを入力してください')
       expect(page).to have_content('著者名を入力してください')
