@@ -19,7 +19,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'password', with: @user.password
       fill_in 'password-confirmation', with: @user.password_confirmation
       # 新規登録ボタンを押すとユーザーモデルのカウントが1上がることを確認する
-      expect { click_on('登録する')}.to change { User.count }.by(1)
+      expect { click_on('登録する') }.to change { User.count }.by(1)
       # 保存されるとトップページへ遷移することを確認する
       expect(current_path).to eq root_path
       # 新規登録ページやログインページへ遷移するボタンが表示されていないことを確認する
@@ -147,6 +147,7 @@ RSpec.describe 'ユーザー情報編集', type: :system do
     expect(page).to have_content(@user.name)
     # ユーザー情報編集ページへ移動する
     visit edit_user_path(@user)
+    # 不正な値を入力する
     fill_in 'name', with: ''
     fill_in 'email', with: ''
     # 保存ボタンを押す
