@@ -3,7 +3,7 @@
 <div class="post-content-wrapper">
   <div class="main-books-wrapper">
     <div class="back-btn-wrapper">
-      <%= link_to :back do %>
+      <%= link_to book_path(@post.book_id) do %>
       <div class="back-btn-container">
         <div class="back-btn">
           <%= image_tag 'back-btn.png', size: '50x50' ,class: "back-btn-icon" %>
