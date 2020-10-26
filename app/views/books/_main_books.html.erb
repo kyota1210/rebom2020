@@ -49,8 +49,17 @@
                 <span class='star-count'>0</span>
               </div>
             </div>
-          </div>
-      </li>
+            <div class="tags">
+              <ul class="tag">
+                <li class="tag-list">
+                  <% book.tags.each do |tag| %>
+                    #<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %>
+                  <%end%>
+                </li>
+              </ul>
+            </div>
+           </div>
+        </li>
       <% end %>
     </ul>
     </div>

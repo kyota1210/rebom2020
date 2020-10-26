@@ -1,0 +1,33 @@
+// Place all the styles related to the tags controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tag-book-wrapper{
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 110px);
+  background-color: #dfdfdf09;
+}
+.books-container h1{
+  text-align: center;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.right-side-bar h3{
+  padding: 20px;
+  font-size: 18px;
+}
+.tags{
+  height: 62%;
+  padding-bottom: 50px;
+  overflow: scroll;
+}
+.tags p{
+  padding: 4px;
+}
+.tag{
+  color: #1a2c41;
+  background-color: rgba(191, 189, 189, 0.029);
+}
+

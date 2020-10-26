@@ -12,8 +12,10 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    tag = params[:book][:name].split(',')
     if @book.valid?
       @book.save
+      @book.save_books(tag)
       redirect_to root_path
     else
       render action: :new
@@ -26,12 +28,15 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    @tag = @book.tags.pluck(:name)
   end
 
   def update
     @book = Book.find(params[:id])
+    tag = params[:book][:name].split(',')
     if @book.valid?
       @book.update(book_params)
+      @book.save_books(tag)
       redirect_to user_path(@book.user.id)
     else
       render action: :edit
