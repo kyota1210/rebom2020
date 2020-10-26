@@ -12,7 +12,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    tag = params[:book][:name].split(",")
+    tag = params[:book][:name].split(',')
     if @book.valid?
       @book.save
       @book.save_books(tag)
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    tag = params[:book][:name].split(",")
+    tag = params[:book][:name].split(',')
     if @book.valid?
       @book.update(book_params)
       @book.save_books(tag)
