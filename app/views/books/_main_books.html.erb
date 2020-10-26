@@ -3,11 +3,11 @@
     <div class="left-bar-contents">
       <% if user_signed_in? %>
         <div class="user-image">
-        <% if current_user.image.attached? %>
-          <%= image_tag(rails_blob_path(current_user.image),size: "140x135", class: "user-icon") %>
-        <% else %>
-          <%= image_tag("default_user.png", size: "140x135", class: "user-icon") %>
-        <% end %>
+          <% if current_user.image.attached? %>
+            <%= image_tag(rails_blob_path(current_user.image),size: "140x135", class: "user-icon") %>
+          <% else %>
+            <%= image_tag("default_user.png", size: "140x135", class: "user-icon") %>
+          <% end %>
         </div>
         <div class="left-bar-top">
           <%= current_user.name %>
@@ -30,24 +30,30 @@
   <%# 投稿一覧 %>
   <div class="books-timeline">
     <div class="books-container">
-    <ul class="book-lists">
-      <% @books.each do |book| %>
-      <li class="content">
-          <%= link_to book_path(book.id) do %>
-          <div class='book-img-content'>
-            <%= image_tag book.image, class: "book-img" %>
-          </div>
-          <% end %>
-          <div class="book-info">
-            <h3 class="book-title">
-              <%= book.title %>
-            </h3>
-            <div class="book-author">
-              <%= "著者：#{book.author}" %>
-              <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
+      <ul class="book-lists">
+        <% @books.each do |book| %>
+          <li class="content">
+            <%= link_to book_path(book.id) do %>
+              <div class='book-img-content'>
+                <%= image_tag book.image, class: "book-img" %>
               </div>
+            <% end %>
+              <div class="book-info">
+                <h3 class="book-title">
+                  <%= book.title %>
+                </h3>
+                <div class="book-author">
+                  <%= "著者：#{book.author}" %>
+                  <% if user_signed_in? %>
+                    <div class='star-btn'>
+                      <% if book.favorite_by?(current_user) %>
+                        <%= link_to icon('fas', 'star'), book_favorites_path(book.id), method: :delete, id: :"js-favorite-button-for-book-#{book.id}" %>
+                      <% else %>
+                        <%= link_to icon('far', 'star'), book_favorites_path(book.id), method: :post, id: :"js-favorite-button-for-book-#{book.id}" %>
+                      <% end %>
+                      <span class='star-count'><%= book.favorites.count %></span>
+                    </div>
+                  <% end %>
             </div>
             <div class="tags">
               <ul class="tag">

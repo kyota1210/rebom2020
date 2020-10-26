@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
-    @books = Book.all.order('created_at DESC')
+    @books = Book.all.includes([:user, :favorites]).order('created_at DESC')
   end
 
   def new
@@ -60,5 +60,9 @@ class BooksController < ApplicationController
   def move_to_index
     book = Book.find(params[:id])
     redirect_to root_path unless user_signed_in? && current_user.id == book.user.id
+  end
+
+  def favorites
+    @favorite_books = current_user.favorite_books.includes(:user)
   end
 end
