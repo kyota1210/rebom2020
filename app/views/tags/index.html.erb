@@ -1,0 +1,65 @@
+<%= render "shared/header" %>
+
+<%# タグ検索一覧 %>
+<div class="tag-book-wrapper">
+  <div class="left-side-bar">
+    <div class="move-btn-wrapper">
+      <%= link_to root_path do %>
+      <div class="home-back-btn-container">
+        <div class="back-btn">
+          <%= image_tag 'home-btn.png', size: '50x50' ,class: "back-btn-icon" %>
+        </div>
+      </div>
+      <% end %>
+      <%= link_to user_path(current_user.id) do %>
+      <div class="back-btn-container">
+        <div class="back-btn">
+          <%= image_tag 'human-logo.png', size: '50x50' ,class: "back-btn-icon" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="books-timeline">
+    <div class="books-container">
+      <h1>#<%= @tag.name %></h1>
+      <ul class="book-lists">
+      <% @books.each do |book| %>
+        <li class="content">
+        <%= link_to book_path(book.id) do %>
+          <div class='book-img-content'>
+            <%= image_tag book.image, class: "book-img" %>
+          </div>
+        <% end %>
+        <div class="book-info">
+          <h3 class="book-title">
+            <%= book.title %>
+          </h3>
+          <div class="book-author">
+            <%= "著者：#{book.author}" %>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="right-side-bar">
+    <h3>＜ タグ一覧 ＞</h3>
+    <div class="tags">
+      <% @tags.each do |tag| %>
+      <p>#<%=link_to tag.name, tags_path(tag_id: tag.id), class:"tag"%>(<%= tag.books.count %>)</p>
+      <% end %>
+    </div>
+    <div class='add-btn'>
+      <a href="/books/new" class="add-book">
+      <span class='add-btn-text'>追加する</span>
+      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "add-btn-icon" %>
+      </a>
+    </div>
+  </div>
+</div>

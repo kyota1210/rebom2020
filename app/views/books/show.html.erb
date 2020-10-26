@@ -29,6 +29,11 @@
         <div class="book-author">
           <%= "著者 : #{@book.author}" %>
         </div>
+        <div class="tags">
+            <% @book.tags.each do |tag| %>
+            <p>#<%=link_to tag.name, tags_path(tag_id: tag.id), class:"tag"%></p>
+            <% end %>
+        </div>
         <% unless user_signed_in? && current_user.id  == @book.user.id %>
         <div class="post-user-account">
           <%= link_to "#{@book.user.name}", user_path(@book.user.id), class:"user-account" %>

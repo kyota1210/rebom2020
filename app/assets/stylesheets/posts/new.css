@@ -25,6 +25,14 @@
   padding: 15px 20px;
   font-size: 18px;
 }
+.tag-field{
+  width: 25%;
+  margin: 30px auto;
+}
+.input-tag{
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
 .save-btn{
   margin: 35px auto 30px;
 }

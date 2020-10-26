@@ -58,6 +58,15 @@
           <div class="book-author-users">
             <%= "著者：#{book.author}" %>
           </div>
+          <div class="tags">
+              <ul class="tag">
+                <li class="tag-list">
+                  <% book.tags.each do |tag| %>
+                    #<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %>
+                  <%end%>
+                </li>
+              </ul>
+            </div>
         </div>
         <% if user_signed_in? && current_user.id == @user.id %>
           <div class="action-button">
