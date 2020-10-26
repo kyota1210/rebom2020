@@ -53,6 +53,17 @@
 - has_many :book_tag_relations
 - has_many :books, through: :book_tag_relations
 
+## Book_tag_relations
+
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| book   | references | foreign_key: true |
+| tag    | references | foreign_key: true |
+
+### Association
+- belongs_to :book
+- belongs_to :tag
+
 ## favorites
 
 | Column | Type       | Options                        |
