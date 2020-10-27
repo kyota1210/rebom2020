@@ -45,13 +45,8 @@
                 <div class="book-author">
                   <%= "著者：#{book.author}" %>
                   <% if user_signed_in? %>
-                    <div class='star-btn'>
-                      <% if book.favorite_by?(current_user) %>
-                        <%= link_to icon('fas', 'star'), book_favorites_path(book.id), method: :delete, id: :"js-favorite-button-for-book-#{book.id}" %>
-                      <% else %>
-                        <%= link_to icon('far', 'star'), book_favorites_path(book.id), method: :post, id: :"js-favorite-button-for-book-#{book.id}" %>
-                      <% end %>
-                      <span class='star-count'><%= book.favorites.count %></span>
+                    <div class='star-btn' id="book-<%= book.id %>">
+                      <%= render "favorite" ,{ book: book } %>
                     </div>
                   <% end %>
             </div>

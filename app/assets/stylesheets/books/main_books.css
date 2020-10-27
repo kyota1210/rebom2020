@@ -106,13 +106,14 @@
 
 .star-btn{
   position: absolute;
-  bottom: 2vh;
-  right: 2vw;
+  bottom: 18px;
+  right: 30px;
 }
-.star-icon{
-  width: 3vh;
-  height: 3vh;
+.delete-fav, .post-fav{
+  font-size: 20px;
+  color: #1e2c41;
 }
+
 /* 一覧投稿ここまで */
 
 .right-side-bar{
