@@ -29,7 +29,7 @@ class Book < ApplicationRecord
       self.tags << book_tag
     end
   end
-  
+
   def favorite_by?(user)
     favorites.where(user_id: user.id).exists?
   end
