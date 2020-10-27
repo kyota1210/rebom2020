@@ -29,7 +29,7 @@
         <div class="book-author">
           <%= "著者 : #{@book.author}" %>
         </div>
-        <div class="tags">
+        <div class="book-tags">
             <% @book.tags.each do |tag| %>
             <p>#<%=link_to tag.name, tags_path(tag_id: tag.id), class:"tag"%></p>
             <% end %>

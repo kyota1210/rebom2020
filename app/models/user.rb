@@ -10,7 +10,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 10, message: 'は10字以内で入力してください' }
   validates :email, presence: true
 
-  has_many         :books
+  has_many         :books, dependent: :destroy
+  has_many         :favorites, dependent: :destroy
+  has_many         :favorite_books, through: :favorites, source: :book
   has_one_attached :image
 
   def update_without_current_password(params, *options)
@@ -23,5 +25,17 @@ class User < ApplicationRecord
 
     clean_up_passwords
     update_attributes(params, *options)
+  end
+
+  def favorite(book)
+    favorite_books << book
+  end
+
+  def unfavorite(book)
+    favorite_books.destroy(book)
+  end
+
+  def favorite?(book)
+    favorite_books.include?(book)
   end
 end

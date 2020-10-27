@@ -1,7 +1,8 @@
+<%= render "shared/header" %>
+
 <div class="main-books-wrapper">
   <div class="left-side-bar">
     <div class="left-bar-contents">
-      <% if user_signed_in? %>
         <div class="user-image">
           <% if current_user.image.attached? %>
             <%= image_tag(rails_blob_path(current_user.image),size: "140x135", class: "user-icon") %>
@@ -21,8 +22,12 @@
             <li class="left-content"><%= link_to "お気に入り", favorites_books_path, class:"content-btn" %></li>
           <ul>
         </div>
-      <% else %>
-        <div class="gest">ようこそ<br>ゲストさん</div>
+        <%= link_to root_path do %>
+      <div class="home-back-btn-container">
+        <div class="back-btn">
+          <%= image_tag 'home-btn.png', size: '50x50' ,class: "back-btn-icon" %>
+        </div>
+      </div>
       <% end %>
     </div>
   </div>
@@ -30,37 +35,42 @@
   <%# 投稿一覧 %>
   <div class="books-timeline">
     <div class="books-container">
+    <h1>お気に入り</h1>
       <ul class="book-lists">
-        <% @books.each do |book| %>
+      <% if @favorite_books.present? %> 
+        <% @favorite_books.each do |book| %>
           <li class="content">
             <%= link_to book_path(book.id) do %>
               <div class='book-img-content'>
                 <%= image_tag book.image, class: "book-img" %>
               </div>
             <% end %>
-              <div class="book-info">
-                <h3 class="book-title">
-                  <%= book.title %>
-                </h3>
-                <div class="book-author">
-                  <%= "著者：#{book.author}" %>
-                  <% if user_signed_in? %>
-                    <div class='star-btn' id="book-<%= book.id %>">
-                      <%= render "favorite" ,{ book: book } %>
-                    </div>
-                  <% end %>
+            <div class="book-info">
+              <h3 class="book-title">
+                <%= book.title %>
+              </h3>
+              <div class="book-author">
+                <%= "著者：#{book.author}" %>
+                <% if user_signed_in? %>
+                  <div class='star-btn' id="book-<%= book.id %>">
+                    <%= render "favorite" ,{ book: book } %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="tags">
+                <ul class="tag">
+                  <li class="tag-list">
+                    <% book.tags.each do |tag| %>
+                      #<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %>
+                    <%end%>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="tags">
-              <ul class="tag">
-                <li class="tag-list">
-                  <% book.tags.each do |tag| %>
-                    #<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %>
-                  <%end%>
-                </li>
-              </ul>
-            </div>
-           </div>
-        </li>
+          </li>
+        <% end %>
+      <% else %>
+        <p>お気に入りはありません</p>
       <% end %>
     </ul>
     </div>

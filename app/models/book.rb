@@ -1,9 +1,11 @@
 class Book < ApplicationRecord
   belongs_to :user
-  has_many :posts, dependent: :destroy
   has_one_attached :image
+  has_many :posts, dependent: :destroy
   has_many :book_tag_relations, dependent: :destroy
   has_many :tags, through: :book_tag_relations
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_books, through: :favorites
 
   with_options presence: :true do
     validates :title,  length: { maximum: 36, message: 'は36字以内で入力してください' }
@@ -26,5 +28,9 @@ class Book < ApplicationRecord
       book_tag = Tag.find_or_create_by(name: new_name)
       self.tags << book_tag
     end
+  end
+
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exists?
   end
 end

@@ -40,12 +40,17 @@
   display: flex;
   flex-direction: column;
 }
-.left-content{
-  padding: 10px 0;
-}
+
 .content-btn{
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
   color: #1e2c41;
-  text-decoration: none;
+}
+.content-btn:hover{
+  background-color: #1e2c41;
+  color: aliceblue;
 }
 .gest{
   margin-top: 50px;
@@ -106,13 +111,14 @@
 
 .star-btn{
   position: absolute;
-  bottom: 2vh;
-  right: 2vw;
+  bottom: 18px;
+  right: 30px;
 }
-.star-icon{
-  width: 3vh;
-  height: 3vh;
+.delete-fav, .post-fav{
+  font-size: 20px;
+  color: #1e2c41;
 }
+
 /* 一覧投稿ここまで */
 
 .right-side-bar{
