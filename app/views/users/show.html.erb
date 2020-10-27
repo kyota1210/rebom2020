@@ -3,6 +3,7 @@
 <div class="main-books-wrapper">
   <div class="left-side-bar">
     <div class="left-bar-contents">
+      <%= link_to edit_user_path(@user.id) do %>
       <div class="user-image">
         <% if @user.image.attached? %>
           <%= image_tag(rails_blob_path(@user.image), size: "140x135", class: "user-icon") %>
@@ -10,8 +11,9 @@
           <p><%= image_tag("default_user.png", size: "140x135", class: "user-icon") %></p>
         <% end %>
       </div>
+      <% end %>
       <div class="left-bar-title">
-        <%= link_to "#{@user.name}", edit_user_path(@user.id), class:"user-name" %>
+        <%= @user.name %>
       </div>
       <div class="user-text">
         <% if @user.text %>
@@ -22,7 +24,7 @@
         <div class="left-bar-list">
           <ul class="left-content-lists">
             <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
-            <li class="left-content"><%= link_to "お気に入り", "#", class:"content-btn" %></li>
+            <li class="left-content"><%= link_to "お気に入り", favorites_books_path, class:"content-btn" %></li>
           <ul>
         </div>
         <% if current_user.id == @user.id %>

@@ -51,6 +51,10 @@ class BooksController < ApplicationController
     end
   end
 
+  def favorites
+    @favorite_books = current_user.favorite_books.includes(:user).order('created_at DESC')
+  end
+
   private
 
   def book_params
@@ -60,9 +64,5 @@ class BooksController < ApplicationController
   def move_to_index
     book = Book.find(params[:id])
     redirect_to root_path unless user_signed_in? && current_user.id == book.user.id
-  end
-
-  def favorites
-    @favorite_books = current_user.favorite_books.includes(:user)
   end
 end

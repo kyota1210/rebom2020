@@ -40,12 +40,17 @@
   display: flex;
   flex-direction: column;
 }
-.left-content{
-  padding: 10px 0;
-}
+
 .content-btn{
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
   color: #1e2c41;
-  text-decoration: none;
+}
+.content-btn:hover{
+  background-color: #1e2c41;
+  color: aliceblue;
 }
 .gest{
   margin-top: 50px;
