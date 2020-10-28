@@ -6,7 +6,7 @@
       <%= link_to book_path(@post.book_id) do %>
       <div class="back-btn-container">
         <div class="back-btn">
-          <%= image_tag 'back-btn.png', size: '50x50' ,class: "back-btn-icon" %>
+          <%= image_tag 'back-btn.png', size: '50x50' ,class: "back-btn-icon", alt: "戻るボタン" %>
         </div>
       </div>
       <% end %>
@@ -14,7 +14,7 @@
     <div class="left-side-container">
       <div class="left-side-contents">
         <div class="book-image">
-          <%= image_tag(rails_blob_path(@post.book.image), class: "book-img") %>
+          <%= image_tag(rails_blob_path(@post.book.image), class: "book-img"), alt: "本の画像" %>
         </div>
         <div class="left-bar-title">
           <%= @post.book.title %>
@@ -32,8 +32,8 @@
           <% end %>
           <% if user_signed_in? && current_user.id == @post.book.user.id %>
             <div class="only-post-user">
-              <%= link_to '編集', edit_book_post_path(@post.book.id),class:"post-edit action-btn"  %>
-              <%= link_to '削除', book_post_path(@post.book.id), method: :delete, class:"post-delete action-btn" %>
+              <%= link_to '編集', edit_post_path(@post),class:"post-edit action-btn"  %>
+              <%= link_to '削除', post_path(@post), method: :delete, class:"post-delete action-btn" %>
             </div>
           <% end %>
         </div>
@@ -50,7 +50,6 @@
         <div class="post-text">
           <%= @post.text %>
         </div>
-      
         <div class="post-time">
           <%= l @post.created_at %>
         </div>

@@ -7,7 +7,7 @@
       <%= link_to root_path do %>
       <div class="home-back-btn-container">
         <div class="back-btn">
-          <%= image_tag 'home-btn.png', size: '50x50' ,class: "back-btn-icon" %>
+          <%= image_tag 'home-btn.png', size: '50x50' ,class: "back-btn-icon", alt: "ホームボタン" %>
         </div>
       </div>
       <% end %>
@@ -15,7 +15,7 @@
       <%= link_to user_path(current_user.id) do %>
       <div class="back-btn-container">
         <div class="back-btn">
-          <%= image_tag 'human-logo.png', size: '50x50' ,class: "back-btn-icon" %>
+          <%= image_tag 'human-logo.png', size: '50x50' ,class: "back-btn-icon", alt: "ユーザーページ遷移ボタン" %>
         </div>
       </div>
       <% end %>
@@ -28,9 +28,9 @@
       <ul class="book-lists">
       <% @books.each do |book| %>
         <li class="content">
-        <%= link_to book_path(book.id) do %>
+        <%= link_to book_path(book) do %>
           <div class='book-img-content'>
-            <%= image_tag book.image, class: "book-img" %>
+            <%= image_tag book.image, class: "book-img", alt: "本の画像" %>
           </div>
         <% end %>
         <div class="book-info">
@@ -40,14 +40,13 @@
           <div class="book-author">
             <%= "著者：#{book.author}" %>
             <% if user_signed_in? %>
-                    <div class='star-btn'>
-                      <% if book.favorite_by?(current_user) %>
-                        <%= link_to icon('fas', 'star'), book_favorites_path(book.id), method: :delete, id: "fas-star", class: "delete-fav" %>
-                      <% else %>
-                        <%= link_to icon('far', 'star'), book_favorites_path(book.id), method: :post, id: "far-star", class: "post-fav" %>
-                      <% end %>
-                      <span class='star-count'><%= book.favorites.count %></span>
-                    </div>
+              <div class='star-btn'>
+                <% if book.favorite_by?(current_user) %>
+                  <%= link_to icon('fas', 'star'), book_favorites_path(book.id), method: :delete, class: "delete-fav" %>                    <% else %>
+                  <%= link_to icon('far', 'star'), book_favorites_path(book.id), method: :post, class: "post-fav" %>
+                <% end %>
+                <span class='star-count'><%= book.favorites.count %></span>
+              </div>
             <% end %>
           </div>
         </div>
