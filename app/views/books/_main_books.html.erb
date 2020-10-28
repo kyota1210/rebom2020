@@ -33,7 +33,7 @@
       <ul class="book-lists">
         <% @books.each do |book| %>
           <li class="content">
-            <%= link_to book_path(book.id) do %>
+            <%= link_to book_path(book) do %>
               <div class='book-img-content'>
                 <%= image_tag book.image, class: "book-img" %>
               </div>
@@ -46,7 +46,7 @@
                   <%= "著者：#{book.author}" %>
                   <% if user_signed_in? %>
                     <div class='star-btn' id="book-<%= book.id %>">
-                      <%= render "favorite" ,{ book: book } %>
+                      <%= render "favorite", { book: book } %>
                     </div>
                   <% end %>
             </div>

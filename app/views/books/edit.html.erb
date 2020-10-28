@@ -8,7 +8,7 @@
     </h3>
   </div>
 
-  <%= form_with model: @book, url: book_path(@book.id), class: 'book-main', local: true do |f| %>
+  <%= form_with model: @book, url: book_path(@book), class: 'book-main', local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <div class="form-group file">
