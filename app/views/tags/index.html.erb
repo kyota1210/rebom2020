@@ -58,9 +58,9 @@
   </div>
   <div class="right-side-bar">
     <h3>＜ タグ一覧 ＞</h3>
-    <div class="tags">
+    <div class="tag-index">
       <% @tags.each do |tag| %>
-      <p>#<%=link_to tag.name, tags_path(tag_id: tag.id), class:"tag"%>(<%= tag.books.count %>)</p>
+      <p>#<%=link_to tag.name, tags_path(tag_id: tag.id), class:"tag-name"%>(<%= tag.books.count %>)</p>
       <% end %>
     </div>
     <div class='add-btn'>

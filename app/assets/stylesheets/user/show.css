@@ -2,7 +2,6 @@
   margin-top: 28px;
 }
 .user-icon{
-  border: 2px solid black;
   border-radius: 4%;
 }
 .left-bar-title{
@@ -11,7 +10,6 @@
 }
 .user-name{
   color: #1e2c41;
-  text-decoration: none;
 }
 .user-text{
   padding: 8px;
@@ -28,29 +26,14 @@
 }
 .bottom-logout-btn{
   padding: 10px 20px;
-  font-size: 13px;
-  color: white;
-  background-color: cornflowerblue;
+  font-size: 15px;
+  color: rgb(67, 69, 74);
+  border: 2px solid rgb(98, 101, 108);
   border-radius: 0.5em;
   cursor: pointer;
-  text-decoration: none;
 }
-.follow-btn{
-  background-color: rgba(42, 81, 165, 0.749);
-  width: 60%;
-  margin: 40px auto;
-  padding: 10px;
-  border-radius: 0.5em;
-  cursor: pointer;
-  opacity: 0.9;
-}
-.follow-btn:hover{
-  opacity: 1;
-}
-.follow-user{
-  font-size: 16px;
-  text-decoration: none;
-  color: whitesmoke;
+.bottom-logout-btn:hover{
+  background-color: rgba(98, 101, 108, 0.351);
 }
 
 /* 投稿一覧部分 */
@@ -58,16 +41,11 @@
   display: flex;
   flex-wrap: wrap-reverse;
 }
-.book-author-users{
-  margin: 5px auto 15px;
-  font-size: 13px;
-  display: flex;
-  justify-content: space-between;
-}
+
 .action-button{
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 180px;
 }
 .action-lists{
   font-size: 8px;
@@ -77,7 +55,7 @@
 .edit-button{
   padding: 6px 10px;
   margin-right: 5px;
-  border: 1px solid rgba(100, 148, 237, 0.79);
+  border: 2px solid rgba(100, 148, 237, 0.79);
   border-radius: 0.5em;
   color: rgb(100, 148, 237);
 }

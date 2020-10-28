@@ -17,18 +17,21 @@
 .right-side-bar h3{
   padding: 20px;
   font-size: 18px;
+  color: azure;
 }
-.tags{
+.tag-index{
   height: 62%;
   padding-bottom: 50px;
   overflow: scroll;
   p{
     padding: 4px;
+    color: azure;
+    background-color: rgb(64, 111, 198);
   }
 }
 
-.tag{
-  color: #1a2c41;
-  background-color: rgba(191, 189, 189, 0.029);
+.tag-name{
+  color: azure;
+  background-color: rgb(64, 111, 198);
 }
 

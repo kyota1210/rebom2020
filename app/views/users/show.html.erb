@@ -33,10 +33,10 @@
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"bottom-logout-btn" %>
             </div>
           </div>
-        <% else %>
-          <div class="follow-btn">
-            <a href="#", class="follow-user">フォローする</a>
-          </div>
+        <%# <% else %>
+          <%# <div class="follow-btn"> %>
+            <%# <a href="#", class="follow-user">フォローする</a> %>
+          <%# </div> %>
         <% end %>
       <% end %>
     </div>
@@ -57,30 +57,35 @@
           <h3 class="book-title">
             <%= book.title %>
           </h3>
-          <div class="book-author-users">
+          <div class="book-author">
             <%= "著者：#{book.author}" %>
           </div>
           <div class="tags">
               <ul class="tag">
                 <li class="tag-list">
                   <% book.tags.each do |tag| %>
-                    #<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %>
+                    <P>#<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %></p>
                   <%end%>
                 </li>
               </ul>
-            </div>
-        </div>
-        <% if user_signed_in? && current_user.id == @user.id %>
-          <div class="action-button">
-            <ul class="action-lists">
-              <li>
-                <%= link_to '編集', edit_book_path(book.id), class:"edit-button" %>
-              </li>
-              <li>
-                <%= link_to '削除', book_path(book.id), method: :delete, class:"delete-button" %>
-              </li>
-            </ul>
           </div>
+        </div>
+        <% if user_signed_in? %>
+          <div class='star-btn' id="book-<%= book.id %>">
+            <%= render "/books/favorite" ,{ book: book } %>
+          </div>
+          <% if current_user.id == @user.id %>
+            <div class="action-button">
+              <ul class="action-lists">
+                <li>
+                  <%= link_to '編集', edit_book_path(book.id), class:"edit-button" %>
+                </li>
+                <li>
+                  <%= link_to '削除', book_path(book.id), method: :delete, class:"delete-button" %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
         <% end %>
       </li>
       <% end %>

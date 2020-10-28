@@ -7,7 +7,7 @@
 
 .left-side-bar{
   width: 260px;
-  background-image: linear-gradient(10deg, rgba(114, 114, 114, 0.24) 0%, #41444754 100%);
+  background-color: rgb(172, 172, 172);
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -104,8 +104,9 @@
   font-size: 18px;
 }
 .book-author{
-  margin-top: 20px;
-  padding-left: 10px;
+  padding: 10px;
+  color: #1a2c41;
+  margin: 0 auto;
   font-size: 14px;
 }
 
@@ -123,7 +124,7 @@
 
 .right-side-bar{
   width: 260px;
-  background-color: #aab7d2b0;
+  background-color: rgb(64, 111, 198);
   display: flex;
   text-align: center;
   flex-direction: column;
