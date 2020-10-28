@@ -1,6 +1,5 @@
 .fotter {
   width: 100%;
-  min-width: 800px;
   height: 150px;
   background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
   display: flex;

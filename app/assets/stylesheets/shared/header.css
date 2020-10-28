@@ -41,7 +41,6 @@
 
 .top-login-btn{
   color: aliceblue;
-  background-color: cornflowerblue;
   text-decoration: none;
   padding: 10px 20px;
   display: block;
@@ -51,7 +50,11 @@
 }
 .sign-up-btn{
   color: aliceblue;
+  background-color: cornflowerblue;
   text-decoration: none;
   padding: 10px 20px;
   display: block;
+}
+.sign-up-btn:hover{
+  background-color: rgb(64, 111, 198);
 }
