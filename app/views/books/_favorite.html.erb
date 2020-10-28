@@ -1,7 +1,6 @@
-
-  <% if book.favorite_by?(current_user) %>
-    <%= link_to icon('fas', 'star'), book_favorites_path(book.id), method: :delete, remote: true, id: "fas-star", class: "delete-fav" %>
-  <% else %>
-    <%= link_to icon('far', 'star'), book_favorites_path(book.id), method: :post, remote: true, id: "far-star", class: "post-fav" %>
-  <% end %>
-  <span class='star-count'><%= book.favorites.count %></span>
+<% if book.favorite_by?(current_user) %>
+  <%= link_to icon('fas', 'star'), book_favorites_path(book.id), method: :delete, remote: true, id: "fas-star", class: "delete-fav" %>
+<% else %>
+  <%= link_to icon('far', 'star'), book_favorites_path(book.id), method: :post, remote: true, id: "far-star", class: "post-fav" %>
+<% end %>
+<span class='star-count'><%= book.favorites.count %></span>

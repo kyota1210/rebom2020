@@ -22,10 +22,11 @@
   height: 62%;
   padding-bottom: 50px;
   overflow: scroll;
+  p{
+    padding: 4px;
+  }
 }
-.tags p{
-  padding: 4px;
-}
+
 .tag{
   color: #1a2c41;
   background-color: rgba(191, 189, 189, 0.029);
