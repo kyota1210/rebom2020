@@ -41,7 +41,7 @@
   text-align: center;
 }
 .book-image{
-  margin-top: 26px;
+  margin-top: 30px;
 }
 .left-bar-title{
   padding: 10px 0;
@@ -64,7 +64,7 @@
 .posts-index{
   width: 60%;
   height: 560px;
-  padding: 30px 0 50px;
+  padding: 10px 0 50px;
   margin: 40px 120px 0 20px;
   background-color:rgb(236, 236, 236);
   display: flex;
@@ -81,16 +81,16 @@
   text-decoration: none;
   width: 500px;
   height: 60px;
-  margin-top: 30px;
-  border: 1px solid rgb(44, 44, 44);
+  margin: 20px;
+  border: 2px solid azure;
   border-radius: 0.5em;
-  background-color: rgb(253, 128, 70);
+  background-color: cornflowerblue;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .add-btn-post:hover{
-  background-color: rgb(246, 112, 50);
+  background-color: rgb(64, 111, 198);
 }
 /* アウトプットボタンここまで */
 
@@ -99,7 +99,7 @@
   width: 100%;
   background-color:rgb(236, 236, 236);
   padding-bottom: 60px;
-  margin-bottom: 40px;
+  margin:10px auto 40px;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -107,15 +107,14 @@
 margin: 0 auto;
 width: 92%;
 }
-.posts{
-margin-top: 50px;
-}
+
 .post{
 width: 100%;
 height: 18vh;
 padding: 12px 24px;
 margin: 10px auto;
 border: 1px solid #1e2c41;
+border-radius: 0.5em;
 color: rgb(54, 65, 65);
 background-color: white;
 position: relative;
@@ -132,8 +131,7 @@ position: relative;
   font-size: 18px;
 }
 .highlight-btn{
-  text-decoration: none;
-  color: rgb(54, 65, 65);
+  color: #1a2c41;
 }
 .highlight-btn:hover{
   color: rgb(246, 112, 50);

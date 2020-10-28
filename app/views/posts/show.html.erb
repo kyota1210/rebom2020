@@ -14,7 +14,7 @@
     <div class="left-side-container">
       <div class="left-side-contents">
         <div class="book-image">
-          <%= image_tag(rails_blob_path(@post.book.image), class: "book-img"), alt: "本の画像" %>
+          <%= image_tag(rails_blob_path(@post.book.image), class: "book-img", alt: "本の画像") %>
         </div>
         <div class="left-bar-title">
           <%= @post.book.title %>
@@ -54,11 +54,11 @@
           <%= l @post.created_at %>
         </div>
       </div>
-      <div class="comment-wrapper">
-        <h2>コメント</h2>
-        <div class="comment-table">
-        </div>
-      </div>
+      <%# <div class="comment-wrapper"> %>
+        <%# <h2>コメント</h2> %>
+        <%# <div class="comment-table"> %>
+        <%# </div> %>
+      <%# </div> %>
     </div>
   </div>
 </div>
