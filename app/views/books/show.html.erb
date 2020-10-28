@@ -9,12 +9,14 @@
         </div>
       </div>
       <% end %>
+      <% if user_signed_in? %>
       <%= link_to user_path(current_user.id) do %>
       <div class="back-btn-container">
         <div class="back-btn">
           <%= image_tag 'human-logo.png', size: '50x50' ,class: "back-btn-icon" %>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
   <div class="main-books-wrapper">
