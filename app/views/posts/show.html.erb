@@ -32,8 +32,8 @@
           <% end %>
           <% if user_signed_in? && current_user.id == @post.book.user.id %>
             <div class="only-post-user">
-              <%= link_to '編集', edit_post_path(@post),class:"post-edit action-btn"  %>
-              <%= link_to '削除', post_path(@post), method: :delete, class:"post-delete action-btn" %>
+              <%= link_to '編集', edit_book_post_path(@post.book.id),class:"post-edit action-btn"  %>
+              <%= link_to '削除', book_post_path(@post.book.id), method: :delete, class:"post-delete action-btn" %>
             </div>
           <% end %>
         </div>

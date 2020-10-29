@@ -59,7 +59,7 @@
                 <li class="post">
                   <div class="upper-content">
                     <div class="highlight-content">
-                      <%= link_to "#{post.highlight}", post_path(post), class:"highlight-btn" %>
+                      <%= link_to "#{post.highlight}", "/books/#{post.book_id}/posts/#{post.id}", class:"highlight-btn" %>
                     </div>
                   </div>
                   <div class="lower-content">
