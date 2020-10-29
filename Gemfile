@@ -67,3 +67,5 @@ gem 'font-awesome-sass', '~> 5.13.0'
 group :production do
   gem 'rails_12factor'
 end
+
+gem "aws-sdk-s3", require: false
