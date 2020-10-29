@@ -4,11 +4,11 @@
   <div class="main-books-wrapper">
     <div class="back-btn-wrapper">
       <%= link_to book_path(@post.book_id) do %>
-      <div class="back-btn-container">
-        <div class="back-btn">
-          <%= image_tag 'back-btn.png', size: '50x50' ,class: "back-btn-icon", alt: "戻るボタン" %>
+        <div class="back-btn-container">
+          <div class="back-btn">
+            <%= image_tag 'back-btn.png', size: '50x50' ,class: "back-btn-icon", alt: "戻るボタン" %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
     <div class="left-side-container">
@@ -26,8 +26,8 @@
         <div class="left-bottom-contents">
           <% unless user_signed_in? && current_user.id  == @post.book.user.id %>
             <div class="post-user-account">
-            <%= link_to "#{@post.book.user.name}", user_path(@post.book.user.id), class:"user-account" %>
-            <span>さんの投稿</span>
+              <%= link_to "#{@post.book.user.name}", user_path(@post.book.user.id), class:"user-account" %>
+              <span>さんの投稿</span>
             </div>
           <% end %>
           <% if user_signed_in? && current_user.id == @post.book.user.id %>
