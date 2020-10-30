@@ -65,7 +65,8 @@ gem 'rails-i18n'
 gem 'font-awesome-sass', '~> 5.13.0'
 
 group :production do
-  gem 'rails_12factor'
+  # gem 'rails_12factor'
+  gem 'unicorn', '5.4.1'
 end
 
 gem "aws-sdk-s3", require: false
