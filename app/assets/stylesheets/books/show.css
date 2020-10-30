@@ -14,7 +14,7 @@
   width: 70px;
   height: 70px;
   margin: 70px auto;
-  border: 4px solid #1a2c41;
+  border: 4px solid #1e2c41;
   border-radius: 5em;
 }
 .back-btn-container:hover{
@@ -46,7 +46,7 @@
 .left-bar-title{
   padding: 10px 0;
   font-size: 18px;
-  color: #1a2c41;
+  color: #1e2c41;
 }
 
 .post-user-account{
@@ -57,7 +57,7 @@
   color: #1e2c41;
 }
 .user-account:hover{
-  border-bottom: 1px solid #1a2c41;
+  border-bottom: 1px solid #1e2c41;
 }
 
 /* ここから記事投稿一覧 */
@@ -130,7 +130,7 @@ position: relative;
   font-size: 18px;
 }
 .highlight-btn{
-  color: #1a2c41;
+  color: #1e2c41;
 }
 .highlight-btn:hover{
   color: rgb(246, 112, 50);

@@ -10,9 +10,10 @@
       </div>
       <div class="text-box">
         <%= f.text_area :text, placeholder: "200字以内", class:"text-area" %>
+        <span class="count-character" id="char-num">0文字</span>
       </div>
       <div class='save-btn'>
-        <%= f.submit "保存する", class:"save" %>
+        <%= f.submit "保存する", class:"save", id:"save-btn" %>
       </div>
     <% end %>
   </div>
