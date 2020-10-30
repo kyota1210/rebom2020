@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="container">
+    <div class="header-left">
+      <div class="header-logo">
+        <a href="/" class="top-logo">
+          <%= image_tag 'rebom-icon.png', class: "top-icon", alt: "ロゴ画像" %>
+          <span class="header-text">Rebom</span>
+        </a>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-right-contents">
+      <% unless user_signed_in? %>
+        <div class="login">
+          <%= link_to 'ログイン', new_user_session_path, class:"top-login-btn" %>
+        </div>
+        <div class="sign-up">
+          <%= link_to '新規登録', new_user_registration_path, class:"sign-up-btn" %>
+        </div>
+      <% else %>
+        <div class="search-area">
+        <%= search_form_for @q do |f| %>
+          <%= f.search_field :title_or_author_cont, class:"search-input" %>
+          <%# <%= f.submit image_tag class:"search-btn" %>
+          <%= button_tag type: :submit ,class:"search-btn" do %>
+            <%= image_tag "search.png", class:"search-img"%>
+          <% end %>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
