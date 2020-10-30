@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: rebom2020_production
-  username: rebom2020
-  password: <%= ENV['REBOM2020_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.s
