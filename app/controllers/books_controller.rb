@@ -4,6 +4,8 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all.includes([:user, :favorites]).order('created_at DESC')
+    @q = Book.ransack(params[:q])
+    @results = @q.result(distinct: true).order('created_at DESC')
   end
 
   def new

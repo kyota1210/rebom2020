@@ -55,3 +55,17 @@
 .sign-up-btn:hover{
   background-color: rgb(64, 111, 198);
 }
+
+.search-area{
+  width: 25vw;
+  height: 35px;
+}
+.search-input{
+  width: 85%;
+  height: 35px;
+  padding: 5px 10px;
+}
+.search-btn{
+  height: 35px;
+  background-color: rgb(202, 213, 232)
+}

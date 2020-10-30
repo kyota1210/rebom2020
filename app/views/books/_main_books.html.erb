@@ -31,6 +31,39 @@
   <div class="books-timeline">
     <div class="books-container">
       <ul class="book-lists">
+      <% if @results %>
+        <% @results.each do |result| %>
+          <li class="content">
+            <%= link_to book_path(result) do %>
+              <div class='book-img-content'>
+                <%= image_tag result.image, class: "book-img" %>
+              </div>
+            <% end %>
+              <div class="book-info">
+                <h3 class="book-title">
+                  <%= result.title %>
+                </h3>
+                <div class="book-author">
+                  <%= "著者：#{result.author}" %>
+                  <% if user_signed_in? %>
+                    <div class='star-btn' id="book-<%= result.id %>">
+                      <%= render "favorite", { book: result } %>
+                    </div>
+                  <% end %>
+            </div>
+            <div class="tags">
+              <ul class="tag">
+                <li class="tag-list">
+                  <% result.tags.each do |tag| %>
+                    <p>#<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %></p>
+                  <%end%>
+                </li>
+              </ul>
+            </div>
+           </div>
+        </li>
+        <% end %>
+      <% else %>
         <% @books.each do |book| %>
           <li class="content">
             <%= link_to book_path(book) do %>
@@ -62,6 +95,7 @@
            </div>
         </li>
       <% end %>
+    <% end %>
     </ul>
     </div>
   </div>
