@@ -2,12 +2,11 @@
   display: flex;
   width: 100vw;
   height: calc(100vh - 110px);
-  background-color: #dfdfdf09;
 }
 
 .left-side-bar{
   width: 260px;
-  background-color: rgb(172, 172, 172);
+  background-color: #6e5e46;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -17,20 +16,20 @@
   margin: 0 auto;
   padding-top: 10px;
   font-size: 18px;
+  color: #eeeae4;
 }
-.move-to-show{
+.move-to-user{
   margin-top: 20px;
 }
-.move-show{
+.move-user{
   display: inline-block;
   width: 100%;
   height: 8vh;
   line-height: 8vh;
-  color: #1e2c41;
+  color: #eeeae4;
 }
-.move-show:hover{
-  background-color: #1e2c41;
-  color: aliceblue;
+.move-user:hover{
+  background-color: #738e99;
 }
 
 .left-bar-list{
@@ -46,22 +45,22 @@
   width: 100%;
   height: 50px;
   line-height: 50px;
-  color: #1e2c41;
+  color: #eeeae4;
 }
 .content-btn:hover{
-  background-color: #1e2c41;
-  color: aliceblue;
+  background-color: #354e59;
+  color: #eeeae4;
 }
 .gest{
   margin-top: 50px;
   text-align: center;
   font-size: 25px;
-  color: #1e2c41;
+  color: #eeeae4;
 }
 
 /* ここから投稿一覧 */
 .books-timeline{
-  background-color: rgb(241, 240, 240);
+  background-color: #eeeae4;
   width: calc(100vw - 260px);
   padding: 20px;
   margin-bottom: 20px;
@@ -79,7 +78,7 @@
   width: 48%;
   height: 33vh;
   border-radius: 0.3em;
-  background-color:rgba(214, 214, 214, 0.548);
+  background-color:#ad9f8aa9;
   display: flex;
   margin: 8px auto;
   position: relative;
@@ -105,7 +104,6 @@
 }
 .book-author{
   padding: 10px;
-  color: #1e2c41;
   margin: 0 auto;
   font-size: 14px;
 }
@@ -117,14 +115,14 @@
 }
 .delete-fav, .post-fav{
   font-size: 20px;
-  color: #1e2c41;
+  color: #354e59;
 }
 
 /* 一覧投稿ここまで */
 
 .right-side-bar{
   width: 260px;
-  background-color: rgb(64, 111, 198);
+  background-color: #738e99;
   display: flex;
   text-align: center;
   flex-direction: column;

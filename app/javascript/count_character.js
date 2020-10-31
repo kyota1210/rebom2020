@@ -8,7 +8,7 @@ function count (){
     if(countVal > 200){
       charNum.setAttribute("style", "color:red")
     }else{
-      charNum.setAttribute("style", "color: #1e2c41")
+      charNum.setAttribute("style", "color: #354e59")
     }
   });
 }

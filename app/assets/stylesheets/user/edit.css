@@ -28,8 +28,8 @@
 }
 .edit-indigo-btn {
   width: 100%;
-  background: #1e2c41;
-  border: 1px solid #1e2c41;
+  background:#354e59;
+  border: 1px solid#354e59;
   border-radius: 0.5em;
   color: #fff;
   line-height: 48px;
@@ -41,7 +41,7 @@
   margin-top: 40px;
 }
 .change-btn{
-  background-color: rgb(94, 122, 160);
+  background-color: #738e99;
   color: white;
   border-radius: 10em;
   padding: 8px 20px;

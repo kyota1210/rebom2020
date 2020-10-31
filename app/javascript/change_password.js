@@ -3,10 +3,10 @@ function pullDown() {
   const pullDownShow = document.getElementById("pulldown-show")
 
   pullDownButton.addEventListener('mouseover', function(){
-    this.setAttribute("style", "background-color:#1e2c41;")
+    this.setAttribute("style", "background-color:#354e59;")
   })
   pullDownButton.addEventListener('mouseout', function(){
-    this.removeAttribute("style", "background-color:#1e2c41;")
+    this.removeAttribute("style", "background-color:#354e59;")
   })
 
   pullDownButton.addEventListener('click', function() {
