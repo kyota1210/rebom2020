@@ -3,18 +3,16 @@
 <div class="main-books-wrapper">
   <div class="left-side-bar">
     <div class="left-bar-contents">
+
       <%= render partial: "books/left_bar", locals: { user: @user } %>
-        <% if user_signed_in? && current_user.id == @user.id %>
-          <div class="logout-btn">
-            <div class="logout">
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"bottom-logout-btn" %>
-            </div>
+      
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <div class="logout-btn">
+          <div class="logout">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"bottom-logout-btn" %>
           </div>
-        <%# <% else %>
-          <%# <div class="follow-btn"> %>
-            <%# <a href="#", class="follow-user">フォローする</a> %>
-          <%# </div> %>
-        <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 
