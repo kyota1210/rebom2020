@@ -75,7 +75,7 @@
   height: 560px;
   padding: 10px 0 50px;
   margin: 40px 120px 0 20px;
-  background-color:#ad9f8aa9;
+  background-color: #d2c6b6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,10 +87,11 @@
 }
 .add-btn-post{
   color: #eeeae4;
-  width: 500px;
+  font-size: 1.2rem;
+  width: 30vw;
   height: 60px;
   margin: 20px;
-  border-radius: 0.5em;
+  border-radius: 0.5rem;
   background-color: #354e59;
   display: flex;
   justify-content: center;
@@ -105,27 +106,28 @@
   width: 100%;
   padding-bottom: 60px;
   margin:10px auto 40px;
+  background-color:#d2c6b6;
   display: flex;
   flex-direction: column-reverse;
 }
 .post-contents{
-margin: 0 auto;
-width: 92%;
+  margin: 0 auto;
+  width: 92%;
 }
-
 .post{
-width: 100%;
-height: 18vh;
-padding: 12px 24px;
-margin: 15px auto;
-border: 1px solid #354e59;
-border-radius: 0.5em;
-color: #354e59;
-background-color: #eeeae4;
-position: relative;
+  width: 100%;
+  height: 18vh;
+  padding: 1rem 1.5rem;
+  margin: 15px auto;
+  border: 1px solid #354e59;
+  border-radius: 0.5rem;
+  color: #354e59;
+  background-color: #eeeae4;
+  text-align: justify;
+  position: relative;
 }
 .post-date{
-  font-size: 13px;
+  font-size: 1rem;
   position: absolute;
   bottom: 8px;
   right: 15px;
@@ -134,7 +136,7 @@ position: relative;
 
 .highlight-content{
   margin: 10px auto;
-  font-size: 18px;
+  font-size: 1.2rem;
 }
 .highlight-btn{
   color: #354e59;

@@ -43,8 +43,8 @@
 
 .action-button{
   position: absolute;
-  bottom: 20px;
-  right: 170px;
+  bottom: 10%;
+  right: 35%;
 }
 .action-lists{
   font-size: 12px;

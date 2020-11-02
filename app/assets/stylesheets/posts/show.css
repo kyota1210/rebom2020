@@ -1,21 +1,24 @@
-
+.left-bar-book-title{
+  width: 94%;
+  margin: 15px auto;
+}
 .left-bottom-contents{
   margin: 25px;
 }
 
 .action-btn{
-  font-size: 13px;
-  border-radius: 0.5em;
+  font-size: 0.3rem;
+  border-radius: 0.5rem;
   padding: 8px 16px;
 }
 .post-edit{
   background-color: #738e99;
-  border: 1px solid #738e99;
-  border-radius: 0.5em;
+  border: 1px solid #528395;
+  border-radius: 0.5rem;
   color: azure;
 }
 .post-edit:hover{
-  background-color: rgba(100, 148, 237, 0.708);
+  background-color: #528395;
 }
 .post-delete{
   margin-left: 10px;
@@ -36,20 +39,23 @@
   color: #354e59;
 }
 .highlight{
-  font-size: 21px;
+  width: 100%;
+  font-size: 1.3rem;
+  text-align: justify;
 }
 .post-bottom-content{
-  background-color: white;
   width: 90%;
-  height: 50%;
   padding: 20px 30px 50px;
   margin-top: 25px;
   border-radius: 0.5em;
   color: #354e59;
+  background-color: #eeeae4;
   position: relative;
 }
 .post-text{
-  font-size: 20px;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: justify;
 }
 .post-time{
   position: absolute;
