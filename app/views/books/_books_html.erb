@@ -1,31 +1,29 @@
-<% books.each do |book| %>
-  <li class="content">
-    <%= link_to book_path(book) do %>
-      <div class='book-img-content'>
-        <%= image_tag book.image, class: "book-img" %>
-      </div>
-    <% end %>
-    <div class="book-info">
-      <h3 class="book-title">
-        <%= book.title %>
-      </h3>
-      <div class="book-author">
-        <%= "著者：#{book.author}" %>
-        <% if user_signed_in? %>
-          <div class='star-btn' id="book-<%= book.id %>">
-            <%= render "favorite", { book: book } %>
-          </div>
-        <% end %>
-      </div>
-      <div class="tags">
-        <ul class="tag">
-          <li class="tag-list">
-            <% book.tags.each do |tag| %> 
-              <p>#<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %></p>
-            <%end%>
-          </li>
-        </ul>
-      </div>
+<li class="content">
+  <%= link_to book_path(book) do %>
+    <div class='book-img-content'>
+      <%= image_tag book.image, class: "book-img" %>
     </div>
-  </li>
-<% end %>
+  <% end %>
+  <div class="book-info">
+    <h3 class="book-title">
+      <%= book.title %>
+    </h3>
+    <div class="book-author">
+      <%= "著者：#{book.author}" %>
+      <% if user_signed_in? %>
+        <div class='star-btn' id="book-<%= book.id %>">
+          <%= render "favorite", { book: book } %>
+        </div>
+      <% end %>
+    </div>
+    <div class="tags">
+      <ul class="tag">
+        <li class="tag-list">
+          <% book.tags.each do |tag| %> 
+            <p>#<%= link_to tag.name, tags_path(tag_id: tag.id), class:"tag" %></p>
+          <%end%>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>

@@ -46,7 +46,7 @@
           </li>
         <% end %>
       <% else %>
-        <%= render partial: "books", collection: @books, as: "book" %>
+        <%= book_list(@books) %>
     <% end %>
     </ul>
     </div>
