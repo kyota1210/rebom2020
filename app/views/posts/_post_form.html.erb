@@ -1,0 +1,14 @@
+<%= form_with model: post, url: post.new_record? ? book_posts_path : book_post_path(post.book.id), local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="highlight-box">
+    <%= f.text_area :highlight, placeholder: "ハイライト", id:"post_highlight", class:"highlight-form" %>
+  </div>
+  <div class="text-box">
+    <%= f.text_area :text, placeholder: "200字以内", id:"post_text", class:"text-area" %>
+    <span class="count-character" id="char-num">0文字</span>
+  </div>
+  <div class='save-btn'>
+    <%= f.submit "保存する", class:"save", id:"save-btn" %>
+  </div>
+<% end %>
