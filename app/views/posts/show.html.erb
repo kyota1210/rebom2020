@@ -22,7 +22,6 @@
         <div class="book-author">
           <%= "著者：#{@post.book.author}" %>
         </div>
-        
         <div class="left-bottom-contents">
           <% unless user_signed_in? && current_user.id  == @post.book.user.id %>
             <div class="post-user-account">

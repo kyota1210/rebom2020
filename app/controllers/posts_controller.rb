@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :move_to_index1, only: [:edit, :destroy]
   before_action :move_to_index2, only: :new
+  before_action :find_post_id, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -17,15 +18,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     @post.update(post_params)
     if @post.valid?
       redirect_to action: :show
@@ -35,7 +33,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to book_path(@post.book.id)
   end
@@ -55,5 +52,9 @@ class PostsController < ApplicationController
     post = Post.new
     book = Book.find(params[:book_id])
     redirect_to root_path unless user_signed_in? && current_user.id == book.user.id
+  end
+
+  def find_post_id
+    @post = Post.find(params[:id])
   end
 end

@@ -1,16 +1,14 @@
 class UsersController < ApplicationController
   before_action :move_to_index, only: [:edit, :update]
+  before_action :find_user_id, only: [:show, :edit, :update]
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(update_paramas)
       redirect_to user_path(@user.id)
     elsif @user.update_without_current_password(no_pass_update_params)
@@ -34,5 +32,9 @@ class UsersController < ApplicationController
   def move_to_index
     user = User.find(params[:id])
     redirect_to root_path unless user_signed_in? && current_user.id == user.id
+  end
+
+  def find_user_id
+    @user = User.find(params[:id])
   end
 end

@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :find_book_id, only: [:show, :edit, :update]
 
   def index
     @books = Book.all.includes([:user, :favorites]).order('created_at DESC')
@@ -25,16 +26,13 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
   end
 
   def edit
-    @book = Book.find(params[:id])
     @tag = @book.tags.pluck(:name)
   end
 
   def update
-    @book = Book.find(params[:id])
     tag = params[:book][:name].split(',')
     if @book.valid?
       @book.update(book_params)
@@ -66,5 +64,9 @@ class BooksController < ApplicationController
   def move_to_index
     book = Book.find(params[:id])
     redirect_to root_path unless user_signed_in? && current_user.id == book.user.id
+  end
+
+  def find_book_id
+    @book = Book.find(params[:id])
   end
 end
