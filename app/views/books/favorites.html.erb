@@ -3,31 +3,15 @@
 <div class="main-books-wrapper">
   <div class="left-side-bar">
     <div class="left-bar-contents">
-        <div class="user-image">
-          <% if current_user.image.attached? %>
-            <%= image_tag(rails_blob_path(current_user.image),size: "140x135", class: "user-icon", alt: "ユーザーアイコン画像") %>
-          <% else %>
-            <%= image_tag("default_user.png", size: "140x135", class: "user-icon", alt: "デフォルトアイコン画像") %>
-          <% end %>
+
+      <%= render "left_bar" %>
+
+      <%= link_to root_path do %>
+        <div class="home-back-btn-container">
+          <div class="back-btn">
+            <%= image_tag 'home-btn.png', size: '50x50' ,class: "back-btn-icon", alt: "ホームボタン" %>
+          </div>
         </div>
-        <div class="left-bar-top">
-          <%= current_user.name %>
-        </div>
-        <div class="move-to-user">
-          <%= link_to "書斎へ行く", user_path(current_user.id), class:"move-user" %>
-        </div>
-        <div class="left-bar-list">
-          <ul class="left-content-lists">
-            <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
-            <li class="left-content"><%= link_to "お気に入り", favorites_books_path, class:"content-btn" %></li>
-          <ul>
-        </div>
-        <%= link_to root_path do %>
-      <div class="home-back-btn-container">
-        <div class="back-btn">
-          <%= image_tag 'home-btn.png', size: '50x50' ,class: "back-btn-icon", alt: "ホームボタン" %>
-        </div>
-      </div>
       <% end %>
     </div>
   </div>
@@ -73,12 +57,5 @@
     </ul>
     </div>
   </div>
-  <div class="right-side-bar">
-    <div class='add-btn'>
-      <a href="/books/new" class="add-book">
-      <span class='add-btn-text'>追加する</span>
-      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "add-btn-icon", alt: "本追加ボタン" %>
-      </a>
-    </div>
-  </div>
+  <%= render "right_bar" %>
 </div>

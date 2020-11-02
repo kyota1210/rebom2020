@@ -1,0 +1,21 @@
+<%= link_to edit_user_path(user) do %>
+<div class="user-image">
+  <% if user.image.attached? %>
+    <%= image_tag(rails_blob_path(user.image),size: "140x135", class: "user-icon") %>
+  <% else %>
+    <%= image_tag("default_user.png", size: "140x135", class: "user-icon") %>
+  <% end %>
+</div>
+<% end %>
+<div class="left-bar-top">
+  <%= user.name %>
+</div>
+<div class="move-to-user">
+  <%= link_to "書斎へ行く", user_path(user.id), class:"move-user" %>
+</div>
+<div class="left-bar-list">
+  <ul class="left-content-lists">
+    <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
+    <li class="left-content"><%= link_to "お気に入り", favorites_books_path, class:"content-btn" %></li>
+  <ul>
+</div>

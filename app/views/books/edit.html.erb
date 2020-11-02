@@ -1,6 +1,5 @@
 <%= render "shared/second-header"%>
 
-
 <div class='form-wrapper'>
   <div class='form-header'>
     <h3 class='form-header-text'>
@@ -8,35 +7,6 @@
     </h3>
   </div>
 
-  <%= form_with model: @book, url: book_path(@book), class: 'book-main', local: true do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
-
-  <div class="form-group file">
-    <h4>画像</h4>
-    <%= f.file_field :image, placeholder: "画像アップロード" %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">本のタイトル</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.text_area :title, class:"input-default", id:"title", placeholder:"タイトル", maxlength:"40" %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">著者</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.text_field :author, class:"input-default", id:"author", placeholder:"著者", autofocus: true %>
-  </div>
-  <div class="tag-field", id='tag-field'>
-    <label class="form-tag">♯</label>
-    <%= f.text_field :name, value: @tag, class:"input-tag"  %>
-  </div>
-  <div class='book-btn'>
-    <%= f.submit "追加する", class:"book-indigo-btn" %>
-  </div>
-</div>
-<% end %>
+  <%= render partial: "book_form", locals: { book: @book, tag: @tag } %>
 
 <%= render "shared/footer"%>

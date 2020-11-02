@@ -3,31 +3,8 @@
 <div class="main-books-wrapper">
   <div class="left-side-bar">
     <div class="left-bar-contents">
-      <%= link_to edit_user_path(@user) do %>
-      <div class="user-image">
-        <% if @user.image.attached? %>
-          <%= image_tag(rails_blob_path(@user.image), size: "140x135", class: "user-icon", alt: "ユーザーアイコン画像") %>
-        <% else %>
-          <p><%= image_tag("default_user.png", size: "140x135", class: "user-icon", alt: "デフォルトアイコン画像") %></p>
-        <% end %>
-      </div>
-      <% end %>
-      <div class="left-bar-title">
-        <%= @user.name %>
-      </div>
-      <div class="user-text">
-        <% if @user.text %>
-          <%= @user.text %>
-        <% end %>
-      </div>
-      <% if user_signed_in? %>
-        <div class="left-bar-list">
-          <ul class="left-content-lists">
-            <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
-            <li class="left-content"><%= link_to "お気に入り", favorites_books_path, class:"content-btn" %></li>
-          <ul>
-        </div>
-        <% if current_user.id == @user.id %>
+      <%= render partial: "books/left_bar", locals: { user: @user } %>
+        <% if user_signed_in? && current_user.id == @user.id %>
           <div class="logout-btn">
             <div class="logout">
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"bottom-logout-btn" %>
@@ -38,7 +15,6 @@
             <%# <a href="#", class="follow-user">フォローする</a> %>
           <%# </div> %>
         <% end %>
-      <% end %>
     </div>
   </div>
 
@@ -94,11 +70,4 @@
     <%# 投稿一覧ここまで %>
   </div>
 
-  <div class="right-side-bar">
-    <div class='add-btn'>
-      <span class='add-btn-text'>追加する</span>
-      <a href="/books/new">
-      <%= image_tag 'book_btn.png' , size: '200x50' ,class: "add-btn-icon" %>
-      </a>
-    </div>
-  </div>
+<%= render "books/right_bar" %>
