@@ -13,7 +13,7 @@
 .sale-container{
   background-color: #eeeae4;
   width: 75vw;
-  height: 80vh;
+  height: 73vh;
   min-width: 450px;
 }
 
@@ -22,6 +22,7 @@
   margin: 0 auto;
   padding: 3rem 0;
   display: flex;
+  justify-content: space-between;
 }
 
 .items-sell-title {
@@ -46,51 +47,38 @@
 .weight-bold-text {
   font-weight: bold;
   min-width: 170px;
-  margin-bottom: 10px;
+  margin: 15px 0 10px;
 }
 
 .select-box {
   height: 30px;
-  width: 100%;
+  width: 90%;
   background-color: #f5f5f5;
-  padding-left: 20px;
+  padding-left: 10px;
+  margin: 1.5vh 0;
 }
 
 
 /* 商品名と商品説明 */
 .content-book{
-  width: 40%;
+  width: 45%;
   display: flex;
 }
 .sales-info{
-  width: 60%;
-  margin-top: 35px;
-}
-
-.items-detail {
-  display: flex;
-  justify-content: space-between;
-  padding: 2vh 0;
-}
-
-.items-detail>.form {
-  width: 300px;
-  padding: 2vh 0;
-}
-
-.select-box {
-  margin: 2vh 0;
+  width: 25%;
+  padding: 10px 20px;
+  margin-top: 30px;
 }
 
 /* 販売価格 */
 .sell-price {
+  margin-top: 10%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .price-content {
-  width: 300px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #6e5e46;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -105,12 +93,15 @@
 
 .sell-yen {
   font-size: 18px;
+  margin-left: 5px;
 }
 
 .price-input {
+  width: 130px;
   height: 30px;
   text-align: right;
   padding-right: 10px;
+  margin-left: 5px;
 }
 
 /* /販売価格 */
@@ -119,7 +110,6 @@
 .sell-btn-contents {
   width: 70%;
   margin: 0 auto;
-  padding-top: 20px;
   text-align: center;
 }
 
