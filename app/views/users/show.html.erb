@@ -3,15 +3,37 @@
 <div class="main-books-wrapper">
   <div class="left-side-bar">
     <div class="left-bar-contents">
-
-      <%= render partial: "books/left_bar", locals: { user: @user } %>
-      
-      <% if user_signed_in? && current_user.id == @user.id %>
-        <div class="logout-btn">
-          <div class="logout">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"bottom-logout-btn" %>
-          </div>
+      <%= link_to edit_user_path(@user) do %>
+      <div class="user-image">
+        <% if @user.image.attached? %>
+          <%= image_tag(rails_blob_path(@user.image), size: "140x135", class: "user-icon", alt: "ユーザーアイコン画像") %>
+        <% else %>
+          <p><%= image_tag("default_user.png", size: "140x135", class: "user-icon", alt: "デフォルトアイコン画像") %></p>
+        <% end %>
+      </div>
+      <% end %>
+      <div class="left-bar-title">
+        <%= @user.name %>
+      </div>
+      <% if @user.text %>
+        <div class="user-text">
+          <%= @user.text %>
         </div>
+      <% end %>
+      <% if  %>
+        <div class="left-bar-list">
+          <ul class="left-content-lists">
+            <li class="left-content"><%= link_to "ブックリスト", "#", class:"content-btn" %></li>
+            <li class="left-content"><%= link_to "お気に入り", favorites_books_path, class:"content-btn" %></li>
+          <ul>
+        </div>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <div class="logout-btn">
+            <div class="logout">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"bottom-logout-btn" %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
