@@ -6,7 +6,7 @@ class Book < ApplicationRecord
   has_many :tags, through: :book_tag_relations
   has_many :favorites, dependent: :destroy
   has_many :favorite_books, through: :favorites
-  has_one  :sale
+  has_one  :sale, dependent: :destroy
 
   with_options presence: :true do
     validates :title,  length: { maximum: 36, message: 'は36字以内で入力してください' }

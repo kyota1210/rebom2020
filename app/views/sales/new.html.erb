@@ -20,9 +20,9 @@
 
     <div class="sales-info">
       <%= form_with model: @book_sale, url: sales_path(book_id: @book.id), local: true do |f| %>
-        <%= render 'shared/error_messages', model: f.object %>
 
         <div class="form">
+        
           <div class="weight-bold-text">
           本の状態
           <span class="indispensable">必須</span>
@@ -64,14 +64,10 @@
     </div>
     <%# /販売価格 %>
     </div>
-    <%# <div class="check-box"> %>
-      <%# <%= f.label :sell, "出品してもよろしいですか？" %>
-      <%# <%= f.check_box :sell ,{}, "true", "false" %>
-    <%# </div> %>
-    <%# 下部ボタン %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div class="sell-btn-contents">
       <%= f.submit "出品する", class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-button" %>
+      <%=link_to 'もどる', user_path(@book.user.id), class:"back-button" %>
     </div>
     <% end %>
     <%# /下部ボタン %>

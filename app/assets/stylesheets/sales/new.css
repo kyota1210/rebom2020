@@ -13,8 +13,8 @@
 .sale-container{
   background-color: #eeeae4;
   width: 75vw;
-  height: 73vh;
   min-width: 450px;
+  padding-bottom: 70px;
 }
 
 .items-sell-main {
@@ -114,13 +114,16 @@
 }
 
 .sell-btn {
-  background: #354e59;
+  background-color: #354e59;
   color: #fff;
   width: 25%;
   height: 50px;
   font-size: 14px;
   border-radius: 0.5em;
   cursor: pointer;
+}
+.sell-btn:hover{
+  background-color: #213741;
 }
 
 .back-button{

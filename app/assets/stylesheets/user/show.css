@@ -44,19 +44,38 @@
 .action-button{
   position: absolute;
   bottom: 10%;
-  right: 35%;
+  right: 20%;
 }
 .action-lists{
-  font-size: 12px;
+  font-size: 0.5rem;
   display: flex;
   justify-content: space-around;
+}
+.sell-button{
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: 2px solid #c24040;
+  border-radius: 0.5em;
+  color: #c24040;
+}
+.sell-button:hover{
+  color: azure;
+  background-color: #c24040c5;
+}
+.selling-button{
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: 2px solid #c24040;
+  border-radius: 0.5em;
+  color: azure;
+  background-color: #c24040;
 }
 .edit-button{
   padding: 6px 10px;
   margin-right: 5px;
   border: 2px solid #738e99;
   border-radius: 0.5em;
-  color: #738e99;
+  color: #5a7883;
 }
 .edit-button:hover{
   color: azure;
