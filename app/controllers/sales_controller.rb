@@ -35,6 +35,11 @@ before_action :authenticate_user!, only: [:new]
     end
   end
 
+  def show
+    @book = Book.find(params[:id])
+    @sale = @book.sale
+  end
+
   private
 
   def sale_params

@@ -44,7 +44,7 @@
               </div>
               <div class="sell-status">
                 <% if user_signed_in? && result.sell %>
-                  <%= link_to '出品中', "#", class:"selling-btn" %>
+                  <%= link_to '出品中', sale_path(result), class:"selling-btn" %>
                 <% end %>
               </div>
             </div>

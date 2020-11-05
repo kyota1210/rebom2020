@@ -1,0 +1,55 @@
+<%= render "shared/second-header"%>
+
+<div class="items-sell-contents">
+  <div class="sale-container">
+    <h2 class="items-sell-title">本の情報</h2>
+  <div class="items-sell-main">
+    <div class="content-book">
+      <div class="book-img-content">
+        <%= image_tag @book.image, class: "book-img" %>
+      </div>
+      <div class="book-info">
+        <h3 class="book-title">
+          <%= @book.title %>
+        </h3>
+        <div class="book-author">
+        <%= "著者：#{@book.author}" %>
+        </div>  
+      </div>
+    </div>
+
+    <div class="sale-info">
+      <div class="books-detail">
+        <div class="sale-text">
+          <span>本の状態</span>
+          <div class="status">
+              <%= @sale.status.name %>
+          </div>
+        </div>
+        <div class="sale-text">
+          <span>配送料の負担</span>
+          <div class="transfer_fee">
+            <%= @sale.transfer_fee.name %>
+          </div>
+        </div>  
+      </div>
+      <div class="sale-price">
+        <div class="sale-text">
+          価格
+          <div class="price">
+            <%= "¥ #{ @sale.price }" %>
+          </div>
+        </div>
+      <div>
+      </div>
+    </div>
+  </div>
+  <div class="order">
+    <div class="move-order">
+      <%= link_to "購入画面へ行く", "#", class:"move-order-btn" %>
+    </div>
+  </div>
+  </div>
+</div>
+
+<%= render "shared/footer"%>
