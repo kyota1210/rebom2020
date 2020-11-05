@@ -75,7 +75,7 @@
               <ul class="action-lists">
                 <li>
                   <% if book.sell %>
-                    <%= link_to '出品中', "#", class:"selling-button" %>
+                    <%= link_to '出品中', edit_sale_path(book), class:"selling-button" %>
                   <% else %>
                     <%= link_to '売る', new_sale_path(id: book.id), class:"sell-button" %>
                   <% end %>

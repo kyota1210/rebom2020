@@ -13,10 +13,7 @@ ja:
       post:
         highlight: ハイライト
         text: 本文
-        
-  activemodel:
-    attributes:
-      book_sale:
-        status: 本の状態
-        transfer_fee: 配送料の負担
+      sale:
+        status_id: 本の状態
+        transfer_fee_id: 配送料の負担
         price: 価格

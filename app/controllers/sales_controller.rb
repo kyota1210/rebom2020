@@ -3,25 +3,41 @@ before_action :authenticate_user!, only: [:new]
 
   def new
     @book = Book.find(params[:id])
-    @book_sale = BookSale.new
+    @sale = Sale.new
   end
 
   def create
     @book = Book.find(params[:book_id])
-    @book_sale = BookSale.new(sale_params)
-    if @book_sale.valid?
+    @sale = Sale.new(sale_params)
+    if @sale.valid?
       @book.sell = :sell
       @book.save
-      @book_sale.save
+      @sale.save
       redirect_to "/users/#{@book.user.id}"
     else
       render action: :new
     end
   end
 
+  def edit
+    @book = Book.find(params[:id])
+    @sale = @book.sale
+  end
+
+  def update
+    @book = Book.find(params[:book_id])
+    @sale = Sale.find(params[:id])
+    if @sale.valid?
+      @sale.update(sale_params)
+      redirect_to "/users/#{@book.user_id}"
+    else
+      render action: :edit
+    end
+  end
+
   private
 
   def sale_params
-    params.require(:book_sale).permit(:sell, :status, :transfer_fee, :price).merge(book_id: params[:book_id])
+    params.require(:sale).permit(:status_id, :transfer_fee_id, :price).merge(book_id: params[:book_id])
   end
 end
