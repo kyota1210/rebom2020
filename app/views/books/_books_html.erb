@@ -25,5 +25,10 @@
         </li>
       </ul>
     </div>
+    <div class="sell-status">
+      <% if user_signed_in? && book.sell %>
+        <%= link_to '出品中', "#", class:"selling-button" %>
+      <% end %>
+    </div>
   </div>
 </li>

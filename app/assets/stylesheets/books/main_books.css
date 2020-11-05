@@ -107,7 +107,17 @@
   margin: 0 auto;
   font-size: 14px;
 }
-
+.sell-status{
+  margin: 30px 10px 0 20px;
+}
+.selling-btn{
+  font-size: 0.5rem;
+  padding: 6px 10px;
+  border: 2px solid #c24040;
+  border-radius: 0.5em;
+  color: azure;
+  background-color: #c24040;
+}
 .star-btn{
   position: absolute;
   bottom: 18px;

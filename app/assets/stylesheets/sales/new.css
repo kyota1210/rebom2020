@@ -1,0 +1,135 @@
+/* border-bottom: 1px solid #eee; */
+
+
+.items-sell-contents {
+  background-color: #6e5e46;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.sale-container{
+  background-color: #eeeae4;
+  width: 75vw;
+  min-width: 450px;
+  padding-bottom: 70px;
+}
+
+.items-sell-main {
+  width: 85%;
+  margin: 0 auto;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.items-sell-title {
+  font-size: 22px;
+  font-weight: bold;
+  width: 75%;
+  margin: 0 auto;
+  padding: 2rem 0 1.2rem 3rem;
+  border-bottom: 2px solid #6e5e46;
+}
+
+/* 共通 */
+.indispensable {
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin: 15px 0 10px;
+}
+
+.select-box {
+  height: 30px;
+  width: 90%;
+  background-color: #f5f5f5;
+  padding-left: 10px;
+  margin: 1.5vh 0;
+}
+
+
+/* 商品名と商品説明 */
+.content-book{
+  width: 45%;
+  display: flex;
+}
+.sales-info{
+  width: 25%;
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+
+/* 販売価格 */
+.sell-price {
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.price-content {
+  border-bottom: 1px solid #6e5e46;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-text {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.sell-yen {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.price-input {
+  width: 130px;
+  height: 30px;
+  text-align: right;
+  padding-right: 10px;
+  margin-left: 5px;
+}
+
+/* /販売価格 */
+
+/* 下部ボタン */
+.sell-btn-contents {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sell-btn {
+  background-color: #354e59;
+  color: #fff;
+  width: 25%;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.sell-btn:hover{
+  background-color: #213741;
+}
+
+.back-button{
+  background: #8d9598;
+  color: #fff;
+  padding: 15px 30px;
+  margin-left: 30px;
+  border-radius: 0.5em;
+}

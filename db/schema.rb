@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_091114) do
+ActiveRecord::Schema.define(version: 2020_11_04_005144) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_091114) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "sell", default: false, null: false
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -68,6 +69,16 @@ ActiveRecord::Schema.define(version: 2020_10_26_091114) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_posts_on_book_id"
+  end
+
+  create_table "sales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status_id", null: false
+    t.integer "transfer_fee_id", null: false
+    t.integer "price", null: false
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_sales_on_book_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -97,4 +108,5 @@ ActiveRecord::Schema.define(version: 2020_10_26_091114) do
   add_foreign_key "favorites", "books"
   add_foreign_key "favorites", "users"
   add_foreign_key "posts", "books"
+  add_foreign_key "sales", "books"
 end

@@ -74,6 +74,13 @@
             <div class="action-button">
               <ul class="action-lists">
                 <li>
+                  <% if book.sell %>
+                    <%= link_to '出品中', "#", class:"selling-button" %>
+                  <% else %>
+                    <%= link_to '売る', new_sale_path(id: book.id), class:"sell-button" %>
+                  <% end %>
+                </li>
+                <li>
                   <%= link_to '編集', edit_book_path(book), class:"edit-button" %>
                 </li>
                 <li>
