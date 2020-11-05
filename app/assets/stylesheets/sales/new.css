@@ -86,7 +86,7 @@
 }
 
 .price-text {
-  /* min-width: 170px; */
+  font-weight: bold;
   display: flex;
   align-items: center;
 }
