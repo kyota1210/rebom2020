@@ -7,7 +7,7 @@ class Status < ActiveHash::Base
     { id: 4, name: 'やや汚れあり' },
     { id: 5, name: '全体的に状態が悪い' }
   ]
-  
+
   include ActiveHash::Associations
   has_many :sales
 end
