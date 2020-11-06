@@ -16,17 +16,17 @@ RSpec.describe BookSale, type: :model do
       it '本の状態が存在しないと出品できないこと' do
         @book_sale.status = 0
         @book_sale.valid?
-        expect(@book_sale.errors.full_messages).to include("本の状態が選択されていません")
+        expect(@book_sale.errors.full_messages).to include('本の状態が選択されていません')
       end
       it '配送料の負担が存在しないと出品できないこと' do
         @book_sale.transfer_fee = 0
         @book_sale.valid?
-        expect(@book_sale.errors.full_messages).to include("配送料の負担が選択されていません")
+        expect(@book_sale.errors.full_messages).to include('配送料の負担が選択されていません')
       end
       it '価格が存在しないと出品できないこと' do
-        @book_sale.price = ""
+        @book_sale.price = ''
         @book_sale.valid?
-        expect(@book_sale.errors.full_messages).to include("価格を入力してください")
+        expect(@book_sale.errors.full_messages).to include('価格を入力してください')
       end
       it '価格が299円以下の場合、出品できないこと' do
         @book_sale.price = 299

@@ -1,5 +1,5 @@
 class SalesController < ApplicationController
-before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new]
 
   def new
     @book = Book.find(params[:id])
@@ -38,6 +38,19 @@ before_action :authenticate_user!, only: [:new]
   def show
     @book = Book.find(params[:id])
     @sale = @book.sale
+  end
+
+  def destroy
+    @book = Book.find(params[:book_id])
+    @sale = Sale.find(params[:id])
+    if @sale.valid?
+      @sale.destroy
+      @book.sell = false
+      @book.save
+      redirect_to root_path
+    else
+      render root_path
+    end
   end
 
   private
