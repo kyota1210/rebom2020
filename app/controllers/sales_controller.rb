@@ -40,6 +40,19 @@ before_action :authenticate_user!, only: [:new]
     @sale = @book.sale
   end
 
+  def destroy
+    @book = Book.find(params[:book_id])
+    @sale = Sale.find(params[:id])
+    if @sale.valid?
+      @sale.destroy
+      @book.sell = false
+      @book.save
+      redirect_to root_path
+    else
+      render root_path
+    end
+  end
+
   private
 
   def sale_params

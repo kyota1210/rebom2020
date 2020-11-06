@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     end
   end
   resources :tags, only: :index
-  resources :sales, only: [:new, :create, :edit, :update, :show]
+  resources :sales, only: [:new, :create, :edit, :update, :show, :destroy]
 end
