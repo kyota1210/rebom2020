@@ -5,7 +5,7 @@ class OrderAddress
   ZIP_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze
   MOBILE_REGEX = /\A\d{11}\z/.freeze
   with_options presence: true do
-    # validates :token
+    validates :token
     validates :user_id
     validates :sale_id
     validates :zip_code,      format: { with: ZIP_CODE_REGEX, message: 'はハイフンを含めて入力してください' }
