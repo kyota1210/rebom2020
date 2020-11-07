@@ -1,5 +1,6 @@
 class Sale < ApplicationRecord
   belongs_to :book
+  has_one :order
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :status

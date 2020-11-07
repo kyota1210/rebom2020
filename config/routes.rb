@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'orders/index'
   devise_for :users
   root to:  'books#index'
   resources :users, only: [:show, :edit, :update]
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
     end
   end
   resources :tags, only: :index
-  resources :sales, only: [:new, :create, :edit, :update, :show, :destroy]
+  resources :sales, only: [:new, :create, :edit, :update, :show, :destroy] do
+    resources :orders, only: [:index, :create]
+  end
 end

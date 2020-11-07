@@ -65,6 +65,7 @@ gem 'rails-i18n'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'ransack'
 gem 'active_hash'
+gem 'payjp'
 
 group :production do
   # gem 'rails_12factor'
