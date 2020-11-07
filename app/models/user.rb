@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many         :favorites, dependent: :destroy
   has_many         :favorite_books, through: :favorites, source: :book
   has_one_attached :image
+  has_many         :orders
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
