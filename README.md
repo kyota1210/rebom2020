@@ -1,8 +1,7 @@
 # README
 
 ## アプリケーション名
-<h2>Rebom (Read Book Management)</h2> 
-
+### Rebom (Read Book Management)
 リボンと読みます。
 
 ## 概要
