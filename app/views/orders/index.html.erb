@@ -28,10 +28,6 @@
         </div>
       </div>
     </div>
-    <%# /購入内容の表示 %>
-
-    <%# 支払額の表示 %>
-    <%# /支払額の表示 %>
 
     <%= form_with(model: @order_address, url: sale_orders_path(@sale.id), id: 'charge-form', class: 'transaction-form-wrap',local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object, locals: { messages: @messages } %>

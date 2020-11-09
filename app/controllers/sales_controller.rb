@@ -1,13 +1,13 @@
 class SalesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  before_action :find_bookid, only: [:new, :edit, :show]
+  before_action :find_book_id, only: [:create, :update, :destroy]
 
   def new
-    @book = Book.find(params[:id])
     @sale = Sale.new
   end
 
   def create
-    @book = Book.find(params[:book_id])
     @sale = Sale.new(sale_params)
     if @sale.valid?
       @book.sell = :sell
@@ -20,12 +20,10 @@ class SalesController < ApplicationController
   end
 
   def edit
-    @book = Book.find(params[:id])
     @sale = @book.sale
   end
 
   def update
-    @book = Book.find(params[:book_id])
     @sale = Sale.find(params[:id])
     if @sale.valid?
       @sale.update(sale_params)
@@ -36,12 +34,10 @@ class SalesController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
     @sale = @book.sale
   end
 
   def destroy
-    @book = Book.find(params[:book_id])
     @sale = Sale.find(params[:id])
     if @sale.valid?
       @sale.destroy
@@ -54,6 +50,14 @@ class SalesController < ApplicationController
   end
 
   private
+
+  def find_bookid
+    @book = Book.find(params[:id])
+  end
+
+  def find_book_id
+    @book = Book.find(params[:book_id])
+  end
 
   def sale_params
     params.require(:sale).permit(:status_id, :transfer_fee_id, :price).merge(book_id: params[:book_id])
