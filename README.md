@@ -74,13 +74,3 @@
 ### Association
 - belongs_to :user
 - belongs_to :book
-
-## lists
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| text   | string     | null: false                    |
-| user   | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
