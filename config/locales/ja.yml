@@ -17,3 +17,12 @@ ja:
         status_id: 本の状態
         transfer_fee_id: 配送料の負担
         price: 価格
+  activemodel:
+    attributes:
+      order_address:
+        token: クレジットカード情報
+        zip_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        street: 番地
+        phone_number: 電話番号

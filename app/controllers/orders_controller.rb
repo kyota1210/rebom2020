@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     @sale = Sale.find(params[:sale_id])
     book = @sale.book
     @order_address = OrderAddress.new(order_address_params)

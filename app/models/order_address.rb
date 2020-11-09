@@ -12,7 +12,7 @@ class OrderAddress
     validates :prefecture_id, numericality: { other_than: 0, message: 'が選択されていません' }
     validates :city
     validates :street
-    validates :phone_number, format: { with: MOBILE_REGEX, message: 'が正しく入力されていません' }
+    validates :phone_number, format: { with: MOBILE_REGEX, message: 'はハイフン無しで入力してください' }
   end
   
 
