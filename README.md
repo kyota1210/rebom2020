@@ -308,4 +308,4 @@ PASS: 1210
 
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/51120eedcfe1490ff92c375ac3dc4fd0.png)](https://gyazo.com/51120eedcfe1490ff92c375ac3dc4fd0)
+[![Image from Gyazo](https://i.gyazo.com/e762f3cdef2e2c68f2f5a654d76441c9.png)](https://gyazo.com/e762f3cdef2e2c68f2f5a654d76441c9)
