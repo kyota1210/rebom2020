@@ -1,8 +1,19 @@
 require 'rails_helper'
 
+def basic_pass(path)
+  username = ENV["BASIC_AUTH_USER"] 
+  password = ENV["BASIC_AUTH_PASSWORD"]
+  visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
+end
+
 RSpec.describe 'ユーザー新規登録', type: :system do
   before do
     @user = FactoryBot.build(:user)
+  end
+
+  it 'Basic認証の通過' do
+    basic_pass new_user_session_path
+    find('input[name="commit"]').click
   end
 
   context 'ユーザー新規登録ができるとき' do

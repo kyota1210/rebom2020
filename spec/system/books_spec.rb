@@ -1,8 +1,19 @@
 require 'rails_helper'
 
+def basic_pass(path)
+  username = ENV["BASIC_AUTH_USER"] 
+  password = ENV["BASIC_AUTH_PASSWORD"]
+  visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
+end
+
 RSpec.describe 'Books', type: :system do
   before do
     @book = FactoryBot.create(:book)
+  end
+
+  it 'Basic認証の通過' do
+    basic_pass new_user_session_path
+    find('input[name="commit"]').click
   end
 
   context '本の追加ができたとき' do
@@ -12,7 +23,7 @@ RSpec.describe 'Books', type: :system do
       # トップページに本の追加ボタンがあることを確認する
       expect(page).to have_content('追加する')
       # 本の追加ボタンを押す
-      click_on('追加する')
+      find('.add-btn').click
       # 本の追加ページに遷移する
       visit new_book_path
       # 画像選択フォームに画像を添付する
@@ -45,7 +56,7 @@ RSpec.describe 'Books', type: :system do
       # トップページに本の追加ボタンがあることを確認する
       expect(page).to have_content('追加する')
       # 本の追加ボタンを押す
-      click_on('追加する')
+      find('.add-btn').click
       # 本の追加ページに遷移する
       visit new_book_path
       # 画像選択フォームに画像を添付する
@@ -70,7 +81,7 @@ RSpec.describe 'Books', type: :system do
       # トップページに本の追加ボタンがあることを確認する
       expect(page).to have_content('追加する')
       # 本の追加ボタンを押す
-      click_on('追加する')
+      find('.add-btn').click
       # 本の追加ページに遷移する
       visit new_book_path
       # フォームの値が空であることを確認する

@@ -1,8 +1,19 @@
 require 'rails_helper'
 
+def basic_pass(path)
+  username = ENV["BASIC_AUTH_USER"] 
+  password = ENV["BASIC_AUTH_PASSWORD"]
+  visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
+end
+
 RSpec.describe 'Posts', type: :system do
   before do
     @post = FactoryBot.create(:post)
+  end
+
+  it 'Basic認証の通過' do
+    basic_pass new_user_session_path
+    find('input[name="commit"]').click
   end
 
   str1 = 'これで10文字です。これで20文字です。これで30文字です。これで40文字です。これで50文字です。これで60文字です。これで70文字です。これで80文字です。これで90文字です。これで100文字です。これで110文字以上です。'
