@@ -105,25 +105,6 @@ RSpec.describe 'Books', type: :system do
       it '本情報の編集がうまくいくと、トップページに遷移し、トップページとユーザー詳細ページに、追加した情報が表示されている' do
         # ログインする
         sign_in(@book.user)
-        # トップページに本の追加ボタンがあることを確認する
-        expect(page).to have_content('追加する')
-        # 本の追加ボタンを押す
-        find('.add-btn').click
-        # 本の追加ページに遷移する
-        visit new_book_path
-        # 画像選択フォームに画像を添付する
-        attach_file('book_image', Rails.root.join('public/images/test_image.png'))
-        # 本の情報を入力する
-        fill_in 'title', with: @book.title
-        fill_in 'author', with: @book.author
-        # '追加する'ボタンを押すと送信した情報がDBに保存されていることを確認する
-        expect { click_on('追加する') }.to change { Book.count }.by(1)
-        # トップページに遷移していることを確認する
-        expect(current_path).to eq root_path
-        # 追加した本の情報がトップページに表示されていることを確認する
-        expect(page).to have_selector('img')
-        expect(page).to have_content(@book.title)
-        expect(page).to have_content(@book.author)
         # トップページに'書斎へ行く'ボタンがあることを確認する
         expect(page).to have_content('書斎へ行く')
         # ユーザー詳細ページへ遷移する
@@ -151,25 +132,6 @@ RSpec.describe 'Books', type: :system do
       it 'フォームに不正な値が入力されて、本の追加ができなかったとき' do
         # ログインする
         sign_in(@book.user)
-        # トップページに本の追加ボタンがあることを確認する
-        expect(page).to have_content('追加する')
-        # 本の追加ボタンを押す
-        find('.add-btn').click
-        # 本の追加ページに遷移する
-        visit new_book_path
-        # 画像選択フォームに画像を添付する
-        attach_file('book_image', Rails.root.join('public/images/test_image.png'))
-        # 本の情報を入力する
-        fill_in 'title', with: @book.title
-        fill_in 'author', with: @book.author
-        # '追加する'ボタンを押すと送信した情報がDBに保存されていることを確認する
-        expect { click_on('追加する') }.to change { Book.count }.by(1)
-        # トップページに遷移していることを確認する
-        expect(current_path).to eq root_path
-        # 追加した本の情報がトップページに表示されていることを確認する
-        expect(page).to have_selector('img')
-        expect(page).to have_content(@book.title)
-        expect(page).to have_content(@book.author)
         # トップページに'書斎へ行く'ボタンがあることを確認する
         expect(page).to have_content('書斎へ行く')
         # ユーザー詳細ページへ遷移する
@@ -196,25 +158,6 @@ RSpec.describe 'Books', type: :system do
       it 'フォームが空で送信されて、本情報の編集がうまくいかないとき' do
         # ログインする
         sign_in(@book.user)
-        # トップページに本の追加ボタンがあることを確認する
-        expect(page).to have_content('追加する')
-        # 本の追加ボタンを押す
-        find('.add-btn').click
-        # 本の追加ページに遷移する
-        visit new_book_path
-        # 画像選択フォームに画像を添付する
-        attach_file('book_image', Rails.root.join('public/images/test_image.png'))
-        # 本の情報を入力する
-        fill_in 'title', with: @book.title
-        fill_in 'author', with: @book.author
-        # '追加する'ボタンを押すと送信した情報がDBに保存されていることを確認する
-        expect { click_on('追加する') }.to change { Book.count }.by(1)
-        # トップページに遷移していることを確認する
-        expect(current_path).to eq root_path
-        # 追加した本の情報がトップページに表示されていることを確認する
-        expect(page).to have_selector('img')
-        expect(page).to have_content(@book.title)
-        expect(page).to have_content(@book.author)
         # トップページに'書斎へ行く'ボタンがあることを確認する
         expect(page).to have_content('書斎へ行く')
         # ユーザー詳細ページへ遷移する
