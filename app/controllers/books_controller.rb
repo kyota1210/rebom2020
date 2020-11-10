@@ -34,8 +34,7 @@ class BooksController < ApplicationController
 
   def update
     tag = params[:book][:name].split(',')
-    if @book.valid?
-      @book.update(book_params)
+    if @book.update(book_params)
       @book.save_books(tag)
       redirect_to user_path(@book.user.id)
     else
