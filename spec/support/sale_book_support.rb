@@ -10,7 +10,7 @@ module SaleBookSupport
     find('.select-box2').click
     select '着払い(購入者負担)', from: 'item-shipping-fee-status'
     fill_in 'sale[price]', with: sale.price
-    expect{ click_on('出品する') }.to change { Sale.count }.by(1)
+    expect { click_on('出品する') }.to change { Sale.count }.by(1)
     expect(current_path).to eq "/users/#{book.user.id}"
     expect(page).to have_content('出品中')
   end

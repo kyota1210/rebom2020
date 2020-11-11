@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 def basic_pass(path)
-  username = ENV["BASIC_AUTH_USER"] 
-  password = ENV["BASIC_AUTH_PASSWORD"]
+  username = ENV['BASIC_AUTH_USER']
+  password = ENV['BASIC_AUTH_PASSWORD']
   visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
 end
 
@@ -118,8 +118,8 @@ RSpec.describe 'Books', type: :system do
         # 画像選択フォームに画像を添付する
         attach_file('book_image', Rails.root.join('public/images/test_image.png'))
         # 本の情報を編集した内容を入力する
-        book_title = "新タイトル"
-        book_author = "新著者"
+        book_title = '新タイトル'
+        book_author = '新著者'
         fill_in 'title', with: book_title
         fill_in 'author', with: book_author
         # '追加する'ボタンを押す

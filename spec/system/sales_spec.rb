@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 def basic_pass(path)
-  username = ENV["BASIC_AUTH_USER"] 
-  password = ENV["BASIC_AUTH_PASSWORD"]
+  username = ENV['BASIC_AUTH_USER']
+  password = ENV['BASIC_AUTH_PASSWORD']
   visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
 end
 
-RSpec.describe "Sales", type: :system do
+RSpec.describe 'Sales', type: :system do
   before do
     @sale = FactoryBot.create(:sale)
     @book = FactoryBot.create(:book)
@@ -48,8 +48,8 @@ RSpec.describe "Sales", type: :system do
         select '着払い(購入者負担)', from: 'item-shipping-fee-status'
         # 本の価格を入力する
         fill_in 'sale[price]', with: '200'
-        #「出品する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
-        expect{ click_on('出品する') }.to change { Sale.count }.by(0)
+        # 「出品する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
+        expect { click_on('出品する') }.to change { Sale.count }.by(0)
         # エラーメッセージが出ていることを確認する
         expect(page).to have_content('価格は¥300~9,999,999で入力してください')
       end
@@ -68,8 +68,8 @@ RSpec.describe "Sales", type: :system do
         visit new_sale_path(id: @book.id)
         # 本の価格を入力する
         fill_in 'sale[price]', with: ''
-        #「出品する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
-        expect{ click_on('出品する') }.to change { Sale.count }.by(0)
+        # 「出品する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
+        expect { click_on('出品する') }.to change { Sale.count }.by(0)
         # エラーメッセージが出ていることを確認する
         expect(page).to have_content('本の状態が選択されていません')
         expect(page).to have_content('配送料の負担が選択されていません')
@@ -98,7 +98,7 @@ RSpec.describe "Sales", type: :system do
         select '着払い(購入者負担)', from: 'item-shipping-fee-status'
         # 本の価格を入力する
         fill_in 'sale[price]', with: @sale.price
-        #「更新する」ボタンを押す
+        # 「更新する」ボタンを押す
         click_on('更新する')
         # ユーザー詳細ページに遷移していることを確認する
         expect(current_path).to eq user_path(@book.user)
@@ -122,8 +122,8 @@ RSpec.describe "Sales", type: :system do
         select '着払い(購入者負担)', from: 'item-shipping-fee-status'
         # 本の価格を入力する
         fill_in 'sale[price]', with: '100'
-        #「更新する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
-        expect{ click_on('更新する') }.to change { Sale.count }.by(0)
+        # 「更新する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
+        expect { click_on('更新する') }.to change { Sale.count }.by(0)
       end
       it 'フォームが空で送信されて本の出品情報の編集ができないとき' do
         # ログインする
@@ -142,8 +142,8 @@ RSpec.describe "Sales", type: :system do
         select '---', from: 'item-shipping-fee-status'
         # 本の価格を入力する
         fill_in 'sale[price]', with: ''
-        #「更新する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
-        expect{ click_on('更新する') }.to change { Sale.count }.by(0)
+        # 「更新する」ボタンを押しても、送信した情報がDBに保存されていないことを確認する
+        expect { click_on('更新する') }.to change { Sale.count }.by(0)
       end
     end
     context '本の出品を取り消すとき' do
@@ -159,7 +159,7 @@ RSpec.describe "Sales", type: :system do
         # 出品を取り消すボタンがあることを確認する
         expect(page).to have_content('出品を取り消す')
         # 出品を取り消すボタンを押すと、情報がDBから削除されることを確認する
-        expect{ click_on('出品を取り消す') }.to change { Sale.count }.by(-1)
+        expect { click_on('出品を取り消す') }.to change { Sale.count }.by(-1)
         # トップページに戻ってくることを確認する
         expect(current_path).to eq root_path
         # 出品中マークが表示されていないことを確認する
@@ -177,7 +177,7 @@ RSpec.describe "Sales", type: :system do
         # 出品を取り消すボタンがあることを確認する
         expect(page).to have_content('出品を取り消す')
         # 出品を取り消すボタンを押すと、情報がDBから削除されることを確認する
-        expect{ click_on('出品を取り消す') }.to change { Sale.count }.by(-1)
+        expect { click_on('出品を取り消す') }.to change { Sale.count }.by(-1)
         # トップページに戻ってくることを確認する
         expect(current_path).to eq root_path
         # 出品中マークが表示されていないことを確認する

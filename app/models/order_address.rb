@@ -14,7 +14,6 @@ class OrderAddress
     validates :street
     validates :phone_number, format: { with: MOBILE_REGEX, message: 'はハイフン無しで入力してください' }
   end
-  
 
   def save
     order = Order.create(user_id: user_id, sale_id: sale_id)
