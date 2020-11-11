@@ -26,13 +26,13 @@
           本の状態
           <span class="indispensable">必須</span>
           </div>
-            <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+            <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box1", id:"item-sales-status"}) %>
           <div class="items-detail">
             <div class="weight-bold-text">
             配送料の負担
             <span class="indispensable">必須</span>
             </div>
-            <%= f.collection_select(:transfer_fee_id, TransferFee.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+            <%= f.collection_select(:transfer_fee_id, TransferFee.all, :id, :name, {}, {class:"select-box2", id:"item-shipping-fee-status"}) %>
         </div>
       </div>
     </div>
@@ -65,6 +65,11 @@
     </div>
     <%= render 'shared/error_messages', model: f.object %>
     <div class="sell-btn-contents">
+      <% if user_signed_in? && current_user.id == @book.user.id %>
+        <div class="delete-order">
+          <%= link_to "出品を取り消す", sale_path(book_id: @book.id, id: @sale.id), method: :delete, class:"move-order-btn" %>
+        </div>
+      <% end %>
       <%= f.submit "更新する", class:"sell-btn" %>
       <%=link_to 'もどる', user_path(@book.user.id), class:"back-button" %>
     </div>
