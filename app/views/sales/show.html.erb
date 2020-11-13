@@ -47,7 +47,7 @@
   <div class="order">
     <% if user_signed_in? && current_user.id == @book.user.id %>
       <div class="move-order">
-      <%= link_to "出品を取り消す", sale_path(book_id: @book.id, id: @sale.id), method: :delete, class:"move-order-btn" %>
+      <%= link_to "出品を取り消す", sale_path(book_id: @book.id, id: @sale.id), method: :delete, class:"move-order-btn", data: {confirm: "出品を取り消します。"} %>
       </div>
     <% else %>
     <div class="move-order">
