@@ -32,7 +32,7 @@
           <% if user_signed_in? && current_user.id == @post.book.user.id %>
             <div class="only-post-user">
               <%= link_to '編集', edit_book_post_path(@post.book.id),class:"post-edit action-btn"  %>
-              <%= link_to '削除', book_post_path(@post.book.id), method: :delete, class:"post-delete action-btn" %>
+              <%= link_to '削除', book_post_path(@post.book.id), method: :delete, class:"post-delete action-btn", data: {confirm: "削除してもよろしいですか？"} %>
             </div>
           <% end %>
         </div>

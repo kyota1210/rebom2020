@@ -83,7 +83,7 @@
                   <%= link_to '編集', edit_book_path(book), class:"edit-button" %>
                 </li>
                 <li>
-                  <%= link_to '削除', book_path(book), method: :delete, class:"delete-button" %>
+                  <%= link_to '削除', book_path(book), method: :delete, class:"delete-button", data: {confirm: "削除してもよろしいですか？"} %>
                 </li>
               </ul>
             </div>
