@@ -6,7 +6,7 @@ def basic_pass(path)
   visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
 end
 
-RSpec.describe "OrderAddresses", type: :system do
+RSpec.describe 'OrderAddresses', type: :system do
   before do
     @book = FactoryBot.create(:book)
     @sale = FactoryBot.create(:sale)
@@ -18,7 +18,6 @@ RSpec.describe "OrderAddresses", type: :system do
     basic_pass new_user_session_path
     find('input[name="commit"]').click
   end
-
 
   context '正しい情報を入力して、本の購入ができるとき' do
     it '本の購入に成功する' do
@@ -37,7 +36,7 @@ RSpec.describe "OrderAddresses", type: :system do
       click_on('購入画面へ行く')
       visit sale_orders_path(@sale)
       # クレジットカード情報を入力する
-      fill_in 'card-number', with: 4242424242424242
+      fill_in 'card-number', with: 4_242_424_242_424_242
       fill_in 'card-exp-month', with: 3
       fill_in 'card-exp-year', with: 30
       fill_in 'card-cvc', with: 123
@@ -111,7 +110,7 @@ RSpec.describe "OrderAddresses", type: :system do
       click_on('購入画面へ行く')
       visit sale_orders_path(@sale)
       # クレジットカード情報を入力する
-      fill_in 'card-number', with: 4242424242424241
+      fill_in 'card-number', with: 4_242_424_242_424_241
       fill_in 'card-exp-month', with: 3
       fill_in 'card-exp-year', with: 3
       fill_in 'card-cvc', with: 456
@@ -144,12 +143,12 @@ RSpec.describe "OrderAddresses", type: :system do
       click_on('購入画面へ行く')
       visit sale_orders_path(@sale)
       # クレジットカード情報を入力する
-      fill_in 'card-number', with: 4242424242424242
+      fill_in 'card-number', with: 4_242_424_242_424_242
       fill_in 'card-exp-month', with: 3
       fill_in 'card-exp-year', with: 30
       fill_in 'card-cvc', with: 123
       # 購入者情報を入力する
-      fill_in 'postal-code', with: 1234567
+      fill_in 'postal-code', with: 1_234_567
       fill_in 'city', with: @order_address.city
       fill_in 'addresses', with: @order_address.street
       fill_in 'building', with: @order_address.building
