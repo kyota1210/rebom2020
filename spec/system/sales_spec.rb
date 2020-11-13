@@ -158,8 +158,13 @@ RSpec.describe 'Sales', type: :system do
         click_on('出品中')
         # 出品を取り消すボタンがあることを確認する
         expect(page).to have_content('出品を取り消す')
-        # 出品を取り消すボタンを押すと、情報がDBから削除されることを確認する
-        expect { click_on('出品を取り消す') }.to change { Sale.count }.by(-1)
+        # 出品を取り消すボタンを押すと確認アラートが表示され、OKボタンを押すと情報がDBから削除されることを確認する
+        expect {
+          click_on('出品を取り消す')
+          expect(page.driver.browser.switch_to.alert.text).to eq "出品を取り消します。"
+          page.driver.browser.switch_to.alert.accept
+          expect(page).to have_no_content('出品中')
+        }.to change{ Sale.count }.by(-1)
         # トップページに戻ってくることを確認する
         expect(current_path).to eq root_path
         # 出品中マークが表示されていないことを確認する
@@ -176,8 +181,14 @@ RSpec.describe 'Sales', type: :system do
         visit edit_sale_path(@book)
         # 出品を取り消すボタンがあることを確認する
         expect(page).to have_content('出品を取り消す')
-        # 出品を取り消すボタンを押すと、情報がDBから削除されることを確認する
-        expect { click_on('出品を取り消す') }.to change { Sale.count }.by(-1)
+        # 出品を取り消すボタンを押すと確認アラートが表示され、OKボタンを押すとことを確認する
+        expect {
+          click_on('出品を取り消す')
+          expect(page.driver.browser.switch_to.alert.text).to eq "出品を取り消します。"
+          page.driver.browser.switch_to.alert.accept
+          # 出品中マークが表示されていないことを確認する
+          expect(page).to have_no_content('出品中')
+        }.to change{ Sale.count }.by(-1)
         # トップページに戻ってくることを確認する
         expect(current_path).to eq root_path
         # 出品中マークが表示されていないことを確認する
