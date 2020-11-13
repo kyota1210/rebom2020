@@ -148,13 +148,33 @@ PASS: 1210
 スマホやタブレットに対応していないことで、手軽さには大きく欠けています。今後、レスポンシブ対応を実装していく必要があると考えています。<br>
 また、より本を読む習慣作りをサポートしていくためにリマインド機能や気になる本に投稿があった際に通知されるような機能を実装していきたいと考えています。
 
-## 開発環境
+## 使用技術 (開発環境)
+### フロントエンド
+HTML / CSS / JavaScript / Ajax
 
-* 言語：HTML / CSS / Ruby(2.6.5) / JavaScript
-* フレームワーク：Ruby on Rails(6.0.3.4)
-* データベース：MySQL
-* 運用環境： AWS(EC2, S3)
-* その他：GitHub / Visual Studio Code
+### バックエンド
+Ruby(2.6.5) / Ruby on Rails(6.0.3.4)
+
+### データベース
+MySQL / SequelPro
+
+### インフラ
+AWS(EC2, S3) / Capistrano 
+
+### Webサーバー(本番環境)
+Nginx
+
+### アプリケーションサーバー (本番環境)
+Unicorn
+
+### ソース管理
+GitHub / GitHubDesktop
+
+### テスト
+RSpec
+
+### エディタ
+Visual Studio Code
 
 
 ## 要件定義
