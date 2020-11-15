@@ -153,7 +153,7 @@ PASS: 1210
 HTML / CSS / JavaScript / Ajax
 
 ### バックエンド
-Ruby(2.6.5) / Ruby on Rails(6.0.3.4)
+Ruby(2.6.5) / Ruby on Rails(6.0)
 
 ### データベース
 MySQL / SequelPro
