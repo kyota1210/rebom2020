@@ -1,3 +1,331 @@
-// Place all the styles related to the books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$color1: #eeeae4;
+$color2: #354e59;
+
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-books-wrapper{
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 110px);
+}
+
+.left-side-bar{
+  width: 260px;
+  background-color: #6e5e46;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.left-bar-top{
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 18px;
+  color: $color1;
+}
+
+.move-to-user{
+  margin-top: 20px;
+}
+.move-user{
+  display: inline-block;
+  width: 100%;
+  height: 8vh;
+  line-height: 8vh;
+  color: $color1;
+  &:hover{
+    background-color: #738e99;
+  }
+}
+
+.left-bar-list{
+  margin-top: 50px;
+  .left-content-lists{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.content-btn{
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: $color1;
+  &:hover{
+    background-color: $color2;
+    color: $color1;
+  }
+}
+.gest{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: $color1;
+}
+
+/* ここから投稿一覧 */
+.books-timeline{
+  background-color: $color1;
+  width: calc(100vw - 260px);
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: scroll;
+  display: flex;
+}
+.books-container{
+  width: 100%;
+}
+.book-lists{
+  display: flex;
+  flex-wrap: wrap;
+}
+.content{
+  width: 48%;
+  height: 33vh;
+  border-radius: 0.3em;
+  background-color:#ad9f8aa9;
+  display: flex;
+  margin: 8px auto;
+  position: relative;
+}
+.book-img-content{
+  margin: 20px 15px;
+  text-align: center;
+}
+.book-img{
+  width: 11vw;
+  height: 28vh;
+  border-radius: 0.3em;
+}
+
+.book-info{
+  width: 60%;
+}
+.book-title{
+  width: 96%;
+  margin-top: 40px;
+  padding-left: 5px;
+  font-size: 18px;
+}
+.book-author{
+  padding: 10px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+.sell-status{
+  margin: 30px 10px 0 20px;
+}
+.selling-btn{
+  font-size: 0.5rem;
+  padding: 6px 10px;
+  border: 2px solid #c24040;
+  border-radius: 0.5em;
+  color: azure;
+  background-color: #c24040;
+}
+.star-btn{
+  position: absolute;
+  bottom: 18px;
+  right: 30px;
+}
+.delete-fav, .post-fav{
+  font-size: 20px;
+  color: $color2;
+}
+
+/* 一覧投稿ここまで */
+.right-side-bar{
+  width: 260px;
+  background-color: #738e99;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+// 本の新規追加ページ
+
+.form-wrapper{
+  width: 70%;
+  margin: 0 auto;
+}
+.book-btn {
+  width: 50%;
+  margin: 35px auto 50px; 
+  text-align: center;
+}
+.book-indigo-btn {
+  width: 60%;
+  background: $color2;
+  border: 1px solid $color2;
+  opacity: 93%;
+  border-radius: 0.5em;
+  color: #e6dcd8;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover{
+    opacity: 1;
+  }
+}
+// 本の新規追加ページここまで
+
+// 本の詳細ページ
+@mixin back-btn{
+  width: 70px;
+  height: 70px;
+  margin: 70px auto;
+  border: 4px solid $color2;
+  border-radius: 5em;
+}
+
+.book-content-wrapper{
+  overflow: scroll;
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 120px);
+}
+.main-books-wrapper{
+  overflow: scroll;
+}
+.back-btn-wrapper{
+  width: 13%;
+}
+.home-back-btn-container{
+  @include back-btn;
+  &:hover{
+    background-color: #ad9f8a;
+  }
+}
+.back-btn-container{
+  @include back-btn;
+  &:hover{
+    background-color: #ad9f8a;
+  }
+}
+.back-btn-icon{
+  margin: 13px ;
+  width: 60%;
+  height: 70%;
+}
+.left-side-container{
+  width: 350px;
+  height: 560px;
+  margin: 40px 0;
+  background-color: #ad9f8a;
+  display: flex;
+  justify-content: center;
+}
+.left-side-contents{
+  width: 90%;
+  text-align: center;
+}
+.book-image{
+  margin-top: 30px;
+}
+.left-bar{
+  padding: 10px 0;
+  font-size: 18px;
+}
+.book-tags{
+  margin-top: 20px;
+  color: $color2;
+  font-size: 20px;
+}
+.tag{
+  color: $color2;
+  width: 100%;
+  height: 28px;
+  margin: 10px auto;
+}
+.post-user-account{
+  margin-top: 30px;
+  text-align: center;
+}
+.user-account{
+  color: black;
+  &:hover{
+    border-bottom: 1px solid $color2;
+  }
+}
+
+/* ここから記事投稿一覧 */
+.posts-index{
+  width: 60%;
+  height: 560px;
+  padding: 10px 0 50px;
+  margin: 40px 120px 0 20px;
+  background-color: #d2c6b6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* アウトプットボタン */
+.create-content-btn{
+  display: inline-block;
+}
+.add-btn-post{
+  color: $color1;
+  font-size: 1.2rem;
+  width: 30vw;
+  height: 60px;
+  margin: 20px;
+  border-radius: 0.5rem;
+  background-color: $color2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    background-color: #273d46;
+  }
+}
+/* アウトプットボタンここまで */
+
+.post-contents-wrapper{
+  width: 100%;
+  padding-bottom: 60px;
+  margin:10px auto 40px;
+  background-color:#d2c6b6;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.post-contents{
+  margin: 0 auto;
+  width: 92%;
+}
+.post{
+  width: 100%;
+  height: 18vh;
+  padding: 1rem 1.5rem;
+  margin: 15px auto;
+  border: 1px solid $color2;
+  border-radius: 0.5rem;
+  color: $color2;
+  background-color: $color1;
+  text-align: justify;
+  position: relative;
+}
+.post-date{
+  font-size: 1rem;
+  position: absolute;
+  bottom: 8px;
+  right: 15px;
+  color: $color2;
+}
+
+.highlight-content{
+  margin: 10px auto;
+  font-size: 1.2rem;
+}
+
+.highlight-btn{
+  color: $color2;
+  &:hover{
+    color: #c24040;
+  border-bottom: 1px solid #c24040;
+  }
+}
+// 本の詳細ページここまで
