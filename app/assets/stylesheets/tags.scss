@@ -1,6 +1,4 @@
-// Place all the styles related to the tags controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$font-color: azure;
 
 .tag-book-wrapper{
   display: flex;
@@ -16,7 +14,7 @@
 .right-side-bar h3{
   padding: 20px;
   font-size: 18px;
-  color: azure;
+  color: $font-color;
 }
 .tag-index{
   height: 62%;
@@ -24,12 +22,12 @@
   overflow: scroll;
   p{
     padding: 4px;
-    color: azure;
+    color: $font-color;
     background-color: #738e99;
   }
 }
 
 .tag-name{
-  color: azure;
+  color: $font-color;
 }
 
