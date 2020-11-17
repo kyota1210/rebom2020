@@ -1,3 +1,129 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$color1: #eeeae4;
+$color2: #354e59;
+
+// 投稿の新規作成ページ
+.post-wrapper{
+  width: 100%;
+  text-align: center;
+}
+.post-form{
+  padding: 40px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
+.highlight-box{
+  margin: 10px auto;
+}
+.highlight-form{
+  width: 50vw;
+  padding: 13px 18px;
+  font-size: 20px;
+}
+.text-area{
+  width: 50vw;
+  height: 25vh;
+  padding: 15px 20px;
+  font-size: 18px;
+}
+.tag-field{
+  width: 25%;
+  margin: 30px auto;
+}
+.input-tag{
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.text-box{
+  position: relative;
+}
+.count-character{
+  position: absolute;
+  bottom: -25px;
+  right: 320px;
+  color: $color2;
+}
+.save-btn{
+  margin: 35px auto 20px;
+}
+.save{
+  padding: 10px 40px;
+  font-size: 19px;
+  line-height: 40px;
+  background: $color2;
+  opacity: 93%;
+  border: 1px solid $color2;
+  font-size: 18px;
+  border-radius: 0.5em;
+  color: rgb(255, 255, 255);
+  &:hover{
+    opacity: 1;
+  }
+}
+// 投稿の新規作成ページここまで
+
+// 投稿詳細ページ
+.left-bar-book-title{
+  width: 94%;
+  margin: 15px auto;
+}
+.left-bottom-contents{
+  margin: 25px;
+}
+
+.action-btn{
+  font-size: 0.3rem;
+  border-radius: 0.5rem;
+  padding: 8px 16px;
+}
+.post-edit{
+  background-color: #738e99;
+  border: 1px solid #528395;
+  border-radius: 0.5rem;
+  color: azure;
+  &:hover{
+    background-color: #528395;
+  }
+}
+.post-delete{
+  margin-left: 10px;
+  color: rgb(71, 71, 71);
+  border: 1px solid rgb(71, 71, 71);
+  &:hover{
+    color: black;
+  background-color: rgb(131, 130, 130);
+  }
+}
+
+.post-top-content{
+  background-color: rgba(100, 148, 237, 0.461);
+  width: 90%;
+  margin-top: 19px;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5em;
+  color: $color2;
+}
+.highlight{
+  width: 100%;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+.post-bottom-content{
+  width: 90%;
+  padding: 20px 30px 50px;
+  margin-top: 25px;
+  border-radius: 0.5em;
+  color: $color2;
+  background-color: $color1;
+  position: relative;
+}
+.post-text{
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+.post-time{
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
