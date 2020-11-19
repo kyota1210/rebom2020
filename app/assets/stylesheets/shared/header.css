@@ -38,7 +38,6 @@
 
 .top-login-btn{
   color: #eeeae4;
-  text-decoration: none;
   padding: 10px 20px;
   display: block;
 }
@@ -48,7 +47,6 @@
 .sign-up-btn{
   color: #eeeae4;
   background-color: #738e99;
-  text-decoration: none;
   padding: 10px 20px;
   display: block;
 }
