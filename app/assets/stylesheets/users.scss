@@ -190,7 +190,11 @@ $color7: #738e99;
     background-color:  #233d47;
   }
 }
-
+@mixin action {
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-radius: 0.5em;
+}
 // 投稿一覧部分
 .user-book-lists{
   display: flex;
@@ -208,10 +212,8 @@ $color7: #738e99;
   justify-content: space-around;
 }
 .sell-button{
-  padding: 6px 10px;
-  margin-right: 5px;
+  @include action;
   border: 2px solid $color4;
-  border-radius: 0.5em;
   color: $color4;
   &:hover{
     color: azure;
@@ -219,18 +221,14 @@ $color7: #738e99;
   }
 }
 .selling-button{
-  padding: 6px 10px;
-  margin-right: 5px;
+  @include action;
   border: 2px solid $color4;
-  border-radius: 0.5em;
   color: azure;
   background-color: $color4;
 }
 .edit-button{
-  padding: 6px 10px;
-  margin-right: 5px;
+  @include action;
   border: 2px solid $color7;
-  border-radius: 0.5em;
   color: #5a7883;
   &:hover{
     color: azure;
@@ -245,3 +243,99 @@ $color7: #738e99;
   }
 }
 // ユーザー詳細ページここまで
+
+
+
+
+@mixin action {
+  padding: 2px 4px;
+  margin-right: 5px;
+  border-radius: 0.5em;
+}
+@mixin font {
+  font-size: 8px;
+}
+// レスポンシブ実装
+@media (max-width: 500px) {
+  // ユーザー新規登録ページ
+.registration-main {
+  min-width: 300px;
+}
+.form-wrap {
+  background-color: $color6;
+  width: 80%;
+}
+.form-header {
+  font-size: 22px;
+}
+.form-text {
+  font-size: 14px;
+}
+.indispensable{
+  @include font;
+}
+.info-text {
+  @include font;
+}
+.form-info-text {
+  @include font;
+}
+.form-bottom-text {
+  font-size: 5px;
+}
+
+// ユーザー新規登録ページここまで
+
+// ユーザーログインページ
+// 新規登録の方はこちら
+.move-registration{
+  width: 60%;
+  height: 40px;
+}
+.new-ragistration{
+  font-size: 15px;
+  text-align: center;
+  padding: 5px 10px;
+}
+// ユーザーログインページここまで
+
+  // ユーザー詳細ページ
+.user-image{
+  margin-top: 28px;
+}
+.user-icon{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.user-text{
+  display: none;
+}
+.logout-btn{
+  margin: 100px auto 0;
+}
+.bottom-logout-btn{
+  padding: 6px 8px;
+  font-size: 6px;
+}
+
+// 投稿一覧部分
+.action-button{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+.action-lists{
+  font-size: 6px;
+}
+.sell-button{
+  @include action;
+}
+.selling-button{
+  @include action;
+}
+.edit-button{
+  @include action;
+}
+// ユーザー詳細ページここまで
+}
