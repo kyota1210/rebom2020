@@ -333,26 +333,18 @@ $color2: #354e59;
 @media (max-width: 500px){
   .main-books-wrapper{
     display: flex;
-    width: 100vw;
     height: calc(100vh - 60px);
   }
   .right-side-bar{
     width: 0px;
   }
-
   .left-side-bar{
     width: 80px;
-    background-color: #6e5e46;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
   }
-  
   .left-bar-top{
     margin: 0 auto;
     padding-top: 10px;
     font-size: 5px;
-    color: $color1;
   }
   .user-icon{
     width: 60px;
@@ -369,10 +361,6 @@ $color2: #354e59;
     width: 100%;
     height: 8vh;
     line-height: 8vh;
-    color: $color1;
-    &:hover{
-      background-color: #738e99;
-    }
   }
   
   .left-bar-list{
@@ -389,27 +377,16 @@ $color2: #354e59;
     height: 50px;
     line-height: 50px;
     font-size: 6px;
-    color: $color1;
-    &:hover{
-      background-color: $color2;
-      color: $color1;
-    }
   }
   .gest{
-    margin-top: 50px;
-    text-align: center;
     font-size: 6px;
-    color: $color1;
   }
 
   /* ここから投稿一覧 */
 .books-timeline{
-  background-color: $color1;
   width: calc(100vw - 80px);
   padding: 20px;
   margin-bottom: 20px;
-  overflow: scroll;
-  display: flex;
 }
 .books-container{
   width: 100%;
@@ -422,8 +399,6 @@ $color2: #354e59;
 .content{
   width: 100%;
   height: 20vh;
-  border-radius: 0.3em;
-  background-color:#ad9f8aa9;
   display: flex;
   margin: 8px auto;
   position: relative;
@@ -433,7 +408,6 @@ $color2: #354e59;
   text-align: center;
 }
 .book-img{
-  background-color: brown;
   width: 20vw;
   height: 15vh;
   border-radius: 0.3em;
@@ -452,16 +426,17 @@ $color2: #354e59;
   margin: 0 auto;
   font-size: 8px;
 }
+.tag{
+  font-size: 12px;
+}
 .sell-status{
-  margin: 8px;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
 }
 .selling-btn{
   font-size: 0.5rem;
   padding: 2px 6px;
-  border: 2px solid #c24040;
-  border-radius: 0.5em;
-  color: azure;
-  background-color: #c24040;
 }
 .star-btn{
   position: absolute;
@@ -470,7 +445,62 @@ $color2: #354e59;
 }
 .delete-fav, .post-fav{
   font-size: 18px;
-  color: $color2;
+}
+}
+// 本の新規追加ページ
+
+.form-wrapper{
+  width: 80%;
+  margin: 0 auto;
+}
+.book-btn {
+  width: 50%;
+  margin: 35px auto 50px; 
+  text-align: center;
+}
+.form-header-text {
+  line-height: 50px;
+  font-size: 15px;
+}
+// 本の新規追加ページここまで
+
+// 本の詳細ページ
+.show-books-wrapper{
+  overflow: scroll;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
+.left-side-container{
+  width: 90%;
+  height: 300px;
+  margin: 20px auto;
 }
+
+.book-tags{
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+/* ここから記事投稿一覧 */
+/* アウトプットボタン */
+.add-btn-post{
+  font-size: 1rem;
+  width: 100%;
+  margin: 20px auto;
+  padding: 8px 16px;
+}
+/* アウトプットボタンここまで */
+.posts-index{
+  width: 90%;
+  margin: 20px auto;
+}
+.post{
+  width: 90%;
+}
+.highlight-content{
+  margin: 10px auto;
+  font-size: 1rem;
+}
+// 本の詳細ページここまで
