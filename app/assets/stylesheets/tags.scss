@@ -11,7 +11,7 @@ $font-color: azure;
   margin: 10px;
 }
 
-.right-side-bar h3{
+.right-side-bar2 h3{
   padding: 20px;
   font-size: 18px;
   color: $font-color;
@@ -26,7 +26,42 @@ $font-color: azure;
     background-color: #738e99;
   }
 }
-
 .tag-name{
   color: $font-color;
+}
+
+@media (max-width: 500px) {
+.tag-book-wrapper{
+  height: calc(100vh - 80px);
+}
+.books-container h1{
+  text-align: center;
+  font-size: 25px;
+  margin: 10px;
+}
+.right-side-bar2{
+  width: 100px;
+  background-color: #738e99;
+}
+.left-side-bar2{
+  display: none;
+}
+.right-side-bar2 h3{
+  padding: 20px 10px;
+  font-size: 5px;
+}
+.tag-index{
+  height: 75%;
+  padding-bottom: 40px;
+  p{
+    padding: 8px;
+  }
+}
+.tag-field{
+  width: 60%;
+}
+.input-tag{
+  width: 80%;
+  margin: 20px auto;
+}
 }
