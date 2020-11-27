@@ -67,3 +67,77 @@
   height: 35px;
   background-color: rgb(202, 213, 232)
 }
+
+@media (max-width: 500px){
+  .header{
+    width: 100vw;
+    height: 80px;
+    background-color: #354e59;
+  }
+  .container{
+    margin: 0 auto;
+    width: 95%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .top-icon{
+    width: 35px;
+    height: 35px;
+    background-color: #738e99;
+    border-radius: 0.5em;
+  }
+  .header-text{
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .header-right-contents{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .login{
+    border: 1px solid #e6dcd8;
+    margin-right: 15px;
+  }
+  .sign-up{
+    border: 1px solid #e6dcd8;
+  }
+  
+  .top-login-btn{
+    color: #eeeae4;
+    padding: 10px 20px;
+    display: block;
+  }
+  .top-login-btn:hover{
+    background-color: #243e49;
+  }
+  .sign-up-btn{
+    color: #eeeae4;
+    background-color: #738e99;
+    padding: 10px 20px;
+    display: block;
+  }
+  .sign-up-btn:hover{
+    background-color:#577a88;
+  }
+  
+  .search-area{
+    width: 180px;
+    height: 35px;
+  }
+  .search-input{
+    width: 75%;
+    height: 28px;
+    padding: 5px 10px;
+  }
+  .search-btn{
+    height: 28px;
+    background-color: rgb(202, 213, 232)
+  }
+}

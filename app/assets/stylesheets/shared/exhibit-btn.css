@@ -33,3 +33,38 @@
   font-size: 50px;
   color: #fff;
 }
+
+@media (max-width: 500px){
+  .add-btn {
+    width: 90px;
+    height: 90px;
+    background:#354e59 ;
+    text-align: center;
+    border-radius: 0.5em;
+    bottom: 36px;
+    right: 40px;
+    position: fixed;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .add-btn-text {
+    color: #fff;
+    display: block;
+    font-size: 3px;
+    margin-bottom: 5px;
+  }
+  
+  .add-btn-icon {
+    margin-top: 1px;
+    width: 70%;
+    height: 60%;
+  }
+  
+  .top-icon{
+    margin-top: 5px;
+    width: 10%;
+    height: 90%;
+  }
+  
+}
