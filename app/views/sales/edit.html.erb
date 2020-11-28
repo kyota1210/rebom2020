@@ -66,7 +66,7 @@
     <%= render 'shared/error_messages', model: f.object %>
     <div class="sell-btn-contents">
       <% if user_signed_in? && current_user.id == @book.user.id %>
-        <div class="delete-order">
+        <div class="move-order">
           <%= link_to "出品を取り消す", sale_path(book_id: @book.id, id: @sale.id), method: :delete, class:"move-order-btn", data: {confirm: "出品を取り消します。"} %>
         </div>
       <% end %>
