@@ -127,3 +127,43 @@ $color2: #354e59;
   bottom: 15px;
   right: 20px;
 }
+
+// レスポンシブ実装
+@media(max-width: 500px) {
+  .back-btn-wrapper{
+    display: none;
+  }
+
+  // 投稿の新規作成ページ
+.post-wrapper{
+  width: 100%;
+  text-align: center;
+}
+.post-form{
+  padding: 40px;
+}
+.highlight-box{
+  margin: 10px auto;
+}
+.highlight-form{
+  width: 100%;
+  height: 13vh;
+  padding: 13px 18px;
+  font-size: 15px;
+}
+.text-area{
+  width: 100%;
+  height: 36vh;
+  padding: 15px 20px;
+  font-size: 15px;
+}
+.count-character{
+  position: absolute;
+  bottom: -10%;
+  right: 5%;
+}
+.save-btn{
+  margin: 20% auto 0;
+}
+// 投稿の新規作成ページここまで
+}
