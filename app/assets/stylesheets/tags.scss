@@ -10,7 +10,13 @@ $font-color: azure;
   font-size: 30px;
   margin: 10px;
 }
-
+.right-side-bar2{
+  width: 260px;
+  background-color: #738e99;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
 .right-side-bar2 h3{
   padding: 20px;
   font-size: 18px;
