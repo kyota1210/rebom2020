@@ -127,6 +127,8 @@ $color2: #354e59;
   bottom: 15px;
   right: 20px;
 }
+// 投稿詳細ページここまで
+
 
 // レスポンシブ実装
 @media(max-width: 500px) {
@@ -166,4 +168,18 @@ $color2: #354e59;
   margin: 20% auto 0;
 }
 // 投稿の新規作成ページここまで
+
+// 投稿詳細ページ
+.left-bottom-contents{
+  margin: 5%;
+}
+.action-btn{
+  padding: 5px 12px;
+}
+.highlight{
+  font-size: 1rem;
+}
+.post-text{
+  font-size: 1rem;
+}
 }
