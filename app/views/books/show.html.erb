@@ -22,9 +22,11 @@
   <div class="show-books-wrapper">
     <div class="left-side-container">
       <div class="left-side-contents">
+        <div class="max-width">
         <div class="book-image">
           <%= image_tag(rails_blob_path(@book.image), class: "book-img", alt: "本の画像") %>
         </div>
+        <div class="max-width-content">
         <div class="left-bar">
           <%= @book.title %>
         </div>
@@ -42,6 +44,8 @@
           <span>さんの投稿</span>
         </div>
         <% end %>
+        </div>
+        </div>
       </div>
     </div>
 

@@ -448,12 +448,31 @@ $color2: #354e59;
 }
 .left-side-container{
   width: 90%;
-  height: 300px;
+  height: 100%;
   margin: 20px auto;
+  padding: 1rem 0;
+}
+.left-side-contents{
+  width: 90%;
+  text-align: center;
+}
+.max-width{
+  display: flex;
+  justify-content: space-around;
+}
+.book-image{
+  margin: 1rem 0;
+  width: 40%;
+}
+.max-width-content{
+  width: 60%;
+}
+.left-bar{
+  font-size: 1rem;
 }
 .book-tags{
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 /* ここから記事投稿一覧 */
@@ -471,9 +490,11 @@ $color2: #354e59;
 }
 .post{
   width: 90%;
+  height: 18vh;
+  position: static;
 }
 .highlight-content{
-  margin: 10px auto;
+  margin: 0.2rem auto;
   font-size: 1rem;
 }
 // 本の詳細ページここまで
