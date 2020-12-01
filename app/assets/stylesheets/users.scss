@@ -249,8 +249,9 @@ $color7: #738e99;
 
 @mixin action {
   padding: 2px 4px;
-  margin-right: 5px;
+  margin-right: 3px;
   border-radius: 0.5em;
+  font-size: 0.6rem;
 }
 @mixin font {
   font-size: 8px;
@@ -326,7 +327,7 @@ $color7: #738e99;
   right: 10%;
 }
 .action-lists{
-  font-size: 6px;
+  width: 8rem;
 }
 .sell-button{
   @include action;
