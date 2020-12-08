@@ -43,6 +43,7 @@ $color2: #354e59;
     background-color: #c24040;
   }
 }
+
 .move-order-btn{
   color: $color1;
   display: inline-block;
@@ -181,19 +182,6 @@ $color2: #354e59;
   }
 }
 
-.move-order{
-  background-color: #ae3434;
-  width: 18%;
-  height: 50px;
-  border-radius: 0.5rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  &:hover{
-    background-color: #c24040;
-  }
-}
-
 .back-button{
   background: #8d9598;
   color: #fff;
@@ -237,11 +225,7 @@ $color2: #354e59;
   top: 40px;
   left: 28%;
 }
-.move-order{
-  position: absolute;
-  bottom: 0;
-  right: 1.5rem;
-}
+
 // 本出品詳細ページここまで
 
 // 本の出品ページ
