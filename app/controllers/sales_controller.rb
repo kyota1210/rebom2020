@@ -9,14 +9,15 @@ class SalesController < ApplicationController
 
   def create
     @sale = Sale.new(sale_params)
-    if @sale.valid?
-      @book.sell = :sell
-      @book.save
-      @sale.save
-      redirect_to "/users/#{@book.user.id}"
-    else
-      render action: :new
+    book = @sale.book
+    ActiveRecord::Base.transaction do
+      book.sell = :sell
+      book.save!
+      @sale.save!
     end
+      redirect_to "/users/#{@book.user.id}"
+  rescue
+      render action: :new
   end
 
   def edit
